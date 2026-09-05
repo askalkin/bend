@@ -1,15 +1,15 @@
 document.documentElement.classList.add("js");
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const products = {
   prep: {
-    stage: "Stage 01",
+    index: "01 / 03",
     timing: "20-30 min before play",
     name: "PREP",
     promise: "Arrive ready, not wired.",
     description:
-      "A caffeine-free pre-game ball for evening players. One clean step before the first serve, with no shaker and no stimulant blend arguing with sleep later.",
+      "A caffeine-free pre-game ball for evening players. One clean step before the first serve, without a stimulant blend arguing with sleep later.",
     image: "assets/bend-prep-front.png",
     alt: "BEND PREP supplement container",
     facts: [
@@ -19,7 +19,7 @@ const products = {
     ],
   },
   rally: {
-    stage: "Stage 02",
+    index: "02 / 03",
     timing: "During play / between games",
     name: "RALLY",
     promise: "Hold pace through the long set.",
@@ -34,12 +34,12 @@ const products = {
     ],
   },
   reset: {
-    stage: "Stage 03",
+    index: "03 / 03",
     timing: "Within 30 min after play",
     name: "RESET",
     promise: "Tomorrow starts courtside.",
     description:
-      "A post-match water ball that turns the walk off court into a recovery ritual. Mix it while you change, eat, and come down from the lights.",
+      "A post-match water ball that turns the walk off court into a recovery ritual. Mix it while you change, eat, and come down from the match.",
     image: "assets/bend-reset-front.png",
     alt: "BEND RESET supplement container",
     facts: [
@@ -50,57 +50,6 @@ const products = {
   },
 };
 
-const stageTabs = [...document.querySelectorAll(".stage-tab")];
-const productPanel = document.querySelector("#productPanel");
-const focusImage = document.querySelector("#focusProductImage");
-const focusStage = document.querySelector("#focusStage");
-const focusTiming = document.querySelector("#focusTiming");
-const focusName = document.querySelector("#focusName");
-const focusPromise = document.querySelector("#focusPromise");
-const focusDescription = document.querySelector("#focusDescription");
-const focusFacts = document.querySelector("#focusFacts");
-
-function renderProduct(key) {
-  const product = products[key];
-  if (!product || productPanel.dataset.currentProduct === key) return;
-
-  productPanel.classList.add("is-switching");
-  window.setTimeout(() => {
-    productPanel.dataset.currentProduct = key;
-    focusImage.src = product.image;
-    focusImage.alt = product.alt;
-    focusStage.textContent = product.stage;
-    focusTiming.textContent = product.timing;
-    focusName.textContent = product.name;
-    focusPromise.textContent = product.promise;
-    focusDescription.textContent = product.description;
-    focusFacts.innerHTML = product.facts
-      .map(([term, value]) => `<div><dt>${term}</dt><dd>${value}</dd></div>`)
-      .join("");
-    productPanel.classList.remove("is-switching");
-  }, prefersReducedMotion.matches ? 0 : 190);
-}
-
-stageTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => {
-    stageTabs.forEach((item) => {
-      const isActive = item === tab;
-      item.classList.toggle("active", isActive);
-      item.setAttribute("aria-selected", String(isActive));
-    });
-    renderProduct(tab.dataset.product);
-  });
-
-  tab.addEventListener("keydown", (event) => {
-    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
-    event.preventDefault();
-    const offset = event.key === "ArrowRight" ? 1 : -1;
-    const target = stageTabs[(index + offset + stageTabs.length) % stageTabs.length];
-    target.focus();
-    target.click();
-  });
-});
-
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -109,33 +58,94 @@ const revealObserver = new IntersectionObserver(
       revealObserver.unobserve(entry.target);
     });
   },
-  { threshold: 0.12, rootMargin: "0px 0px -7% 0px" },
+  { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
 );
 
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+document.querySelectorAll(".reveal:not(.in-view)").forEach((element) => revealObserver.observe(element));
 
-const mobileMenuButton = document.querySelector(".menu-trigger");
+const header = document.querySelector("[data-header]");
+const movement = document.querySelector(".movement");
+
+function updateScrollState() {
+  header.classList.toggle("scrolled", window.scrollY > 40);
+  if (movement) {
+    const rect = movement.getBoundingClientRect();
+    movement.classList.toggle("in-motion", rect.top < window.innerHeight * 0.78);
+  }
+}
+
+window.addEventListener("scroll", updateScrollState, { passive: true });
+updateScrollState();
+
+const menuButton = document.querySelector(".menu-button");
 const mobileNav = document.querySelector("#mobileNav");
 
 function setMobileMenu(open) {
-  mobileMenuButton.setAttribute("aria-expanded", String(open));
-  mobileMenuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   mobileNav.hidden = !open;
 }
 
-mobileMenuButton.addEventListener("click", () => {
-  setMobileMenu(mobileMenuButton.getAttribute("aria-expanded") !== "true");
-});
-
+menuButton.addEventListener("click", () => setMobileMenu(menuButton.getAttribute("aria-expanded") !== "true"));
 mobileNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMobileMenu(false)));
 
-const galleryImages = [...document.querySelectorAll(".gallery-image")];
+const stageTabs = [...document.querySelectorAll(".stage-tab")];
+const stagePanel = document.querySelector("#stagePanel");
+const stageVisual = stagePanel.querySelector(".stage-visual");
+const stageImage = document.querySelector("#stageImage");
+const stageIndex = document.querySelector("#stageIndex");
+const stageTiming = document.querySelector("#stageTiming");
+const stageName = document.querySelector("#stageName");
+const stagePromise = document.querySelector("#stagePromise");
+const stageDescription = document.querySelector("#stageDescription");
+const stageFacts = document.querySelector("#stageFacts");
+
+function renderProduct(key) {
+  const product = products[key];
+  if (!product || stagePanel.dataset.currentProduct === key) return;
+
+  stagePanel.classList.add("is-switching");
+  window.setTimeout(() => {
+    stagePanel.dataset.currentProduct = key;
+    stageVisual.dataset.productTone = key;
+    stageImage.src = product.image;
+    stageImage.alt = product.alt;
+    stageIndex.textContent = product.index;
+    stageTiming.textContent = product.timing;
+    stageName.textContent = product.name;
+    stagePromise.textContent = product.promise;
+    stageDescription.textContent = product.description;
+    stageFacts.innerHTML = product.facts.map(([term, value]) => `<div><dt>${term}</dt><dd>${value}</dd></div>`).join("");
+    stagePanel.classList.remove("is-switching");
+  }, reducedMotion.matches ? 0 : 190);
+}
+
+stageTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    stageTabs.forEach((item) => {
+      const active = item === tab;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
+    renderProduct(tab.dataset.product);
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    const nextIndex = (index + (event.key === "ArrowRight" ? 1 : -1) + stageTabs.length) % stageTabs.length;
+    stageTabs[nextIndex].focus();
+    stageTabs[nextIndex].click();
+  });
+});
+
+const gallerySlides = [...document.querySelectorAll(".gallery-slide")];
 const galleryCurrent = document.querySelector("#galleryCurrent");
 let galleryIndex = 0;
 
 function showGallery(nextIndex) {
-  galleryIndex = (nextIndex + galleryImages.length) % galleryImages.length;
-  galleryImages.forEach((image, index) => image.classList.toggle("active", index === galleryIndex));
+  galleryIndex = (nextIndex + gallerySlides.length) % gallerySlides.length;
+  gallerySlides.forEach((slide, index) => slide.classList.toggle("active", index === galleryIndex));
   galleryCurrent.textContent = String(galleryIndex + 1).padStart(2, "0");
 }
 
@@ -161,8 +171,7 @@ const frequencyData = {
 };
 
 function updatePurchasePrice() {
-  const total = unitPrice * quantity;
-  cartPrice.textContent = `EUR ${total}`;
+  cartPrice.textContent = `EUR ${unitPrice * quantity}`;
 }
 
 purchaseRadios.forEach((radio) => {
@@ -185,20 +194,18 @@ frequencyButtons.forEach((button) => {
 
 document.querySelector("[data-quantity-minus]").addEventListener("click", () => {
   quantity = Math.max(1, quantity - 1);
-  quantityValue.value = String(quantity);
   quantityValue.textContent = String(quantity);
   updatePurchasePrice();
 });
 
 document.querySelector("[data-quantity-plus]").addEventListener("click", () => {
   quantity = Math.min(8, quantity + 1);
-  quantityValue.value = String(quantity);
   quantityValue.textContent = String(quantity);
   updatePurchasePrice();
 });
 
 const cartDrawer = document.querySelector("#cartDrawer");
-const cartTrigger = document.querySelector(".cart-trigger");
+const bagButton = document.querySelector(".bag-button");
 const drawerBackdrop = document.querySelector(".drawer-backdrop");
 const drawerEmpty = document.querySelector("#drawerEmpty");
 const drawerItems = document.querySelector("#drawerItems");
@@ -219,16 +226,16 @@ function showToast(message) {
 function openCart() {
   cartDrawer.classList.add("open");
   cartDrawer.setAttribute("aria-hidden", "false");
-  cartTrigger.setAttribute("aria-expanded", "true");
+  bagButton.setAttribute("aria-expanded", "true");
   drawerBackdrop.hidden = false;
   document.body.classList.add("no-scroll");
-  cartDrawer.querySelector(".drawer-head button").focus();
+  cartDrawer.querySelector("[data-close-cart]").focus();
 }
 
 function closeCart() {
   cartDrawer.classList.remove("open");
   cartDrawer.setAttribute("aria-hidden", "true");
-  cartTrigger.setAttribute("aria-expanded", "false");
+  bagButton.setAttribute("aria-expanded", "false");
   drawerBackdrop.hidden = true;
   document.body.classList.remove("no-scroll");
 }
@@ -241,22 +248,15 @@ function renderCart() {
   drawerItems.hidden = cart.length === 0;
   drawerTotal.hidden = cart.length === 0;
   drawerPrice.textContent = `EUR ${total}`;
-
   drawerItems.innerHTML = cart
     .map(
-      (item, index) => `
-        <article class="drawer-item">
-          <div class="drawer-item-image"><img src="assets/bend-rally-front.png" alt=""></div>
-          <div>
-            <strong>${item.name}</strong>
-            <small>${item.mode} / Qty ${item.quantity}</small>
-          </div>
-          <button type="button" data-remove-item="${index}">Remove</button>
-        </article>
-      `,
+      (item, index) => `<article class="drawer-item">
+        <div class="drawer-item-image"><img src="assets/bend-rally-front.png" alt=""></div>
+        <div><strong>${item.name}</strong><small>${item.mode} / Qty ${item.quantity}</small></div>
+        <button type="button" data-remove-item="${index}">Remove</button>
+      </article>`,
     )
     .join("");
-
   drawerItems.querySelectorAll("[data-remove-item]").forEach((button) => {
     button.addEventListener("click", () => {
       cart.splice(Number(button.dataset.removeItem), 1);
@@ -265,260 +265,156 @@ function renderCart() {
   });
 }
 
-cartTrigger.addEventListener("click", openCart);
-document.querySelectorAll("[data-cart-close]").forEach((button) => button.addEventListener("click", closeCart));
+bagButton.addEventListener("click", openCart);
+drawerBackdrop.addEventListener("click", closeCart);
+document.querySelectorAll("[data-close-cart]").forEach((element) => element.addEventListener("click", closeCart));
 
-document.querySelector("[data-add]").addEventListener("click", () => {
+document.querySelector("#addToBag").addEventListener("click", () => {
   cart.push({
     name: "BEND Match Stack",
-    mode: purchaseMode === "subscription" ? `${frequency}x weekly plan` : "One-time",
-    quantity,
+    mode: purchaseMode === "subscription" ? `${frequency}x weekly subscription` : "one-time",
     price: unitPrice,
+    quantity,
   });
   renderCart();
-  showToast("Match Stack added to bag");
+  showToast("Match Stack added to your bag");
   openCart();
 });
 
-document.querySelector("#checkoutButton").addEventListener("click", () => {
-  showToast("Checkout is not connected in this brand prototype");
+document.querySelectorAll(".faq-list article").forEach((item) => {
+  const button = item.querySelector("button");
+  const answer = item.querySelector(".faq-answer");
+  button.addEventListener("click", () => {
+    const open = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!open));
+    answer.hidden = open;
+  });
+});
+
+const formulaDialog = document.querySelector("#formulaDialog");
+
+document.querySelectorAll(".dialog-open").forEach((button) => {
+  button.addEventListener("click", () => formulaDialog.showModal());
+});
+
+formulaDialog.querySelector("[data-close-dialog]").addEventListener("click", () => formulaDialog.close());
+formulaDialog.addEventListener("click", (event) => {
+  const rect = formulaDialog.getBoundingClientRect();
+  const inside = event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;
+  if (!inside) formulaDialog.close();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && cartDrawer.classList.contains("open")) closeCart();
+  if (event.key !== "Escape") return;
+  if (cartDrawer.classList.contains("open")) closeCart();
+  if (!mobileNav.hidden) setMobileMenu(false);
 });
 
-document.querySelectorAll("[data-account-action]").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelector("#accountStatus").textContent = `${button.dataset.accountAction}. Prototype only — nothing was changed.`;
-  });
-});
-
-document.querySelector("#signupForm").addEventListener("submit", (event) => {
+document.querySelector("#newsletterForm").addEventListener("submit", (event) => {
   event.preventDefault();
-  const email = new FormData(event.currentTarget).get("email");
-  document.querySelector("#signupStatus").textContent = `Access request recorded for ${email}. Prototype only — no data was sent.`;
+  showToast("You are on the BEND court list");
   event.currentTarget.reset();
 });
 
-document.querySelectorAll(".dialog-open").forEach((button) => {
-  button.addEventListener("click", () => document.querySelector(`#${button.dataset.dialog}`).showModal());
-});
-
-document.querySelectorAll(".formula-dialog").forEach((dialog) => {
-  dialog.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
-  });
-});
-
-document.querySelectorAll(".faq-list details").forEach((details) => {
-  details.addEventListener("toggle", () => {
-    if (!details.open) return;
-    document.querySelectorAll(".faq-list details").forEach((other) => {
-      if (other !== details) other.open = false;
-    });
-  });
-});
-
-function setupHeroCanvas() {
-  const canvas = document.querySelector("#courtCanvas");
-  const context = canvas.getContext("2d");
-  const hero = canvas.closest(".hero");
-  let width = 0;
-  let height = 0;
-  let frame = 0;
-  let pointerX = 0;
-  let pointerY = 0;
-  let targetX = 0;
-  let targetY = 0;
-
-  function resize() {
+function makeCanvasResponsive(canvas, draw) {
+  const resize = () => {
     const rect = canvas.getBoundingClientRect();
-    const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    width = rect.width;
-    height = rect.height;
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
-  }
-
-  function draw(time = 0) {
-    context.clearRect(0, 0, width, height);
-    pointerX += (targetX - pointerX) * 0.05;
-    pointerY += (targetY - pointerY) * 0.05;
-
-    const progress = (time * 0.00012) % 1;
-    const x0 = width * 0.06;
-    const y0 = height * 0.78;
-    const x1 = width * 0.43;
-    const y1 = height * 0.18;
-    const x2 = width * 0.7;
-    const y2 = height * 0.34;
-
-    context.save();
-    context.translate(pointerX * 10, pointerY * 8);
-    context.beginPath();
-    context.moveTo(x0, y0);
-    context.quadraticCurveTo(x1, y1, x2, y2);
-    context.strokeStyle = "rgba(200,255,34,0.78)";
-    context.lineWidth = 1.2;
-    context.stroke();
-
-    const inv = 1 - progress;
-    const ballX = inv * inv * x0 + 2 * inv * progress * x1 + progress * progress * x2;
-    const ballY = inv * inv * y0 + 2 * inv * progress * y1 + progress * progress * y2;
-    const glow = context.createRadialGradient(ballX, ballY, 1, ballX, ballY, 22);
-    glow.addColorStop(0, "rgba(226,255,92,1)");
-    glow.addColorStop(0.28, "rgba(200,255,34,0.92)");
-    glow.addColorStop(1, "rgba(200,255,34,0)");
-    context.fillStyle = glow;
-    context.beginPath();
-    context.arc(ballX, ballY, 22, 0, Math.PI * 2);
-    context.fill();
-
-    for (let index = 0; index < 16; index += 1) {
-      const phase = ((progress - index * 0.016) + 1) % 1;
-      const phaseInv = 1 - phase;
-      const px = phaseInv * phaseInv * x0 + 2 * phaseInv * phase * x1 + phase * phase * x2;
-      const py = phaseInv * phaseInv * y0 + 2 * phaseInv * phase * y1 + phase * phase * y2;
-      context.fillStyle = `rgba(200,255,34,${0.18 * (1 - index / 16)})`;
-      context.beginPath();
-      context.arc(px, py, Math.max(1, 4 - index * 0.16), 0, Math.PI * 2);
-      context.fill();
-    }
-    context.restore();
-
-    if (!prefersReducedMotion.matches) frame = window.requestAnimationFrame(draw);
-  }
-
-  hero.addEventListener("pointermove", (event) => {
-    const rect = hero.getBoundingClientRect();
-    targetX = event.clientX / rect.width - 0.5;
-    targetY = event.clientY / rect.height - 0.5;
-  });
-  hero.addEventListener("pointerleave", () => {
-    targetX = 0;
-    targetY = 0;
-  });
-
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.max(1, Math.round(rect.width * dpr));
+    canvas.height = Math.max(1, Math.round(rect.height * dpr));
+    const context = canvas.getContext("2d");
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw(context, rect.width, rect.height, performance.now());
+  };
   const observer = new ResizeObserver(resize);
   observer.observe(canvas);
-  resize();
-  draw();
-
-  prefersReducedMotion.addEventListener("change", () => {
-    window.cancelAnimationFrame(frame);
-    draw();
-  });
+  return resize;
 }
 
-function setupProtocolCanvas() {
-  const canvas = document.querySelector("#protocolCanvas");
-  const context = canvas.getContext("2d");
-  let width = 0;
-  let height = 0;
-  let frame = 0;
+const orbitCanvas = document.querySelector("#orbitCanvas");
+let orbitSize = { width: 0, height: 0 };
+let orbitFrame;
 
-  function resize() {
-    const rect = canvas.getBoundingClientRect();
-    const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    width = rect.width;
-    height = rect.height;
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    draw();
-  }
+function drawOrbits(context, width, height, time) {
+  orbitSize = { width, height };
+  context.clearRect(0, 0, width, height);
+  context.save();
+  context.globalAlpha = 0.28;
+  context.strokeStyle = "#ffffff";
+  context.lineWidth = 1;
+  const phase = reducedMotion.matches ? 0 : time * 0.00014;
+  context.beginPath();
+  context.ellipse(width * 0.31, height * 0.54, width * 0.28, height * 0.2, -0.42 + Math.sin(phase) * 0.025, 0, Math.PI * 2);
+  context.stroke();
+  context.globalAlpha = 0.18;
+  context.beginPath();
+  context.ellipse(width * 0.33, height * 0.54, width * 0.36, height * 0.27, -0.42, 0, Math.PI * 2);
+  context.stroke();
+  context.restore();
+}
 
-  function curvePoint(t) {
-    const points = [
-      [width * 0.04, height * 0.66],
-      [width * 0.23, height * 0.52],
-      [width * 0.36, height * 0.17],
-      [width * 0.54, height * 0.23],
-      [width * 0.69, height * 0.36],
-      [width * 0.83, height * 0.3],
-      [width * 0.96, height * 0.7],
-    ];
-    const scaled = t * (points.length - 1);
-    const index = Math.min(Math.floor(scaled), points.length - 2);
-    const local = scaled - index;
-    const p0 = points[Math.max(0, index - 1)];
-    const p1 = points[index];
-    const p2 = points[Math.min(points.length - 1, index + 1)];
-    const p3 = points[Math.min(points.length - 1, index + 2)];
-    const t2 = local * local;
-    const t3 = t2 * local;
-    const interpolate = (axis) =>
-      0.5 *
-      ((2 * p1[axis]) +
-        (-p0[axis] + p2[axis]) * local +
-        (2 * p0[axis] - 5 * p1[axis] + 4 * p2[axis] - p3[axis]) * t2 +
-        (-p0[axis] + 3 * p1[axis] - 3 * p2[axis] + p3[axis]) * t3);
-    return [interpolate(0), interpolate(1)];
-  }
+const resizeOrbits = makeCanvasResponsive(orbitCanvas, drawOrbits);
 
-  function draw(time = 0) {
-    context.clearRect(0, 0, width, height);
-    context.save();
+function animateOrbits(time) {
+  const context = orbitCanvas.getContext("2d");
+  drawOrbits(context, orbitSize.width, orbitSize.height, time);
+  if (!reducedMotion.matches) orbitFrame = requestAnimationFrame(animateOrbits);
+}
+
+if (!reducedMotion.matches) orbitFrame = requestAnimationFrame(animateOrbits);
+
+const curveCanvas = document.querySelector("#curveCanvas");
+let curveSize = { width: 0, height: 0 };
+let curveFrame;
+
+function drawCurve(context, width, height, time) {
+  curveSize = { width, height };
+  context.clearRect(0, 0, width, height);
+  const pulse = reducedMotion.matches ? 0 : Math.sin(time * 0.0014) * 3;
+  const points = [
+    [0, height * 0.77],
+    [width * 0.23, height * 0.34],
+    [width * 0.49, height * 0.53 + pulse],
+    [width * 0.74, height * 0.21],
+    [width, height * 0.38],
+  ];
+  context.save();
+  context.strokeStyle = "rgba(10,11,10,.42)";
+  context.lineWidth = 1.25;
+  context.beginPath();
+  context.moveTo(points[0][0], points[0][1]);
+  context.bezierCurveTo(width * 0.1, height * 0.68, width * 0.12, height * 0.2, points[1][0], points[1][1]);
+  context.bezierCurveTo(width * 0.34, height * 0.24, width * 0.38, height * 0.66, points[2][0], points[2][1]);
+  context.bezierCurveTo(width * 0.59, height * 0.43, width * 0.63, height * 0.15, points[3][0], points[3][1]);
+  context.bezierCurveTo(width * 0.84, height * 0.16, width * 0.9, height * 0.5, points[4][0], points[4][1]);
+  context.stroke();
+
+  points.forEach(([x, y], index) => {
+    context.fillStyle = index === 2 ? "#c8ff22" : "rgba(255,255,255,.9)";
     context.beginPath();
-    for (let step = 0; step <= 120; step += 1) {
-      const [x, y] = curvePoint(step / 120);
-      if (step === 0) context.moveTo(x, y);
-      else context.lineTo(x, y);
-    }
-    context.strokeStyle = "#c8ff22";
-    context.lineWidth = 2;
-    context.stroke();
-
-    context.setLineDash([5, 8]);
-    context.beginPath();
-    context.moveTo(width * 0.04, height * 0.72);
-    context.bezierCurveTo(width * 0.32, height * 0.39, width * 0.68, height * 0.67, width * 0.96, height * 0.58);
-    context.strokeStyle = "rgba(255,255,255,0.38)";
-    context.lineWidth = 1;
-    context.stroke();
-    context.setLineDash([]);
-
-    [0.07, 0.5, 0.94].forEach((t, index) => {
-      const [x, y] = curvePoint(t);
-      context.fillStyle = index === 0 ? "#bba7ff" : index === 1 ? "#c8ff22" : "#f6a178";
-      context.beginPath();
-      context.arc(x, y, 7, 0, Math.PI * 2);
-      context.fill();
-      context.strokeStyle = "rgba(255,255,255,0.82)";
-      context.lineWidth = 1;
-      context.beginPath();
-      context.arc(x, y, 18, 0, Math.PI * 2);
-      context.stroke();
-    });
-
-    const t = (time * 0.00008) % 1;
-    const [ballX, ballY] = curvePoint(t);
-    const glow = context.createRadialGradient(ballX, ballY, 0, ballX, ballY, 26);
-    glow.addColorStop(0, "rgba(255,255,255,1)");
-    glow.addColorStop(0.2, "rgba(200,255,34,1)");
-    glow.addColorStop(1, "rgba(200,255,34,0)");
-    context.fillStyle = glow;
-    context.beginPath();
-    context.arc(ballX, ballY, 26, 0, Math.PI * 2);
+    context.arc(x, y, index === 2 ? 5 : 3.5, 0, Math.PI * 2);
     context.fill();
-    context.restore();
-
-    if (!prefersReducedMotion.matches) frame = window.requestAnimationFrame(draw);
-  }
-
-  const observer = new ResizeObserver(resize);
-  observer.observe(canvas);
-  resize();
-  draw();
-
-  prefersReducedMotion.addEventListener("change", () => {
-    window.cancelAnimationFrame(frame);
-    draw();
   });
+  context.restore();
 }
 
-setupHeroCanvas();
-setupProtocolCanvas();
+makeCanvasResponsive(curveCanvas, drawCurve);
+
+function animateCurve(time) {
+  const context = curveCanvas.getContext("2d");
+  drawCurve(context, curveSize.width, curveSize.height, time);
+  if (!reducedMotion.matches) curveFrame = requestAnimationFrame(animateCurve);
+}
+
+if (!reducedMotion.matches) curveFrame = requestAnimationFrame(animateCurve);
+
+reducedMotion.addEventListener("change", () => {
+  cancelAnimationFrame(orbitFrame);
+  cancelAnimationFrame(curveFrame);
+  resizeOrbits();
+  drawCurve(curveCanvas.getContext("2d"), curveSize.width, curveSize.height, performance.now());
+  if (!reducedMotion.matches) {
+    orbitFrame = requestAnimationFrame(animateOrbits);
+    curveFrame = requestAnimationFrame(animateCurve);
+  }
+});

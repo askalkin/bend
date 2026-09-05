@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#061847">
+    <meta name="theme-color" content="#eef0ec">
     <title>BEND Match Stack - Padel &amp; Tennis Supplements</title>
-    <meta name="description" content="PREP before play, RALLY during, RESET after. Meet the three-stage supplement ritual designed around padel and tennis match days.">
+    <meta name="description" content="PREP before play, RALLY during, RESET after. A clear three-stage supplement ritual for padel and tennis match days.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="BEND Match Stack - Bend the match.">
+    <meta property="og:title" content="BEND Match Stack - The match, in balance.">
     <meta property="og:description" content="A three-stage supplement ritual for padel and tennis match days.">
     <meta property="og:image" content="https://bend-match-stack.alinask.chatgpt.site/assets/generated/bend-social-card.png">
-    <meta property="og:image:width" content="1733">
-    <meta property="og:image:height" content="908">
+    <meta property="og:image:width" content="1731">
+    <meta property="og:image:height" content="909">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BEND Match Stack - Bend the match.">
+    <meta name="twitter:title" content="BEND Match Stack - The match, in balance.">
     <meta name="twitter:description" content="A three-stage supplement ritual for padel and tennis match days.">
     <meta name="twitter:image" content="https://bend-match-stack.alinask.chatgpt.site/assets/generated/bend-social-card.png">
     <link rel="preload" href="assets/fonts/WorkSans-wght.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="assets/generated/bend-match-stack-hero-v2.png" as="image">
+    <link rel="preload" href="assets/generated/bend-glass-hero.png" as="image">
     <link rel="preload" href="assets/bend-logo-current.svg" as="image">
     <link rel="icon" href="assets/bend-logo-current.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
@@ -25,365 +25,230 @@
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="BEND home">
-        <img src="assets/bend-logo-current.svg" alt="BEND">
-      </a>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="BEND home"><img src="assets/bend-logo-current.svg" alt="BEND"></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#stack">The stack</a>
-        <a href="#formula">Formula</a>
-        <a href="#protocol">Protocol</a>
-        <a href="#refills">Refills</a>
+        <a href="#system">The system</a><a href="#science">Science</a><a href="#shop">Shop</a>
       </nav>
       <div class="header-actions">
-        <button class="cart-trigger" type="button" aria-controls="cartDrawer" aria-expanded="false">
-          Bag <span id="cartCount" aria-label="items in bag">0</span>
-        </button>
-        <button class="menu-trigger" type="button" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
-          <span></span><span></span>
-        </button>
+        <button class="bag-button" type="button" aria-controls="cartDrawer" aria-expanded="false"><span>Bag</span><output id="cartCount" aria-label="items in bag">0</output></button>
+        <button class="menu-button" type="button" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
       </div>
       <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
-        <a href="#stack">The stack</a>
-        <a href="#formula">Formula</a>
-        <a href="#protocol">Protocol</a>
-        <a href="#refills">Refills</a>
+        <a href="#system">The system</a><a href="#science">Science</a><a href="#shop">Shop</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-background" src="assets/generated/bend-match-stack-hero-v2.png" alt="Chrome supplement vessel on a midnight blue padel court with lime ball paths" fetchpriority="high">
-        <canvas class="hero-canvas" id="courtCanvas" aria-hidden="true"></canvas>
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-grid-lines" aria-hidden="true"></div>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-frame">
+          <img class="hero-image" src="assets/generated/bend-glass-hero.png" alt="BEND chrome court bottle on a pale translucent studio plinth" fetchpriority="high">
+          <div class="hero-sheen" aria-hidden="true"></div>
+          <canvas class="hero-orbits" id="orbitCanvas" aria-hidden="true"></canvas>
+          <div class="hero-caption" aria-hidden="true"><span>Studio study / 001</span><span>Chrome - glass - match day</span></div>
 
-        <div class="hero-content">
-          <p class="eyebrow light">Padel / tennis match nutrition</p>
-          <h1 id="hero-title"><span>Bend</span> the match.</h1>
-          <p class="hero-lede">
-            One precise ritual for the full arc of play. PREP before the first serve,
-            RALLY between games, RESET while the court lights cool.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-acid" href="#buy">Build your stack</a>
-            <a class="text-link light" href="#stack">See the system <span aria-hidden="true">&#8595;</span></a>
-          </div>
-        </div>
+          <article class="hero-card liquid-panel">
+            <div class="hero-card-top">
+              <p class="kicker">Padel + tennis performance</p>
+              <span class="availability"><i></i> Founding release</span>
+            </div>
+            <h1 id="heroTitle">The Match<br>Stack.</h1>
+            <p class="hero-copy">Three clean moments for the full curve of play. PREP before, RALLY during, RESET after.</p>
+            <div class="hero-price">
+              <div><span>From</span><strong>EUR 69</strong></div>
+              <div><span>Format</span><strong>30 balls</strong></div>
+            </div>
+            <div class="hero-actions">
+              <a class="primary-button" href="#shop">Build your stack <span aria-hidden="true">&#8599;</span></a>
+              <button class="round-button dialog-open" type="button" data-dialog="formulaDialog" aria-label="View formula principles">+</button>
+            </div>
+          </article>
 
-        <div class="hero-score" aria-label="Product highlights">
-          <div><span>01</span><strong>Zero sugar</strong></div>
-          <div><span>02</span><strong>Caffeine-free PREP</strong></div>
-          <div><span>03</span><strong>10 match days</strong></div>
-        </div>
-        <div class="hero-status" aria-hidden="true"><span>System armed</span><i></i><span>Match day / 001</span></div>
-      </section>
-
-      <section class="ticker" aria-label="BEND match ritual">
-        <div class="ticker-track">
-          <span>PREP / 20-30 min before</span><i></i>
-          <span>RALLY / during play</span><i></i>
-          <span>RESET / after play</span><i></i>
-          <span>Refill only what moves</span><i></i>
-          <span>PREP / 20-30 min before</span><i></i>
-          <span>RALLY / during play</span><i></i>
-          <span>RESET / after play</span><i></i>
-          <span>Refill only what moves</span><i></i>
+          <div class="floating-pill pill-acid" aria-hidden="true"><i></i> Zero sugar</div>
+          <div class="floating-pill pill-lavender" aria-hidden="true"><i></i> 03 stages</div>
+          <a class="scroll-cue" href="#movement"><span>Scroll to move</span><i></i></a>
         </div>
       </section>
 
-      <section class="system-intro grid-section" id="stack">
+      <section class="movement" id="movement" aria-labelledby="movementTitle">
+        <img class="movement-image" src="assets/generated/bend-sky-match.png" alt="Tennis player moving across a pale blue court beneath a bright sky" loading="eager">
+        <div class="movement-vignette" aria-hidden="true"></div>
+        <div class="movement-copy reveal">
+          <p class="kicker light">Movement / clarity / drive / care</p>
+          <h2 id="movementTitle">Stay inside<br>the point.</h2>
+        </div>
+        <div class="movement-glass liquid-panel reveal">
+          <span>Match rhythm</span><strong>00:42</strong>
+          <div class="mini-curve" aria-hidden="true"><i></i><b></b><em></em></div>
+          <p>Stop. Sprint. Recover. Repeat.</p>
+        </div>
+        <div class="movement-axis" aria-hidden="true"><span>00</span><span>15</span><span>30</span><span>45</span></div>
+      </section>
+
+      <section class="system section-shell" id="system">
         <header class="section-heading reveal">
-          <p class="eyebrow">The match stack / 01</p>
-          <h2>Three moments.<br>One clean rhythm.</h2>
+          <p class="kicker">The system / 01</p>
+          <h2>One ritual.<br>Three moments.</h2>
+          <p>Made for the uneven rhythm of racquet sport, with one clear format for every stage of match day.</p>
         </header>
-        <p class="section-intro reveal">
-          Racquet sport changes every few minutes: wait, sprint, recover, repeat. BEND turns that
-          stop-start pattern into a simple three-stage ritual with one ball for each moment.
-        </p>
 
-        <div class="stage-selector reveal" role="tablist" aria-label="Choose a BEND product">
-          <button class="stage-tab active" type="button" role="tab" aria-selected="true" aria-controls="productPanel" data-product="prep">
-            <span>Before</span><strong>PREP</strong><i>20-30 min</i>
-          </button>
-          <button class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="productPanel" data-product="rally">
-            <span>During</span><strong>RALLY</strong><i>Between games</i>
-          </button>
-          <button class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="productPanel" data-product="reset">
-            <span>After</span><strong>RESET</strong><i>Within 30 min</i>
-          </button>
+        <div class="stage-switcher reveal" role="tablist" aria-label="Choose a BEND product">
+          <button class="stage-tab active" type="button" role="tab" aria-selected="true" aria-controls="stagePanel" data-product="prep"><span>01</span><strong>PREP</strong><small>Before</small></button>
+          <button class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stagePanel" data-product="rally"><span>02</span><strong>RALLY</strong><small>During</small></button>
+          <button class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stagePanel" data-product="reset"><span>03</span><strong>RESET</strong><small>After</small></button>
         </div>
 
-        <article class="product-focus reveal" id="productPanel" data-current-product="prep">
-          <div class="product-focus-visual">
-            <div class="measure-column" aria-hidden="true"><span>100</span><span>75</span><span>50</span><span>25</span><span>00</span></div>
-            <div class="product-orbit orbit-one" aria-hidden="true"></div>
-            <div class="product-orbit orbit-two" aria-hidden="true"></div>
-            <img id="focusProductImage" src="assets/bend-prep-front.png" alt="BEND PREP supplement container">
-            <span class="formula-glyph" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <article class="stage-panel reveal" id="stagePanel" data-current-product="prep">
+          <div class="stage-visual" data-product-tone="prep">
+            <div class="stage-halo" aria-hidden="true"></div>
+            <div class="stage-measure" aria-hidden="true"><span>100</span><span>75</span><span>50</span><span>25</span><span>00</span></div>
+            <img id="stageImage" src="assets/bend-prep-front.png" alt="BEND PREP supplement container">
+            <div class="single-ball" aria-hidden="true"></div>
+            <div class="stage-index" id="stageIndex" aria-hidden="true">01 / 03</div>
           </div>
-          <div class="product-focus-copy">
-            <div class="product-index"><span id="focusStage">Stage 01</span><span id="focusTiming">20-30 min before play</span></div>
-            <h3 id="focusName">PREP</h3>
-            <p class="product-promise" id="focusPromise">Arrive ready, not wired.</p>
-            <p id="focusDescription">
-              A caffeine-free pre-game ball for evening players. One clean step before the first serve,
-              with no shaker and no stimulant blend arguing with sleep later.
-            </p>
-            <dl class="formula-facts" id="focusFacts">
-              <div><dt>Format</dt><dd>1 chewable ball</dd></div>
-              <div><dt>Direction</dt><dd>B vitamins + magnesium</dd></div>
-              <div><dt>Contains</dt><dd>Zero caffeine / zero sugar</dd></div>
+          <div class="stage-copy">
+            <p class="kicker" id="stageTiming">20-30 min before play</p>
+            <h3 id="stageName">PREP</h3>
+            <p class="stage-promise" id="stagePromise">Arrive ready, not wired.</p>
+            <p id="stageDescription">A caffeine-free pre-game ball for evening players. One clean step before the first serve, without a stimulant blend arguing with sleep later.</p>
+            <dl class="stage-facts" id="stageFacts">
+              <div><dt>Format</dt><dd>1 chewable ball</dd></div><div><dt>Direction</dt><dd>B vitamins + magnesium</dd></div><div><dt>Contains</dt><dd>Zero caffeine / zero sugar</dd></div>
             </dl>
-            <a class="text-link" href="#buy">Add to the Match Stack <span aria-hidden="true">&#8594;</span></a>
+            <a class="underlined-link" href="#shop">Shop the complete system <span aria-hidden="true">&#8594;</span></a>
           </div>
         </article>
       </section>
 
-      <section class="campaign-band" aria-labelledby="campaign-title">
-        <img src="assets/generated/bend-court-grid-motion.png" alt="Padel players moving across a blue court grid" loading="lazy">
-        <div class="campaign-grid" aria-hidden="true"></div>
-        <div class="campaign-copy reveal">
-          <p class="eyebrow light">Built for stop / start sport</p>
-          <h2 id="campaign-title">The point ends.<br>The match keeps moving.</h2>
-          <p>
-            Designed for the strange rhythm of padel and tennis: explosive points, long pauses,
-            hot glass, late starts, and the next match already on the calendar.
-          </p>
-        </div>
-        <div class="campaign-score" aria-label="Match sequence">
-          <strong>06:48</strong><span>rally time</span><strong>42</strong><span>repeat points</span>
-        </div>
-      </section>
-
-      <section class="formula-section" id="formula">
-        <div class="formula-media reveal">
-          <img src="assets/generated/bend-formula-still-life-v2.png" alt="Lime, peach and lavender supplement spheres in a translucent laboratory setting" loading="lazy">
-          <div class="media-index" aria-hidden="true"><span>MAT / 03</span><span>CHROME + GLASS</span></div>
-        </div>
-        <div class="formula-copy reveal">
-          <p class="eyebrow">Formula logic / 02</p>
-          <h2>Enough science.<br>No theater.</h2>
-          <p>
-            The range is structured around familiar nutritional building blocks, clear timing, and
-            a one-ball format. Final production formulas and claims remain subject to testing and
-            local regulatory review.
-          </p>
-          <div class="ingredient-grid">
-            <article><span>Na + K</span><strong>Electrolytes</strong><p>For the RALLY water-ball direction.</p></article>
-            <article><span>Mg</span><strong>Magnesium</strong><p>Used across readiness and recovery concepts.</p></article>
-            <article><span>B</span><strong>B vitamins</strong><p>The stimulant-free PREP direction.</p></article>
-            <article><span>AA</span><strong>Amino acids</strong><p>Part of the RESET recovery concept.</p></article>
-          </div>
-          <button class="text-link dialog-open" type="button" data-dialog="formulaDialog">Read the formula principles <span aria-hidden="true">&#8594;</span></button>
-        </div>
-      </section>
-
-      <section class="protocol grid-section" id="protocol">
-        <header class="section-heading reveal">
-          <p class="eyebrow">Match protocol / 03</p>
-          <h2>Follow the curve.</h2>
+      <section class="dashboard section-shell" id="science" aria-labelledby="scienceTitle">
+        <header class="dashboard-heading reveal">
+          <div><p class="kicker">Match intelligence / 02</p><h2 id="scienceTitle">Clear signals.<br>Nothing noisy.</h2></div>
+          <p>The stack follows the match, not a generic gym clock. Every stage gets a simple cue, a familiar nutritional direction, and room to adapt.</p>
         </header>
-        <p class="section-intro reveal">
-          The protocol follows the match, not a generic gym schedule. Use the products you need,
-          leave the rest, and refill around how often you actually play.
-        </p>
 
-        <div class="protocol-chart reveal">
-          <canvas id="protocolCanvas" aria-label="A diagram showing PREP, RALLY, and RESET across a match timeline"></canvas>
-          <div class="chart-axis" aria-hidden="true"><span>-30 min</span><span>Serve</span><span>Set 1</span><span>Set 2</span><span>After</span></div>
-          <div class="chart-points" aria-hidden="true">
-            <i class="point-prep"><b>01</b>PREP</i>
-            <i class="point-rally"><b>02</b>RALLY</i>
-            <i class="point-reset"><b>03</b>RESET</i>
-          </div>
-        </div>
-
-        <div class="protocol-steps">
-          <article class="reveal"><span>01 / Before</span><strong>Chew PREP</strong><p>One ball, 20-30 minutes before play. Caffeine-free by design.</p></article>
-          <article class="reveal"><span>02 / During</span><strong>Drop RALLY</strong><p>One ball in 500-1000 ml water. Drink between games.</p></article>
-          <article class="reveal"><span>03 / After</span><strong>Mix RESET</strong><p>One ball in cold water within 30 minutes after play.</p></article>
-        </div>
-      </section>
-
-      <section class="buy-section" id="buy">
-        <div class="buy-gallery reveal">
-          <div class="gallery-stage" data-active-gallery="0">
-            <figure class="gallery-image active"><img src="assets/bottle-steel.png" alt="BEND stainless steel court bottles" loading="lazy"></figure>
-            <figure class="gallery-image"><img src="assets/generated/bend-shop-lineup.png" alt="BEND court supplement lineup" loading="lazy"></figure>
-            <figure class="gallery-image"><img src="assets/bottle-clear.png" alt="BEND clear court bottles filled with lime supplement balls" loading="lazy"></figure>
-            <div class="gallery-count"><span id="galleryCurrent">01</span> / 03</div>
-          </div>
-          <div class="gallery-controls">
-            <button type="button" data-gallery-prev aria-label="Previous product image">&#8592;</button>
-            <button type="button" data-gallery-next aria-label="Next product image">&#8594;</button>
-          </div>
-        </div>
-
-        <div class="buy-panel reveal">
-          <p class="eyebrow">Founding release / 001</p>
-          <h2>Match Stack</h2>
-          <p class="buy-subtitle">The complete home-and-court system for 10 match days.</p>
-          <div class="rating-line" aria-label="Founding release details"><span>First edition</span><span>30 total balls</span></div>
-
-          <div class="included-list">
-            <div><span>01</span><p><strong>Chrome court bottle</strong>Reusable hardware for the bag and bench.</p></div>
-            <div><span>02</span><p><strong>Three home docks</strong>PREP, RALLY and RESET stay visible.</p></div>
-            <div><span>03</span><p><strong>Three refill tubes</strong>Ten balls per product stage.</p></div>
-          </div>
-
-          <fieldset class="purchase-mode">
-            <legend>Choose your rhythm</legend>
-            <label class="mode-option active">
-              <input type="radio" name="purchase" value="subscription" checked>
-              <span><strong>Subscribe + save</strong><small>Starter kit, then flexible refills</small></span>
-              <b>EUR 69</b>
-            </label>
-            <label class="mode-option">
-              <input type="radio" name="purchase" value="once">
-              <span><strong>One-time purchase</strong><small>Complete 10-match system</small></span>
-              <b>EUR 79</b>
-            </label>
-          </fieldset>
-
-          <div class="frequency-control" id="frequencyControl">
-            <span>Play frequency</span>
-            <div role="group" aria-label="Matches per week">
-              <button class="active" type="button" data-frequency="2">2x</button>
-              <button type="button" data-frequency="3">3x</button>
-              <button type="button" data-frequency="5">5x</button>
-            </div>
-            <strong id="deliveryInterval">Refills every 5 weeks</strong>
-          </div>
-
-          <div class="add-row">
-            <div class="quantity" aria-label="Quantity selector">
-              <button type="button" data-quantity-minus aria-label="Decrease quantity">-</button>
-              <output id="quantityValue" aria-live="polite">1</output>
-              <button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
-            </div>
-            <button class="button button-dark add-to-cart" type="button" data-add="Match Stack">Add to bag <span id="cartPrice">EUR 69</span></button>
-          </div>
-          <p class="purchase-note">Pause, skip, or swap before every refill. No card charged today in this prototype.</p>
+        <div class="metric-grid">
+          <article class="metric-card metric-large gradient-card reveal">
+            <span class="metric-label">Match readiness</span>
+            <div class="metric-number"><strong>92</strong><small>/ 100</small></div>
+            <canvas id="curveCanvas" aria-label="An animated curve representing match readiness"></canvas>
+            <div class="metric-scale" aria-hidden="true"><span>-30</span><span>Serve</span><span>Set 1</span><span>Set 2</span><span>Reset</span></div>
+          </article>
+          <article class="metric-card metric-orbit reveal">
+            <span class="metric-label">Hydration cue</span><div class="orbit-graphic" aria-hidden="true"><i></i><i></i><b></b></div><strong>500-1000 ml</strong><p>One RALLY ball during play.</p>
+          </article>
+          <article class="metric-card metric-product reveal">
+            <span class="status-tag">Caffeine-free</span><img src="assets/bend-prep-front.png" alt="BEND PREP container" loading="lazy"><div><strong>PREP</strong><span>Evening-safe direction</span></div>
+          </article>
+          <article class="metric-card metric-dots reveal">
+            <span class="metric-label">10 match days</span><div class="dot-field" aria-hidden="true"></div><div class="dot-key"><span><i></i>Ready</span><span><i></i>Used</span></div>
+          </article>
+          <article class="metric-card metric-score reveal">
+            <span class="metric-label">Recovery window</span><strong>30<small>min</small></strong><div class="score-line" aria-hidden="true"><i></i></div><p>RESET starts while the court cools.</p>
+          </article>
         </div>
       </section>
 
-      <section class="refill-section grid-section" id="refills">
-        <header class="section-heading reveal">
-          <p class="eyebrow">Refill the function / 04</p>
-          <h2>Keep the object.<br>Move less material.</h2>
-        </header>
-        <p class="section-intro reveal">
-          The first delivery contains the permanent pieces. After that, slim refills arrive on the
-          cadence you choose. It feels lighter because it is.
-        </p>
-
-        <div class="refill-board reveal">
-          <div class="refill-visual">
-            <img src="assets/bend-rally-front.png" alt="BEND RALLY refill dock" loading="lazy">
-            <span>Next dispatch</span><strong>12 Oct</strong>
-          </div>
-          <div class="refill-dashboard">
-            <div class="dashboard-head"><span>Your match rhythm</span><strong>2 sessions / week</strong></div>
-            <div class="stock-bars">
-              <div><span>PREP</span><i><b style="width:62%"></b></i><strong>6</strong></div>
-              <div><span>RALLY</span><i><b style="width:38%"></b></i><strong>4</strong></div>
-              <div><span>RESET</span><i><b style="width:78%"></b></i><strong>8</strong></div>
-            </div>
-            <div class="dashboard-actions">
-              <button type="button" data-account-action="Refill skipped">Skip</button>
-              <button type="button" data-account-action="Products ready to swap">Swap</button>
-              <button type="button" data-account-action="Subscription paused">Pause</button>
-            </div>
-            <p id="accountStatus" aria-live="polite">Your next refill is fully editable.</p>
+      <section class="formula-story" aria-labelledby="formulaTitle">
+        <div class="formula-image-wrap reveal">
+          <img src="assets/generated/bend-formula-still-life-v2.png" alt="Glossy lime, peach and lavender supplement spheres in a clear laboratory setting" loading="lazy">
+          <div class="image-caption" aria-hidden="true"><span>Material study / 03</span><span>Water - mineral - fruit</span></div>
+        </div>
+        <div class="formula-story-copy reveal">
+          <p class="kicker">Formula logic / 03</p><h2 id="formulaTitle">Enough science.<br>No theater.</h2>
+          <p>Familiar nutritional building blocks, clear timing, and a one-ball format. The system is designed to disappear into match day.</p>
+          <div class="formula-lines">
+            <button class="formula-line dialog-open" type="button" data-dialog="formulaDialog"><span>01</span><strong>Electrolytes</strong><small>Na + K</small><i>+</i></button>
+            <button class="formula-line dialog-open" type="button" data-dialog="formulaDialog"><span>02</span><strong>Readiness</strong><small>B + Mg</small><i>+</i></button>
+            <button class="formula-line dialog-open" type="button" data-dialog="formulaDialog"><span>03</span><strong>Recovery</strong><small>AA + tart cherry</small><i>+</i></button>
           </div>
         </div>
       </section>
 
-      <section class="player-section">
-        <div class="player-copy reveal">
-          <p class="eyebrow light">For the real match day / 05</p>
-          <h2>Made for 9 PM<br>and 7 AM.</h2>
-          <p>For the player who closes a laptop, races to the club, plays one match too many, and still wants tomorrow to feel like tomorrow.</p>
-          <a class="button button-light" href="#buy">Start the ritual</a>
+      <section class="protocol section-shell" id="protocol" aria-labelledby="protocolTitle">
+        <header class="protocol-heading reveal"><p class="kicker">The protocol / 04</p><h2 id="protocolTitle">Follow the curve.</h2></header>
+        <div class="protocol-track reveal">
+          <div class="protocol-line" aria-hidden="true"><i></i></div>
+          <article><span>01 / Before</span><strong>Chew PREP</strong><p>One ball, 20-30 minutes before play.</p></article>
+          <article><span>02 / During</span><strong>Drop RALLY</strong><p>One ball in 500-1000 ml water.</p></article>
+          <article><span>03 / After</span><strong>Mix RESET</strong><p>Within 30 minutes after play.</p></article>
         </div>
-        <div class="player-rail" aria-hidden="true"><span>21:00 / court booked</span><span>22:42 / match point</span><span>07:00 / life resumes</span></div>
       </section>
 
-      <section class="faq-section grid-section">
-        <header class="section-heading reveal">
-          <p class="eyebrow">Clear before checkout / 06</p>
-          <h2>Questions,<br>answered cleanly.</h2>
-        </header>
+      <section class="shop section-shell" id="shop" aria-labelledby="shopTitle">
+        <header class="shop-heading reveal"><p class="kicker">Founding release / 001</p><h2 id="shopTitle">Your court <span>system.</span></h2></header>
+        <div class="shop-layout">
+          <div class="gallery reveal">
+            <div class="gallery-stage">
+              <figure class="gallery-slide active"><img src="assets/generated/bend-shop-lineup.png" alt="BEND Match Stack bottle and refill system" loading="lazy"></figure>
+              <figure class="gallery-slide"><img src="assets/bottle-steel.png" alt="BEND stainless steel court bottles" loading="lazy"></figure>
+              <figure class="gallery-slide"><img src="assets/bottle-clear.png" alt="BEND clear refill vessel with lime balls" loading="lazy"></figure>
+              <div class="gallery-progress"><span id="galleryCurrent">01</span><i></i><span>03</span></div>
+              <div class="gallery-buttons"><button type="button" data-gallery-prev aria-label="Previous product image">&#8592;</button><button type="button" data-gallery-next aria-label="Next product image">&#8594;</button></div>
+            </div>
+          </div>
+
+          <div class="buy-panel liquid-panel reveal">
+            <div class="buy-heading"><span class="status-tag">10 match days</span><h3>Match Stack</h3><p>Chrome court bottle, three home docks, and 30 supplement balls across PREP, RALLY, and RESET.</p></div>
+            <fieldset class="purchase-mode">
+              <legend>Choose your rhythm</legend>
+              <label class="mode-option active"><input type="radio" name="purchase" value="subscription" checked><span><strong>Subscribe + save</strong><small>Flexible match-day refills</small></span><b>EUR 69</b></label>
+              <label class="mode-option"><input type="radio" name="purchase" value="once"><span><strong>One-time</strong><small>Full founding system</small></span><b>EUR 79</b></label>
+            </fieldset>
+            <div class="frequency" id="frequencyControl">
+              <div><span>Weekly matches</span><strong id="deliveryInterval">Refills every 5 weeks</strong></div>
+              <div class="segmented" role="group" aria-label="Weekly match frequency"><button class="active" type="button" data-frequency="2">2x</button><button type="button" data-frequency="3">3x</button><button type="button" data-frequency="5">5x</button></div>
+            </div>
+            <div class="buy-action">
+              <div class="quantity" aria-label="Quantity selector"><button type="button" data-quantity-minus aria-label="Decrease quantity">-</button><output id="quantityValue">1</output><button type="button" data-quantity-plus aria-label="Increase quantity">+</button></div>
+              <button class="add-button" type="button" id="addToBag"><span>Add to bag</span><strong id="cartPrice">EUR 69</strong></button>
+            </div>
+            <p class="buy-note">Pause, skip, or swap refills before every shipment.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section-shell" aria-labelledby="faqTitle">
+        <header class="faq-heading reveal"><p class="kicker">Details / 05</p><h2 id="faqTitle">Before the first serve.</h2></header>
         <div class="faq-list reveal">
-          <details>
-            <summary>How many matches does the starter kit cover?<span aria-hidden="true">+</span></summary>
-            <p>Ten complete match days when you use PREP, RALLY, and RESET each time. You can use each stage independently.</p>
-          </details>
-          <details>
-            <summary>Does PREP contain caffeine?<span aria-hidden="true">+</span></summary>
-            <p>No. The current PREP concept is intentionally caffeine-free for evening racquet sport.</p>
-          </details>
-          <details>
-            <summary>Can I change the refill mix?<span aria-hidden="true">+</span></summary>
-            <p>Yes. The subscription is designed to let players skip, pause, swap products, or change frequency before billing.</p>
-          </details>
-          <details>
-            <summary>Are the formulas final?<span aria-hidden="true">+</span></summary>
-            <p>No. This launch prototype shows the intended product architecture. Final ingredients, dosage, testing, and approved claims require formulation and regulatory review.</p>
-          </details>
+          <article><button type="button" aria-expanded="false"><span>Is PREP caffeinated?</span><i>+</i></button><div class="faq-answer" hidden><p>No. The PREP concept is intentionally caffeine-free for late sessions and players who already manage caffeine elsewhere.</p></div></article>
+          <article><button type="button" aria-expanded="false"><span>How do refills work?</span><i>+</i></button><div class="faq-answer" hidden><p>Your match frequency sets the starting cadence. Before each shipment you can pause, skip, or change individual product quantities.</p></div></article>
+          <article><button type="button" aria-expanded="false"><span>Are the formulas final?</span><i>+</i></button><div class="faq-answer" hidden><p>This is a product concept. Final formulations, dosages, substantiation, and claims require testing and local regulatory review before sale.</p></div></article>
         </div>
       </section>
 
-      <section class="signup-section">
-        <div class="signup-copy reveal">
-          <p class="eyebrow">Founding court / 500</p>
-          <h2>Get first serve.</h2>
-          <p>Launch access, formula updates, and the first 500 Match Stack releases.</p>
+      <section class="newsletter">
+        <div class="newsletter-inner reveal">
+          <p class="kicker">Court notes</p><h2>Stay close to the next drop.</h2>
+          <form id="newsletterForm"><label for="email">Email address</label><div><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><button type="submit">Join <span aria-hidden="true">&#8594;</span></button></div></form>
         </div>
-        <form class="signup-form reveal" id="signupForm">
-          <label for="email">Email address</label>
-          <div>
-            <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
-            <button class="button button-dark" type="submit">Request access</button>
-          </div>
-          <p id="signupStatus" aria-live="polite">No spam. Only what moves the product forward.</p>
-        </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-mark"><img src="assets/bend-logo-current.svg" alt="BEND"></div>
-      <div class="footer-links">
-        <a href="#stack">Products</a><a href="#formula">Formula</a><a href="#refills">Refills</a><a href="#top">Back to top</a>
-      </div>
-      <p>Product and formula concepts shown for brand-development purposes. Food supplements are not a substitute for a varied diet. Final claims, dosage, and composition require regulatory review.</p>
-      <span>&copy; 2026 BEND / Movement, clarity, drive, care.</span>
+      <a class="footer-mark" href="#top" aria-label="Back to top"><img src="assets/bend-logo-current.svg" alt="BEND"></a>
+      <p>Match-day supplements for padel and tennis.</p>
+      <div><a href="#science">Formula</a><a href="#shop">Shop</a><a href="mailto:hello@bend.pt">Contact</a></div>
+      <small>Concept release. Final formulas and claims subject to review.</small>
     </footer>
 
-    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
-      <div class="drawer-head"><span>Your bag</span><button type="button" data-cart-close aria-label="Close bag">&#215;</button></div>
-      <div class="drawer-empty" id="drawerEmpty"><span>00</span><p>Your match stack is waiting.</p><a href="#buy" data-cart-close>Build the stack</a></div>
+    <div class="drawer-backdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
+      <header><div><span>Your bag</span><h2 id="cartTitle">Match kit</h2></div><button type="button" data-close-cart aria-label="Close bag">&#215;</button></header>
+      <div class="drawer-empty" id="drawerEmpty"><p>The court is clear.</p><a href="#shop" data-close-cart>Shop the Match Stack</a></div>
       <div class="drawer-items" id="drawerItems" hidden></div>
-      <div class="drawer-total" id="drawerTotal" hidden>
-        <span>Total</span><strong id="drawerPrice">EUR 0</strong>
-        <button class="button button-acid" type="button" id="checkoutButton">Continue to checkout</button>
-      </div>
+      <div class="drawer-total" id="drawerTotal" hidden><div><span>Total</span><strong id="drawerPrice">EUR 0</strong></div><button type="button">Continue to checkout</button></div>
     </aside>
-    <div class="drawer-backdrop" data-cart-close hidden></div>
 
     <dialog class="formula-dialog" id="formulaDialog">
-      <button type="button" class="dialog-close" aria-label="Close formula principles">&#215;</button>
-      <p class="eyebrow">Formula principles</p>
-      <h2>Clear in. Clear out.</h2>
-      <ol>
-        <li><span>01</span><div><strong>Timing before noise</strong><p>Each product owns one match moment and one direct instruction.</p></div></li>
-        <li><span>02</span><div><strong>No proprietary fog</strong><p>Show active ingredients and avoid vague performance-blend language.</p></div></li>
-        <li><span>03</span><div><strong>Test the real formula</strong><p>Validate taste, stability, tolerability, batch quality, and regulatory wording before sale.</p></div></li>
-      </ol>
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Close formula principles">&#215;</button>
+      <p class="kicker">Formula principles</p><h2>Clarity before claims.</h2>
+      <p>BEND starts with a simple behavioral system: one product, one moment, one obvious action. Ingredients should be familiar, evidence-led, and dosed only after formulation and regulatory review.</p>
+      <div class="dialog-principles">
+        <div><span>01</span><strong>Purpose first</strong><p>Every ingredient must answer a match-day need.</p></div>
+        <div><span>02</span><strong>Transparent format</strong><p>No proprietary mystery blends or inflated theater.</p></div>
+        <div><span>03</span><strong>Test before claim</strong><p>Production language follows evidence, stability, and compliance.</p></div>
+      </div>
     </dialog>
-
-    <div class="toast" id="toast" role="status" aria-live="polite">Added to bag</div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
 </html>
