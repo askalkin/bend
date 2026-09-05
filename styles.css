@@ -321,12 +321,13 @@ p {
 }
 
 .liquid-panel {
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.58);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.34)),
-    rgba(241, 244, 241, 0.22);
-  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.94), inset 0 -1px 0 rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(30px) saturate(145%);
+    radial-gradient(220% 190% at 42% -88%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0) 58%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.16));
+  box-shadow: 4px 4px 12px rgba(6, 17, 33, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(18.9px) saturate(132%);
+  backdrop-filter: blur(18.9px) saturate(132%);
 }
 
 .hero {
@@ -608,7 +609,7 @@ p {
 
 .movement-image {
   object-fit: cover;
-  object-position: center;
+  object-position: center 53%;
   transform: scale(1.04);
   transition: transform 1.2s var(--ease);
 }
@@ -618,7 +619,9 @@ p {
 }
 
 .movement-vignette {
-  background: linear-gradient(90deg, rgba(51, 142, 195, 0.42), transparent 50%), linear-gradient(0deg, rgba(15, 96, 147, 0.2), transparent 55%);
+  background:
+    linear-gradient(90deg, rgba(8, 79, 133, 0.27), transparent 48%),
+    linear-gradient(0deg, rgba(18, 102, 157, 0.1), transparent 55%);
 }
 
 .movement-copy {
@@ -632,6 +635,7 @@ p {
   margin-top: 20px;
   font-size: 6.8rem;
   font-weight: 520;
+  text-shadow: 0 8px 28px rgba(8, 61, 99, 0.16);
 }
 
 .movement-glass {
@@ -639,10 +643,32 @@ p {
   z-index: 3;
   right: 6%;
   bottom: 8%;
-  width: 310px;
-  padding: 24px;
-  border-radius: 30px 30px 8px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 336px;
+  aspect-ratio: 1;
+  padding: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 80px;
+  background: radial-gradient(347.77% 347.77% at 42.56% -247.77%, rgba(217, 217, 217, 0.3) 0%, rgba(217, 217, 217, 0) 100%);
+  box-shadow: 4px 4px 12px rgba(6, 17, 33, 0.15);
   color: var(--ink);
+  -webkit-backdrop-filter: blur(18.9px);
+  backdrop-filter: blur(18.9px);
+}
+
+.movement-glass::before {
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  content: "";
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .movement-glass > span {
@@ -653,7 +679,7 @@ p {
 
 .movement-glass > strong {
   display: block;
-  margin: 28px 0 16px;
+  margin: auto 0 16px;
   font-family: "Tourney", monospace;
   font-size: 3.6rem;
   font-weight: 420;
@@ -1542,7 +1568,7 @@ p {
   background:
     radial-gradient(circle at 92% 0%, rgba(187, 167, 255, 0.23), transparent 32%),
     radial-gradient(circle at 20% 100%, rgba(246, 161, 120, 0.18), transparent 35%),
-    rgba(255, 255, 255, 0.62);
+    rgba(255, 255, 255, 0.46);
 }
 
 .buy-heading h3 {
@@ -2212,11 +2238,11 @@ p {
   .hero-caption { top: 92px; bottom: auto; left: 20px; flex-direction: column; gap: 4px; }
   .scroll-cue { display: none; }
   .movement { min-height: 760px; margin: 0 8px; border-radius: 26px; }
-  .movement-image { object-position: 42% center; }
+  .movement-image { object-position: center 52%; }
   .movement-copy { top: 15%; left: 6%; }
   .movement-copy h2 { font-size: 4.7rem; }
-  .movement-glass { right: 20px; bottom: 24px; width: 290px; }
-  .movement-axis { right: 40px; bottom: 350px; left: 40px; }
+  .movement-glass { right: 20px; bottom: 24px; width: 320px; padding: 32px; border-radius: 76px; }
+  .movement-axis { right: 40px; bottom: 372px; left: 40px; }
   .system { padding-top: 110px; padding-bottom: 120px; }
   .section-heading,
   .dashboard-heading { grid-template-columns: 1fr; gap: 32px; padding-bottom: 52px; }
@@ -2271,11 +2297,11 @@ p {
   .pill-acid { top: 90px; right: 14px; }
   .hero-caption { top: 88px; left: 15px; }
   .movement { min-height: 720px; }
-  .movement-image { object-position: 32% center; }
+  .movement-image { object-position: center 52%; }
   .movement-copy { top: 13%; left: 20px; }
   .movement-copy h2 { margin-top: 16px; font-size: 3.8rem; }
-  .movement-glass { right: 12px; bottom: 12px; left: 12px; width: auto; padding: 22px; }
-  .movement-axis { right: 28px; bottom: 340px; left: 28px; }
+  .movement-glass { right: 18px; bottom: 18px; left: auto; width: min(304px, calc(100% - 36px)); padding: 28px; border-radius: 68px; }
+  .movement-axis { right: 28px; bottom: 346px; left: 28px; }
   .section-heading,
   .dashboard-heading { gap: 25px; padding-bottom: 40px; }
   .section-heading h2,
