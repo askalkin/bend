@@ -1,57 +1,42 @@
-const frequencyData = {
-  2: {
-    rhythm: "Two matches a week",
-    interval: "Every 5 weeks",
-    refillPrice: "EUR 39.60",
-    matchCost: "EUR 3.96",
-  },
-  3: {
-    rhythm: "Three matches a week",
-    interval: "Every 4 weeks",
-    refillPrice: "EUR 39.60",
-    matchCost: "EUR 3.96",
-  },
-  5: {
-    rhythm: "Five matches a week",
-    interval: "Every 2 weeks",
-    refillPrice: "EUR 39.60",
-    matchCost: "EUR 3.96",
-  },
-};
+const cartCount = document.querySelector("#cartCount");
+const cartToast = document.querySelector("#cartToast");
+const addButtons = document.querySelectorAll("[data-add]");
+const variantLinks = document.querySelectorAll(".site-nav nav a");
+const routes = document.querySelectorAll(".webpage");
 
-const rhythmLabel = document.querySelector("#rhythmLabel");
-const intervalLabel = document.querySelector("#intervalLabel");
-const refillPrice = document.querySelector("#refillPrice");
-const matchCost = document.querySelector("#matchCost");
-const frequencyButtons = document.querySelectorAll(".freq-button");
+let cartItems = 0;
+let toastTimer = null;
 
-frequencyButtons.forEach((button) => {
+addButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const frequency = button.dataset.frequency;
-    const data = frequencyData[frequency];
+    cartItems += 1;
+    cartCount.textContent = String(cartItems);
+    cartToast.textContent = `${button.dataset.add} added to kit`;
+    cartToast.classList.add("visible");
 
-    frequencyButtons.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-
-    rhythmLabel.textContent = data.rhythm;
-    intervalLabel.textContent = data.interval;
-    refillPrice.textContent = data.refillPrice;
-    matchCost.textContent = data.matchCost;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      cartToast.classList.remove("visible");
+    }, 1900);
   });
 });
 
-const portalStatus = document.querySelector("#portalStatus");
-document.querySelectorAll("[data-portal-action]").forEach((button) => {
-  button.addEventListener("click", () => {
-    portalStatus.textContent = `${button.dataset.portalAction}. You stay in control.`;
-  });
-});
+const routeObserver = new IntersectionObserver(
+  (entries) => {
+    const visibleRoute = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-const signupForm = document.querySelector("#signupForm");
-const signupStatus = document.querySelector("#signupStatus");
+    if (!visibleRoute) return;
 
-signupForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  signupStatus.textContent = "Reserved. Your launch kit access is attached to this email.";
-  signupForm.reset();
-});
+    variantLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${visibleRoute.target.id}`);
+    });
+  },
+  {
+    rootMargin: "-36% 0px -56% 0px",
+    threshold: [0.12, 0.24, 0.48],
+  },
+);
+
+routes.forEach((route) => routeObserver.observe(route));
