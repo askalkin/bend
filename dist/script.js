@@ -2,54 +2,6 @@ document.documentElement.classList.add("js");
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-const products = {
-  prep: {
-    index: "01 / 03",
-    timing: "20-30 min before play",
-    name: "PREP",
-    promise: "Arrive ready, not wired.",
-    description:
-      "A caffeine-free pre-game ball for evening players. One clean step before the first serve, without a stimulant blend arguing with sleep later.",
-    image: "assets/bend-prep-front.png",
-    alt: "BEND PREP supplement container",
-    facts: [
-      ["Format", "1 chewable ball"],
-      ["Direction", "B vitamins + magnesium"],
-      ["Contains", "Zero caffeine / zero sugar"],
-    ],
-  },
-  rally: {
-    index: "02 / 03",
-    timing: "During play / between games",
-    name: "RALLY",
-    promise: "Hold pace through the long set.",
-    description:
-      "A clear-dissolving electrolyte ball for stop-start racquet sport. Drop one in your court bottle and drink between games while water still looks like water.",
-    image: "assets/bend-rally-front.png",
-    alt: "BEND RALLY supplement container",
-    facts: [
-      ["Format", "1 dissolvable ball"],
-      ["Direction", "Sodium + potassium"],
-      ["Mix", "500-1000 ml water"],
-    ],
-  },
-  reset: {
-    index: "03 / 03",
-    timing: "Within 30 min after play",
-    name: "RESET",
-    promise: "Tomorrow starts courtside.",
-    description:
-      "A post-match water ball that turns the walk off court into a recovery ritual. Mix it while you change, eat, and come down from the match.",
-    image: "assets/bend-reset-front.png",
-    alt: "BEND RESET supplement container",
-    facts: [
-      ["Format", "1 dissolvable ball"],
-      ["Direction", "Amino acids + tart cherry"],
-      ["Support", "Vitamin C + magnesium"],
-    ],
-  },
-};
-
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -65,12 +17,19 @@ document.querySelectorAll(".reveal:not(.in-view)").forEach((element) => revealOb
 
 const header = document.querySelector("[data-header]");
 const movement = document.querySelector(".movement");
+const footer = document.querySelector(".site-footer");
+const footerMark = document.querySelector(".footer-mark");
 
 function updateScrollState() {
   header.classList.toggle("scrolled", window.scrollY > 40);
   if (movement) {
     const rect = movement.getBoundingClientRect();
     movement.classList.toggle("in-motion", rect.top < window.innerHeight * 0.78);
+  }
+  if (footer && footerMark) {
+    const footerRect = footer.getBoundingClientRect();
+    const progress = reducedMotion.matches ? 1 : Math.min(1, Math.max(0, (window.innerHeight - footerRect.top) / footerRect.height));
+    footerMark.style.setProperty("--footer-bend", progress.toFixed(3));
   }
 }
 
@@ -89,106 +48,40 @@ function setMobileMenu(open) {
 menuButton.addEventListener("click", () => setMobileMenu(menuButton.getAttribute("aria-expanded") !== "true"));
 mobileNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMobileMenu(false)));
 
-const stageTabs = [...document.querySelectorAll(".stage-tab")];
-const stagePanel = document.querySelector("#stagePanel");
-const stageVisual = stagePanel.querySelector(".stage-visual");
-const stageImage = document.querySelector("#stageImage");
-const stageIndex = document.querySelector("#stageIndex");
-const stageTiming = document.querySelector("#stageTiming");
-const stageName = document.querySelector("#stageName");
-const stagePromise = document.querySelector("#stagePromise");
-const stageDescription = document.querySelector("#stageDescription");
-const stageFacts = document.querySelector("#stageFacts");
-
-function renderProduct(key) {
-  const product = products[key];
-  if (!product || stagePanel.dataset.currentProduct === key) return;
-
-  stagePanel.classList.add("is-switching");
-  window.setTimeout(() => {
-    stagePanel.dataset.currentProduct = key;
-    stageVisual.dataset.productTone = key;
-    stageImage.src = product.image;
-    stageImage.alt = product.alt;
-    stageIndex.textContent = product.index;
-    stageTiming.textContent = product.timing;
-    stageName.textContent = product.name;
-    stagePromise.textContent = product.promise;
-    stageDescription.textContent = product.description;
-    stageFacts.innerHTML = product.facts.map(([term, value]) => `<div><dt>${term}</dt><dd>${value}</dd></div>`).join("");
-    stagePanel.classList.remove("is-switching");
-  }, reducedMotion.matches ? 0 : 190);
-}
-
-stageTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => {
-    stageTabs.forEach((item) => {
-      const active = item === tab;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-selected", String(active));
-    });
-    renderProduct(tab.dataset.product);
-  });
-
-  tab.addEventListener("keydown", (event) => {
-    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
-    event.preventDefault();
-    const nextIndex = (index + (event.key === "ArrowRight" ? 1 : -1) + stageTabs.length) % stageTabs.length;
-    stageTabs[nextIndex].focus();
-    stageTabs[nextIndex].click();
-  });
-});
-
-const gallerySlides = [...document.querySelectorAll(".gallery-slide")];
-const galleryCurrent = document.querySelector("#galleryCurrent");
-let galleryIndex = 0;
-
-function showGallery(nextIndex) {
-  galleryIndex = (nextIndex + gallerySlides.length) % gallerySlides.length;
-  gallerySlides.forEach((slide, index) => slide.classList.toggle("active", index === galleryIndex));
-  galleryCurrent.textContent = String(galleryIndex + 1).padStart(2, "0");
-}
-
-document.querySelector("[data-gallery-prev]").addEventListener("click", () => showGallery(galleryIndex - 1));
-document.querySelector("[data-gallery-next]").addEventListener("click", () => showGallery(galleryIndex + 1));
-
-const purchaseRadios = [...document.querySelectorAll('input[name="purchase"]')];
-const modeOptions = [...document.querySelectorAll(".mode-option")];
+const refillPlan = document.querySelector("#refillPlan");
 const frequencyControl = document.querySelector("#frequencyControl");
 const frequencyButtons = [...document.querySelectorAll("[data-frequency]")];
 const deliveryInterval = document.querySelector("#deliveryInterval");
+const refillSummary = document.querySelector("#refillSummary");
 const quantityValue = document.querySelector("#quantityValue");
 const cartPrice = document.querySelector("#cartPrice");
-let purchaseMode = "subscription";
-let unitPrice = 69;
+const unitPrice = 79;
 let quantity = 1;
 let frequency = 2;
 
 const frequencyData = {
-  2: "Refills every 5 weeks",
-  3: "Refills every 4 weeks",
-  5: "Refills every 2 weeks",
+  2: { interval: "30 refills every 5 weeks", summary: "First refill: 30 doses for EUR 39 after 5 weeks. We remind you before it ships." },
+  3: { interval: "30 refills every 4 weeks", summary: "First refill: 30 doses for EUR 39 after 4 weeks. We remind you before it ships." },
+  5: { interval: "30 refills every 2 weeks", summary: "First refill: 30 doses for EUR 39 after 2 weeks. We remind you before it ships." },
 };
 
 function updatePurchasePrice() {
   cartPrice.textContent = `EUR ${unitPrice * quantity}`;
 }
 
-purchaseRadios.forEach((radio) => {
-  radio.addEventListener("change", () => {
-    purchaseMode = radio.value;
-    unitPrice = purchaseMode === "subscription" ? 69 : 79;
-    modeOptions.forEach((option) => option.classList.toggle("active", option.contains(radio)));
-    frequencyControl.hidden = purchaseMode !== "subscription";
-    updatePurchasePrice();
-  });
+refillPlan.addEventListener("change", () => {
+  frequencyControl.hidden = !refillPlan.checked;
+  refillSummary.textContent = refillPlan.checked
+    ? frequencyData[frequency].summary
+    : "One starter kit only. No future deliveries or recurring charges.";
 });
 
 frequencyButtons.forEach((button) => {
   button.addEventListener("click", () => {
     frequency = Number(button.dataset.frequency);
     frequencyButtons.forEach((item) => item.classList.toggle("active", item === button));
-    deliveryInterval.textContent = frequencyData[frequency];
+    deliveryInterval.textContent = frequencyData[frequency].interval;
+    refillSummary.textContent = frequencyData[frequency].summary;
   });
 });
 
@@ -271,13 +164,13 @@ document.querySelectorAll("[data-close-cart]").forEach((element) => element.addE
 
 document.querySelector("#addToBag").addEventListener("click", () => {
   cart.push({
-    name: "BEND Match Stack",
-    mode: purchaseMode === "subscription" ? `${frequency}x weekly subscription` : "one-time",
+    name: "BEND Starter Kit",
+    mode: refillPlan.checked ? `complete kit + ${frequency}x weekly refill plan` : "complete kit only",
     price: unitPrice,
     quantity,
   });
   renderCart();
-  showToast("Match Stack added to your bag");
+  showToast("Starter kit added to your bag");
   openCart();
 });
 
