@@ -64,9 +64,9 @@ let quantity = 1;
 let frequency = 2;
 
 const frequencyData = {
-  2: { interval: "30 refills every 5 weeks", summary: "First refill: 30 doses for EUR 39 after 5 weeks. We remind you before it ships." },
-  3: { interval: "30 refills every 4 weeks", summary: "First refill: 30 doses for EUR 39 after 4 weeks. We remind you before it ships." },
-  5: { interval: "30 refills every 2 weeks", summary: "First refill: 30 doses for EUR 39 after 2 weeks. We remind you before it ships." },
+  2: { interval: "Refill forecast: about 5 weeks", summary: "Estimated first refill after 5 weeks. Review 30 doses for EUR 39 before payment." },
+  3: { interval: "Refill forecast: about 4 weeks", summary: "Estimated first refill after 4 weeks. Review 30 doses for EUR 39 before payment." },
+  5: { interval: "Refill forecast: about 2 weeks", summary: "Estimated first refill after 2 weeks. Review 30 doses for EUR 39 before payment." },
 };
 
 function updatePurchasePrice() {
@@ -119,6 +119,74 @@ function showToast(message) {
   window.clearTimeout(toastTimer);
   toastTimer = window.setTimeout(() => toast.classList.remove("visible"), 2200);
 }
+
+const appPreview = document.querySelector("[data-app-preview]");
+const appOnboarding = document.querySelector("[data-app-onboarding]");
+const appDashboard = document.querySelector("[data-app-dashboard]");
+const appStartButtons = [...document.querySelectorAll("[data-app-start]")];
+const appResetButton = document.querySelector("[data-app-reset]");
+const trainingDays = [...document.querySelectorAll("[data-training-day]")];
+const doseButtons = [...document.querySelectorAll("[data-dose]")];
+const appSessionCount = document.querySelector("#appSessionCount");
+const appDoseCount = document.querySelector("#appDoseCount");
+const appSupplyCount = document.querySelector("#appSupplyCount");
+const appRefillForecast = document.querySelector("#appRefillForecast");
+const supplyMeter = document.querySelector(".supply-meter i");
+
+function setAppView(dashboardOpen) {
+  appPreview.classList.remove("switching");
+  appOnboarding.hidden = dashboardOpen;
+  appDashboard.hidden = !dashboardOpen;
+  if (dashboardOpen) {
+    void appDashboard.offsetWidth;
+    appPreview.classList.add("switching");
+    appResetButton.focus({ preventScroll: true });
+  } else {
+    appStartButtons.at(-1).focus({ preventScroll: true });
+  }
+}
+
+function updateTrainingPlan() {
+  const sessions = trainingDays.filter((button) => button.getAttribute("aria-pressed") === "true").length;
+  appSessionCount.textContent = `${sessions} ${sessions === 1 ? "session" : "sessions"}`;
+  if (sessions === 0) appRefillForecast.textContent = "Add a session to create a refill forecast.";
+  else if (sessions <= 2) appRefillForecast.textContent = "Next refill ready to review 29 Sep.";
+  else if (sessions <= 4) appRefillForecast.textContent = "Next refill ready to review 22 Sep.";
+  else appRefillForecast.textContent = "Next refill ready to review 15 Sep.";
+}
+
+function updateDoseLog() {
+  const logged = doseButtons.filter((button) => button.getAttribute("aria-pressed") === "true").length;
+  appDoseCount.textContent = `${logged} / 3 logged`;
+  appSupplyCount.textContent = logged === 3 ? "07" : "08";
+  supplyMeter.style.width = logged === 3 ? "70%" : "80%";
+}
+
+appStartButtons.forEach((button) => button.addEventListener("click", () => setAppView(true)));
+appResetButton.addEventListener("click", () => setAppView(false));
+
+trainingDays.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selected = button.getAttribute("aria-pressed") === "true";
+    button.setAttribute("aria-pressed", String(!selected));
+    if (selected) button.querySelector("i")?.remove();
+    else button.append(document.createElement("i"));
+    updateTrainingPlan();
+  });
+});
+
+doseButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selected = button.getAttribute("aria-pressed") === "true";
+    button.setAttribute("aria-pressed", String(!selected));
+    button.querySelector("i").textContent = selected ? "+" : "\u2713";
+    updateDoseLog();
+  });
+});
+
+document.querySelector("[data-refill-review]").addEventListener("click", () => {
+  showToast("Nothing ships until you review the date and price");
+});
 
 function openCart() {
   cartDrawer.classList.add("open");

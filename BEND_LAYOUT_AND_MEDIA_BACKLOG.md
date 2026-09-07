@@ -13,10 +13,12 @@ Glass is a focus treatment, not a page background. Use no more than one dominant
 | Header | Where am I and where can I go? | Orientation | Wordmark, three links, bag |
 | Hero | What is BEND? | Explain the offer in five seconds | Open headline and one colorful offer card |
 | Routine | How does the system work? | Make PREP, RALLY, RESET memorable | One connected three-step list |
+| Court Motion | What does BEND feel like in play? | Connect the ritual to padel speed | One wide editorial photograph with direct typography |
 | First Box | What arrives? | Establish contents and value | Open inventory typography and one accent card |
 | Timing | Why is it organized this way? | Connect the routine to match rhythm | One court-timing instrument and supporting text |
 | Formula | Can I understand what I am taking? | Build product trust | Disclosure list inside one focused glass card |
 | Protocol | What do I actually do? | Remove usage uncertainty | Open linear timeline |
+| BEND Rhythm | How does the routine fit my week? | Demonstrate planning, dose logging, supply, and refill review | One interactive app viewport beside open copy |
 | Shop | What am I buying? | Enable one purchase decision | Open product copy and one order card |
 | FAQ | What could stop me buying? | Resolve objections | Text-only accordion |
 | Footer | How do I stay connected? | Capture interest and leave brand memory | Compact form and expanding BEND wordmark |
@@ -31,7 +33,9 @@ Glass is a focus treatment, not a page background. Use no more than one dominant
 - Use one card radius: `32px`. Fully round only controls and dose forms.
 - Keep gradients inside a focal card or small atmospheric field.
 - Express court energy with rules, grids, trajectory arcs, score notation, and moving acid points.
-- Reserve glass for the hero offer, formula disclosure, and order surface, separated by open sections.
+- Reserve glass for the hero offer, formula disclosure, BEND Rhythm instruments, and order surface, separated by open sections.
+- BEND Rhythm may show training dates, logged routine moments, supply count, and delivery review. It must not invent readiness, recovery, glucose, or performance scores.
+- A planned refill is never presented as an automatic surprise: show contents, price, and date before payment, with move, skip, and pause controls in the production flow.
 
 ## Packaging Assets
 
@@ -134,6 +138,7 @@ Glass is a focus treatment, not a page background. Use no more than one dominant
 - Text-safe paid-ad crops.
 - Alt text and usage notes for every asset.
 
-## Current Layout Pass
+## Produced Web Media
 
-All photographic, rendered product, video, and canvas media is intentionally removed from the rendered website. Existing source assets remain available for later production and are not part of the present layout evaluation.
+- `assets/generated/bend-padel-racket-motion-v1.webp`: original 16:9 motion-blurred padel racket study for the Court Motion chapter. Replace or art-direct further after final racket and product photography are available.
+- The rest of the listed packaging, product, athlete, and unboxing media remains a production backlog. Existing source references are retained outside the live page.
