@@ -1,0 +1,6 @@
+Tennis Ball by Cecile Amstad
+Source: https://sketchfab.com/3d-models/tennisball-83915826ee2d4fb79a6a28ee8ea4d0dc
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+The supplied geometry and textures were optimized for this BEND prototype.
