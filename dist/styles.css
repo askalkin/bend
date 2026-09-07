@@ -1,24 +1,16 @@
 @font-face {
-  font-family: "Work Sans";
-  src: url("assets/fonts/WorkSans-wght.ttf") format("truetype");
+  font-family: "Inter";
+  src: url("assets/fonts/InterVariable.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Druk";
-  src: url("assets/fonts/Druk-Bold-Trial.otf") format("opentype");
+  font-family: "Monument Extended";
+  src: url("assets/fonts/MonumentExtended-Regular.otf") format("opentype");
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Druk";
-  src: url("assets/fonts/Druk-BoldItalic-Trial.otf") format("opentype");
-  font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -43,6 +35,8 @@
   --shadow-soft: 0 22px 70px rgba(20, 24, 20, 0.1);
   --shadow-float: 0 30px 90px rgba(6, 17, 33, 0.15);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-display: "Monument Extended", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
 }
 
 *,
@@ -62,8 +56,10 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background: var(--mist);
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: var(--font-body);
   font-synthesis: none;
+  font-optical-sizing: auto;
+  font-feature-settings: "liga" 1, "calt" 1;
   font-size: 16px;
   line-height: 1.45;
   letter-spacing: 0;
@@ -130,9 +126,9 @@ button {
 }
 
 .data-type {
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-weight: 600;
 }
 
 .reveal {
@@ -179,13 +175,10 @@ button {
 
 .brand {
   justify-self: start;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 33px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
   line-height: 1;
-  transform: scaleX(0.77);
-  transform-origin: left center;
 }
 
 .brand span {
@@ -260,9 +253,9 @@ button {
   border-radius: 50%;
   background: var(--ink);
   color: var(--white);
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .menu-button {
@@ -347,16 +340,17 @@ button {
 .hero h1 {
   max-width: 930px;
   margin: 28px 0 34px;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 112px;
-  font-weight: 700;
-  line-height: 0.94;
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.04;
+  text-transform: uppercase;
 }
 
 .hero h1 span {
   color: #737975;
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .hero-lede {
@@ -576,10 +570,10 @@ button {
 .shop-copy h2,
 .faq-heading h2 {
   margin: 22px 0 28px;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 0.98;
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.04;
 }
 
 .routine-heading h2 em,
@@ -591,8 +585,8 @@ button {
 .shop-copy h2 span,
 .footer-signup h2 em {
   color: #737975;
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .routine-heading > p:last-child,
@@ -648,10 +642,10 @@ button {
 .routine-time {
   justify-self: end;
   color: var(--ink);
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .routine-list strong {
@@ -660,10 +654,10 @@ button {
 
 .routine-list h3 {
   margin: 8px 0 6px;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.08;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.12;
 }
 
 .routine-list p {
@@ -762,22 +756,22 @@ button {
   z-index: 2;
   top: 50%;
   right: 6%;
-  width: min(35%, 430px);
+  width: min(48%, 560px);
   transform: translateY(-50%);
 }
 
 .court-motion-frame h2 {
   margin: 22px 0 28px;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 88px;
-  font-weight: 700;
-  line-height: 0.92;
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.04;
 }
 
 .court-motion-frame h2 em {
   color: #737975;
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .court-motion-frame figcaption > p:last-child {
@@ -834,10 +828,10 @@ button {
 }
 
 .inventory-list strong {
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 72px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 60px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 550;
   line-height: 0.9;
 }
 
@@ -1002,10 +996,10 @@ button {
 
 .instrument-stages small {
   color: var(--acid);
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 17px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .instrument-stages strong {
@@ -1090,16 +1084,16 @@ button {
 
 .formula-line > span {
   color: var(--muted);
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .formula-line strong {
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .formula-line small {
@@ -1170,9 +1164,9 @@ button {
 .protocol-list strong {
   display: block;
   margin: 20px 0 10px;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 400;
 }
 
 .protocol-list p {
@@ -1209,10 +1203,10 @@ button {
 
 .companion-points span {
   color: var(--muted);
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .companion-points strong {
@@ -1311,17 +1305,17 @@ button {
 .app-intro-copy h3,
 .app-dashboard-heading h3 {
   margin: 0;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 68px;
-  font-weight: 700;
-  line-height: 0.96;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.04;
 }
 
 .app-intro-copy h3 em,
 .app-dashboard-heading h3 em {
   color: var(--acid);
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .app-intro-copy > p:last-child {
@@ -1464,10 +1458,10 @@ button {
 }
 
 .calendar-grid button strong {
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .calendar-grid button i {
@@ -1559,10 +1553,10 @@ button {
 }
 
 .app-tile-supply b {
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 58px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 52px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 550;
   line-height: 0.9;
 }
 
@@ -1665,10 +1659,10 @@ button {
 
 .buy-heading h3 {
   margin: 12px 0 34px;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.06;
 }
 
 .first-box-price {
@@ -1697,10 +1691,10 @@ button {
 }
 
 .first-box-price b {
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .box-includes {
@@ -1974,10 +1968,10 @@ button {
 
 .footer-signup h2 {
   margin: 20px 0 0;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 58px;
-  font-weight: 700;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.05;
 }
 
 .footer-signup form {
@@ -2029,10 +2023,10 @@ button {
   display: block;
   transform: scaleX(calc(0.76 + var(--footer-bend) * 0.34));
   transform-origin: center;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 250px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 0.8;
   transition: transform 80ms linear;
 }
@@ -2104,9 +2098,9 @@ button {
 
 .cart-drawer h2 {
   margin: 4px 0 0;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .cart-drawer [data-close-cart] {
@@ -2158,10 +2152,10 @@ button {
   overflow: hidden;
   border-radius: 16px;
   background: linear-gradient(145deg, var(--sky), var(--lavender));
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 17px;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .drawer-item-mark::after {
@@ -2247,10 +2241,10 @@ button {
 
 .formula-dialog h2 {
   margin: 18px 0;
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.05;
 }
 
 .formula-dialog > p:not(.kicker) {
@@ -2274,9 +2268,9 @@ button {
 
 .dialog-principles span {
   color: var(--court);
-  font-family: "Druk", "Work Sans", sans-serif;
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
 }
 
 .dialog-principles p {
@@ -2315,7 +2309,7 @@ button {
   }
 
   .hero h1 {
-    font-size: 88px;
+    font-size: 58px;
   }
 
   .hero-offer-card {
@@ -2341,15 +2335,15 @@ button {
   .companion-copy h2,
   .shop-copy h2,
   .faq-heading h2 {
-    font-size: 58px;
+    font-size: 48px;
   }
 
   .court-motion-frame h2 {
-    font-size: 72px;
+    font-size: 50px;
   }
 
   .app-intro-copy h3 {
-    font-size: 58px;
+    font-size: 40px;
   }
 
   .routine-list li {
@@ -2366,7 +2360,7 @@ button {
   }
 
   .inventory-list strong {
-    font-size: 58px;
+    font-size: 54px;
   }
 
   .box-note-card {
@@ -2383,7 +2377,7 @@ button {
   }
 
   .footer-mark span {
-    font-size: 210px;
+    font-size: 160px;
   }
 }
 
@@ -2397,7 +2391,7 @@ button {
   .hero h1 {
     margin-top: 22px;
     margin-bottom: 24px;
-    font-size: 88px;
+    font-size: 56px;
   }
 
   .hero-lede {
@@ -2458,7 +2452,7 @@ button {
 
   .hero h1 {
     max-width: 760px;
-    font-size: 80px;
+    font-size: 56px;
   }
 
   .hero-offer-card {
@@ -2608,7 +2602,7 @@ button {
   }
 
   .footer-mark span {
-    font-size: 150px;
+    font-size: 112px;
   }
 }
 
@@ -2626,7 +2620,7 @@ button {
   }
 
   .brand {
-    font-size: 27px;
+    font-size: 18px;
   }
 
   .bag-button {
@@ -2659,8 +2653,8 @@ button {
 
   .hero h1 {
     margin: 22px 0 26px;
-    font-size: 58px;
-    line-height: 0.98;
+    font-size: 34px;
+    line-height: 1.06;
   }
 
   .hero-lede {
@@ -2725,7 +2719,7 @@ button {
   .companion-copy h2,
   .shop-copy h2,
   .faq-heading h2 {
-    font-size: 50px;
+    font-size: 36px;
   }
 
   .routine-list li {
@@ -2740,7 +2734,7 @@ button {
   }
 
   .routine-list h3 {
-    font-size: 26px;
+    font-size: 20px;
   }
 
   .dose-object {
@@ -2794,7 +2788,7 @@ button {
   }
 
   .court-motion-frame h2 {
-    font-size: 60px;
+    font-size: 36px;
   }
 
   .motion-index {
@@ -2901,7 +2895,7 @@ button {
   }
 
   .app-intro-copy h3 {
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .app-intro-copy > p:last-child {
@@ -2923,7 +2917,7 @@ button {
   }
 
   .app-dashboard-heading h3 {
-    font-size: 46px;
+    font-size: 30px;
   }
 
   .app-calendar,
@@ -2936,7 +2930,7 @@ button {
   }
 
   .calendar-grid button strong {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .app-dashboard-grid {
@@ -2952,7 +2946,7 @@ button {
   }
 
   .buy-heading h3 {
-    font-size: 40px;
+    font-size: 28px;
   }
 
   .box-includes {
@@ -2997,7 +2991,7 @@ button {
   }
 
   .footer-signup h2 {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   .footer-mark {
@@ -3005,7 +2999,7 @@ button {
   }
 
   .footer-mark span {
-    font-size: 92px;
+    font-size: 64px;
     transform: scaleX(calc(0.76 + var(--footer-bend) * 0.25));
   }
 
@@ -3022,7 +3016,7 @@ button {
   }
 
   .formula-dialog h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .dialog-principles {
@@ -3032,7 +3026,7 @@ button {
 
 @media (max-width: 390px) {
   .hero h1 {
-    font-size: 52px;
+    font-size: 30px;
   }
 
   .hero-offer-card {
@@ -3051,19 +3045,19 @@ button {
   .companion-copy h2,
   .shop-copy h2,
   .faq-heading h2 {
-    font-size: 46px;
+    font-size: 32px;
   }
 
   .court-motion-frame h2 {
-    font-size: 52px;
+    font-size: 34px;
   }
 
   .app-intro-copy h3 {
-    font-size: 44px;
+    font-size: 28px;
   }
 
   .app-dashboard-heading h3 {
-    font-size: 40px;
+    font-size: 28px;
   }
 
   .routine-list li {
@@ -3093,7 +3087,7 @@ button {
   }
 
   .footer-mark span {
-    font-size: 78px;
+    font-size: 56px;
   }
 }
 

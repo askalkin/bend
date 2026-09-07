@@ -28,8 +28,9 @@ Glass is a focus treatment, not a page background. Use no more than one dominant
 - Alternate open, structured, open, focused-card, open, transactional compositions.
 - Do not place two viewport-height media or card surfaces next to each other in the scroll.
 - Use one headline, one supporting paragraph, and one action per section.
-- Use Druk Bold for identity and display typography, with Druk Bold Italic reserved for movement words and selected data. Use Work Sans for communication and interface copy.
-- The current Druk files are labeled demo/trial. Replace them with properly licensed production webfonts before commercial launch.
+- Use Monument Extended Regular for the BEND identity and display typography. Uppercase only true display statements; preserve authored capitalization in headings.
+- Use Inter for body copy, labels, controls, calendars, prices, and all numeric UI data. Tabular figures replace decorative scoreboard numerals.
+- The current Monument Extended file is labeled demo/trial. Replace it with a properly licensed production webfont before commercial launch. Inter is included under the SIL Open Font License 1.1.
 - Use one card radius: `32px`. Fully round only controls and dose forms.
 - Keep gradients inside a focal card or small atmospheric field.
 - Express court energy with rules, grids, trajectory arcs, score notation, and moving acid points.
