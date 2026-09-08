@@ -174,11 +174,29 @@ function updateScrollScene() {
 
   const footerRect = footer.getBoundingClientRect();
   const footerProgress = reducedMotion.matches
-    ? 1
-    : clamp(
-        (viewport - footerRect.top) / Math.max(1, footerRect.height * 0.72),
-      );
-  footerMark.style.setProperty("--footer-bend", footerProgress.toFixed(3));
+    ? 0
+    : clamp((viewport - footerRect.top) / Math.max(1, footerRect.height));
+  const footerBend = smooth(range(footerProgress, 0.1, 0.92));
+  const dotPhase = range(footerProgress, 0.58, 1);
+  const dotBounce =
+    dotPhase < 0.72
+      ? Math.sin((dotPhase / 0.72) * Math.PI)
+      : Math.sin(((dotPhase - 0.72) / 0.28) * Math.PI) * 0.24;
+  const dotTravel = Math.min(132, viewport * 0.16);
+
+  footerMark.style.setProperty("--footer-bend", footerBend.toFixed(3));
+  footerMark.style.setProperty(
+    "--footer-n-skew",
+    `${(-8 * footerBend).toFixed(2)}deg`,
+  );
+  footerMark.style.setProperty(
+    "--footer-dot-y",
+    `${(-dotBounce * dotTravel).toFixed(2)}px`,
+  );
+  footerMark.style.setProperty(
+    "--footer-dot-spin",
+    `${(dotPhase * 320).toFixed(1)}deg`,
+  );
 }
 
 function queueScrollUpdate() {

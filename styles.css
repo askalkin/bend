@@ -1762,6 +1762,9 @@ h3 em {
   font-size: 9px;
 }
 .site-footer {
+  display: flex;
+  min-height: 92svh;
+  flex-direction: column;
   padding: 50px 32px 22px;
   background: var(--ink);
   color: #fff;
@@ -1782,30 +1785,57 @@ h3 em {
 }
 .footer-mark {
   --footer-bend: 0;
+  --footer-dot-y: 0px;
+  --footer-dot-spin: 0deg;
+  --footer-n-skew: 0deg;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   width: 100%;
-  margin-top: 70px;
+  margin-top: auto;
   overflow: hidden;
   font-family: var(--display);
   font-size: 210px;
   line-height: 0.8;
-  transform: scaleX(calc(1 + var(--footer-bend) * 0.16));
-  transform-origin: center bottom;
+  letter-spacing: 0;
 }
 .footer-mark span {
   display: inline-block;
-  flex: 1;
+  flex: 1 1 0;
   text-align: center;
 }
-.footer-mark span:nth-child(2),
-.footer-mark span:nth-child(3) {
-  transform: translateY(calc(var(--footer-bend) * 16px))
-    scaleY(calc(1 - var(--footer-bend) * 0.08));
+.footer-mark .footer-mark__n {
+  flex-grow: calc(1 + var(--footer-bend) * 1.05);
+  transform: scaleX(calc(1 + var(--footer-bend) * 0.38))
+    skewX(var(--footer-n-skew));
+  transform-origin: center bottom;
 }
-.footer-mark i {
-  color: var(--acid);
-  font-style: normal;
+.footer-mark .footer-mark__dot {
+  position: relative;
+  display: block;
+  width: 0.13em;
+  flex: 0 0 0.13em;
+  aspect-ratio: 1;
+  margin: 0 0 0.04em 0.025em;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--acid);
+  box-shadow: 0 0.035em 0.08em rgba(200, 255, 34, 0.24);
+  transform: translateY(var(--footer-dot-y)) rotate(var(--footer-dot-spin));
+  transform-origin: center;
+  will-change: transform;
+}
+.footer-mark .footer-mark__dot::before,
+.footer-mark .footer-mark__dot::after {
+  position: absolute;
+  inset: -16% 27%;
+  border: 1px solid rgba(10, 12, 11, 0.46);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  content: "";
+}
+.footer-mark .footer-mark__dot::after {
+  transform: rotate(90deg);
 }
 .footer-legal {
   max-width: 650px;
@@ -2340,6 +2370,7 @@ h3 em {
     height: 250px;
   }
   .site-footer {
+    min-height: 76svh;
     padding: 40px 16px 20px;
   }
   .site-footer > div:first-child {
@@ -2367,6 +2398,15 @@ h3 em {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .footer-mark,
+  .footer-mark .footer-mark__n,
+  .footer-mark .footer-mark__dot {
+    --footer-bend: 0;
+    --footer-dot-y: 0px;
+    --footer-dot-spin: 0deg;
+    --footer-n-skew: 0deg;
+    transform: none;
   }
   .js .reveal {
     opacity: 1;
