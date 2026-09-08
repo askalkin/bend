@@ -1,0 +1,14 @@
+Tennis Ball model attribution
+
+This work is based on "Tennis Ball"
+https://sketchfab.com/3d-models/tennis-ball-8f1cbc19dc414ad89097eabe063ada88
+
+Original author: Arman.Abgaryan
+https://sketchfab.com/Arman.Abgaryan
+
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Optimization performed for the BEND web project. The optimized asset retains
+the original model's core mesh, texture, seam detail, and simplified geometry
+felt shell.

@@ -24,11 +24,11 @@ if (canvas && !reducedMotion.matches) {
   } else {
     const renderer = new THREE.WebGLRenderer({ canvas, context });
     canvas.closest(".transform-sticky").classList.add("webgl-ready");
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.65));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.4));
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.1;
+    renderer.toneMappingExposure = 0.86;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
@@ -57,7 +57,7 @@ if (canvas && !reducedMotion.matches) {
     const materials = [];
     const loader = new GLTFLoader();
     loader.load(
-      "./assets/3d/tennis-ball-web.glb",
+      "./assets/3d/tennis-ball-felt-web.glb",
       (gltf) => {
         ballGroup.remove(fallback);
         fallback.geometry.dispose();
@@ -67,15 +67,16 @@ if (canvas && !reducedMotion.matches) {
         const size = box.getSize(new THREE.Vector3());
         const center = box.getCenter(new THREE.Vector3());
         const scale = 2 / Math.max(size.x, size.y, size.z);
-        model.position.sub(center);
+        model.position.copy(center).multiplyScalar(-scale);
         model.scale.setScalar(scale);
         model.traverse((child) => {
           if (!child.isMesh) return;
           child.castShadow = false;
           child.receiveShadow = false;
           child.material = child.material.clone();
-          child.material.roughness = 0.9;
+          child.material.roughness = 0.96;
           child.material.metalness = 0;
+          child.material.transparent = true;
           materials.push(child.material);
         });
         ballGroup.add(model);
@@ -117,8 +118,7 @@ if (canvas && !reducedMotion.matches) {
 
       const arrival = smooth(segment(progress, 0, 0.25));
       const materialChange = smooth(segment(progress, 0.22, 0.5));
-      const inspection = smooth(segment(progress, 0.45, 0.65));
-      const drop = smooth(segment(progress, 0.72, 0.96));
+      const drop = smooth(segment(progress, 0.5, 0.94));
       const mobile = window.innerWidth < 720;
 
       ballGroup.position.x = THREE.MathUtils.lerp(
@@ -132,24 +132,23 @@ if (canvas && !reducedMotion.matches) {
           mobile ? 0.75 : 0.25,
           arrival,
         ) -
-        drop * (mobile ? 1.65 : 1.85);
+        drop * (mobile ? 1.55 : 1.8);
       ballGroup.position.z = THREE.MathUtils.lerp(-0.4, 0.35, materialChange);
       const baseScale = mobile ? 0.92 : 1.25;
       ballGroup.scale.setScalar(
-        baseScale *
-          THREE.MathUtils.lerp(1.08, 0.68, inspection) *
-          THREE.MathUtils.lerp(1, 0.52, drop),
+        baseScale * THREE.MathUtils.lerp(1.05, 0.15, drop),
       );
-      ballGroup.rotation.y = time * 0.00022 + progress * 3.4;
-      ballGroup.rotation.x = -0.18 + Math.sin(time * 0.00045) * 0.08;
+      ballGroup.rotation.y = progress * 3.8;
+      ballGroup.rotation.x = -0.18 + progress * 0.42;
 
       materials.forEach((material) => {
-        material.color.copy(acid).lerp(pill, materialChange * 0.85);
-        material.roughness = THREE.MathUtils.lerp(0.92, 0.33, materialChange);
-        material.clearcoat = THREE.MathUtils.lerp(0.02, 0.72, materialChange);
+        material.color.copy(acid).lerp(pill, materialChange * 0.18);
+        material.roughness = THREE.MathUtils.lerp(0.96, 0.42, materialChange);
+        material.clearcoat = THREE.MathUtils.lerp(0, 0.5, materialChange);
+        material.opacity = 1 - smooth(segment(progress, 0.86, 1));
         if (material.normalScale)
           material.normalScale.setScalar(
-            THREE.MathUtils.lerp(1, 0.02, materialChange),
+            THREE.MathUtils.lerp(0.58, 0.04, materialChange),
           );
       });
       if (fallback.material) {
@@ -163,6 +162,19 @@ if (canvas && !reducedMotion.matches) {
 
       renderer.render(scene, camera);
     }
-    renderer.setAnimationLoop(render);
+
+    let inView = false;
+    const updateLoop = () =>
+      renderer.setAnimationLoop(inView && !document.hidden ? render : null);
+    const sectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        updateLoop();
+      },
+      { rootMargin: "100px 0px" },
+    );
+    sectionObserver.observe(canvas.closest("[data-transform-section]"));
+    document.addEventListener("visibilitychange", updateLoop);
+    renderer.render(scene, camera);
   }
 }

@@ -10,11 +10,12 @@
 
 ## Hero and Transformation
 
-- **Prototype:** `assets/generated/bend-flying-balls-hero.mp4`
-- **Final hero film:** 8-12 second seamless loop of tennis balls crossing a clear sky in different directions. Preserve one hero ball for the scroll handoff.
-- **Prototype 3D:** `assets/3d/tennis-ball-web.glb` at approximately 1 MB.
+- **Current static hero:** `assets/generated/bend-ball-sky-field.webp`. Motion is intentionally paused while the composition is being resolved.
+- **Future hero film:** 8-12 second seamless loop of tennis balls crossing a clear sky in different directions. Preserve one hero ball for the scroll handoff.
+- **Current 3D:** `assets/3d/tennis-ball-felt-web.glb`, an optimized felt model used only in the opening handoff.
 - **Final 3D:** Retopologized fluffy tennis ball with separate felt and smooth supplement materials, progressive texture transition, and mobile LODs.
-- **Sequence:** flying ball, isolated 3D ball, felt-to-pill surface change, 1:2:3 format reveal, drop into the BEND vessel.
+- **Current vessel cutout:** `assets/generated/bend-vessel-cutout.png`, isolated from the supplied product visual for the prototype.
+- **Sequence:** static flying-ball field, isolated felt ball, scale-down into the vessel, small dose fall, vessel shifts left, and PREP / RALLY / RESET cards enter.
 
 ## Packaging System
 
@@ -42,13 +43,14 @@
 ## Existing Prototype Media
 
 - `assets/generated/bend-ball-sky-field.webp`
-- `assets/generated/bend-court-grid-motion.png`
+- `assets/generated/bend-court-grid-motion-web.webp`
 - `assets/generated/bend-padel-racket-motion-v1.webp`
 - `assets/generated/bend-sky-match.png`
-- `assets/generated/bend-shop-lineup.png`
+- `assets/generated/bend-shop-lineup-web.webp`
+- `assets/generated/bend-vessel-cutout.png`
 
 These are concept assets. Final publication requires confirmation of image rights, model releases where applicable, packaging feasibility, product claims, and a commercial Monument Extended license.
 
 ## 3D Attribution
 
-The optimized prototype ball is derived from the CC BY 4.0 model credited in `assets/3d/tennis-ball-license.txt`. Keep that attribution with any production build that uses the derivative asset.
+The optimized prototype ball is derived from the CC BY 4.0 model credited in `assets/3d/tennis-ball-felt-web-LICENSE.txt`. Keep that attribution with any production build that uses the derivative asset.

@@ -27,10 +27,12 @@ const transformCopy = document.querySelector("[data-transform-copy]");
 const stageNumber = document.querySelector("[data-stage-number]");
 const stageLabel = document.querySelector("[data-stage-label]");
 const cssBallFallback = document.querySelector(".css-ball-fallback");
+const pillRain = [...document.querySelectorAll("[data-pill-rain] i")];
 const footer = document.querySelector(".site-footer");
 const footerMark = document.querySelector(".footer-mark");
 let lastTransformStage = -1;
 let ticking = false;
+const smooth = (value) => value * value * (3 - 2 * value);
 
 function updateScrollScene() {
   ticking = false;
@@ -51,40 +53,84 @@ function updateScrollScene() {
   const transformRect = transformSection.getBoundingClientRect();
   const transformTravel = Math.max(1, transformSection.offsetHeight - viewport);
   const progress = clamp(-transformRect.top / transformTravel);
-  const copyExit = range(progress, 0.16, 0.34);
+  const copyExit = smooth(range(progress, 0.13, 0.24));
   transformCopy.style.setProperty("--copy-opacity", String(1 - copyExit));
   transformCopy.style.setProperty("--copy-y", `${-45 * copyExit}px`);
-  transformSticky.style.setProperty(
-    "--formats-opacity",
-    String(range(progress, 0.38, 0.55)),
-  );
-  transformSticky.style.setProperty(
-    "--formats-y",
-    `${25 * (1 - range(progress, 0.38, 0.55))}px`,
-  );
+
+  const ballProgress = range(progress, 0, 0.29);
+  const pillProgress = range(progress, 0.17, 0.3);
+  const cupEnter = smooth(range(progress, 0.13, 0.21));
+  const cupShift = smooth(range(progress, 0.28, 0.36));
+  const cupExit = smooth(range(progress, 0.54, 0.61));
+  const cardsEnter = smooth(range(progress, 0.3, 0.37));
+  const prepToRally = smooth(range(progress, 0.56, 0.63));
+  const rallyToReset = smooth(range(progress, 0.76, 0.83));
+
   transformSticky.style.setProperty(
     "--cup-opacity",
-    String(range(progress, 0.64, 0.75)),
+    String(cupEnter * (1 - cupExit)),
   );
   transformSticky.style.setProperty(
-    "--cup-y",
-    `${80 * (1 - range(progress, 0.64, 0.82))}px`,
+    "--cup-left",
+    `${50 - cupShift * 27}%`,
   );
-  const fallbackArrival = range(progress, 0, 0.25);
-  const fallbackSurface = range(progress, 0.22, 0.5);
-  const fallbackInspection = range(progress, 0.45, 0.65);
-  const fallbackDrop = range(progress, 0.72, 0.96);
+  transformSticky.style.setProperty(
+    "--cup-scale",
+    String(1 - cupShift * 0.18),
+  );
+  transformSticky.style.setProperty(
+    "--cards-in",
+    String(cardsEnter),
+  );
+  transformSticky.style.setProperty(
+    "--cards-shift",
+    `${46 * (1 - cardsEnter)}px`,
+  );
+  transformSticky.style.setProperty(
+    "--media-prep",
+    String(cardsEnter * (1 - prepToRally)),
+  );
+  transformSticky.style.setProperty(
+    "--media-rally",
+    String(prepToRally * (1 - rallyToReset)),
+  );
+  transformSticky.style.setProperty("--media-reset", String(rallyToReset));
+
+  transformSticky.dataset.scene =
+    progress < 0.37
+      ? "intro"
+      : progress < 0.6
+        ? "prep"
+        : progress < 0.8
+          ? "rally"
+          : "reset";
+
+  pillRain.forEach((pill, index) => {
+    const start = index * 0.035;
+    const local = smooth(range(pillProgress, start, start + 0.48));
+    pill.style.setProperty("--fall", local.toFixed(3));
+    pill.style.setProperty("--fall-y", `${(local * 51).toFixed(2)}svh`);
+    pill.style.setProperty("--pill-scale", (1 - local * 0.22).toFixed(3));
+    pill.style.setProperty(
+      "--pill-opacity",
+      local < 0.04 || local > 0.92 ? "0" : "1",
+    );
+  });
+
+  const fallbackArrival = range(ballProgress, 0, 0.25);
+  const fallbackSurface = range(ballProgress, 0.2, 0.6);
+  const fallbackDrop = range(ballProgress, 0.56, 0.96);
   cssBallFallback.style.setProperty(
     "--fallback-x",
     `${64 - fallbackArrival * 14}%`,
   );
   cssBallFallback.style.setProperty(
     "--fallback-y",
-    `${42 - fallbackArrival * 4 + fallbackDrop * 35}%`,
+    `${42 - fallbackArrival * 3 + fallbackDrop * 27}%`,
   );
   cssBallFallback.style.setProperty(
     "--fallback-scale",
-    String(1.08 - fallbackInspection * 0.36 - fallbackDrop * 0.34),
+    String(1.06 - fallbackDrop * 0.88),
   );
   cssBallFallback.style.setProperty(
     "--fallback-felt",
@@ -96,24 +142,34 @@ function updateScrollScene() {
   );
   cssBallFallback.style.setProperty(
     "--fallback-color",
-    fallbackSurface > 0.55 ? "#f0f2e8" : "#c8ff22",
+    fallbackSurface > 0.55 ? "#d8ff35" : "#c8ff22",
   );
 
   const nextStage =
-    progress < 0.25 ? 0 : progress < 0.52 ? 1 : progress < 0.76 ? 2 : 3;
+    progress < 0.14
+      ? 0
+      : progress < 0.28
+        ? 1
+        : progress < 0.6
+          ? 2
+          : progress < 0.8
+            ? 3
+            : 4;
   if (nextStage !== lastTransformStage) {
     lastTransformStage = nextStage;
     const labels = [
       "Felt / court",
-      "Surface / changing",
-      "Formats / 1:2:3",
-      "Vessel / ready",
+      "Dose / forming",
+      "PREP / before play",
+      "RALLY / during play",
+      "RESET / after play",
     ];
-    stageNumber.textContent = String(nextStage + 1).padStart(2, "0");
+    const numbers = ["01", "02", "01", "02", "03"];
+    stageNumber.textContent = numbers[nextStage];
     stageLabel.textContent = labels[nextStage];
   }
   window.dispatchEvent(
-    new CustomEvent("bend:transform", { detail: { progress } }),
+    new CustomEvent("bend:transform", { detail: { progress: ballProgress } }),
   );
 
   const footerRect = footer.getBoundingClientRect();
