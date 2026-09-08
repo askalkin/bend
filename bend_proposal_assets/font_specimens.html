@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bend Font Specimens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Michroma&family=Orbitron:wght@400..900&family=Syncopate:wght@400;700&family=Tourney:wdth,wght@75..125,100..900&family=Work+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #050505;
+      --paper: #f7f8f2;
+      --blue: #061847;
+      --court: #168fd8;
+      --ball: #c8ff22;
+      --peach: #f6a178;
+      --lavender: #bba7ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 1600px;
+      min-height: 1000px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Work Sans", sans-serif;
+    }
+
+    .board {
+      padding: 52px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(5, 5, 5, 0.14);
+      background: white;
+      padding: 26px;
+    }
+
+    .card.dark {
+      background: var(--blue);
+      color: white;
+    }
+
+    .card.lime {
+      background: var(--ball);
+    }
+
+    .card.soft {
+      background:
+        linear-gradient(135deg, #dff6ff 0%, #ffffff 54%, #ffe0d0 100%);
+    }
+
+    .name {
+      margin: 0 0 24px;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .word {
+      margin: 0;
+      font-size: 92px;
+      line-height: 0.86;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .sub {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 24px;
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .syncopate .word { font-family: "Syncopate", sans-serif; font-weight: 700; }
+    .orbitron .word { font-family: "Orbitron", sans-serif; font-weight: 900; }
+    .tourney .word { font-family: "Tourney", sans-serif; font-weight: 800; font-stretch: 115%; }
+    .gabarito .word { font-family: "Gabarito", sans-serif; font-weight: 900; }
+    .work .word { font-family: "Work Sans", sans-serif; font-weight: 900; letter-spacing: -2px; }
+    .michroma .word { font-family: "Michroma", sans-serif; font-weight: 400; }
+
+    .syncopate .sub { font-family: "Syncopate", sans-serif; font-size: 18px; }
+    .orbitron .sub { font-family: "Orbitron", sans-serif; font-size: 20px; }
+    .tourney .sub { font-family: "Tourney", sans-serif; font-size: 20px; }
+    .gabarito .sub { font-family: "Gabarito", sans-serif; }
+    .work .sub { font-family: "Work Sans", sans-serif; }
+    .michroma .sub { font-family: "Michroma", sans-serif; font-size: 17px; }
+  </style>
+</head>
+<body>
+  <main class="board">
+    <section class="card dark syncopate">
+      <p class="name">Syncopate / open</p>
+      <h1 class="word">BEND</h1>
+      <p class="sub">Extended digital court voice for Direction 02</p>
+    </section>
+    <section class="card orbitron">
+      <p class="name">Orbitron / open</p>
+      <h1 class="word">BEND</h1>
+      <p class="sub">Night Match display logic for Direction 04</p>
+    </section>
+    <section class="card lime tourney">
+      <p class="name">Tourney / open</p>
+      <h1 class="word">BEND</h1>
+      <p class="sub">Sport-tech stencil, useful for limited SKUs</p>
+    </section>
+    <section class="card soft gabarito">
+      <p class="name">Gabarito / open</p>
+      <h1 class="word">BEND</h1>
+      <p class="sub">Soft chew and flavor family support voice</p>
+    </section>
+    <section class="card work">
+      <p class="name">Work Sans / open</p>
+      <h1 class="word">BEND</h1>
+      <p class="sub">Reference-adjacent neutral system type</p>
+    </section>
+    <section class="card dark michroma">
+      <p class="name">Michroma / open</p>
+      <h1 class="word">BEND</h1>
+      <p class="sub">Eurostile/Microgramma-adjacent free test face</p>
+    </section>
+  </main>
+</body>
+</html>

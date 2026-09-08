@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bend Web Mockups</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Orbitron:wght@400..900&family=Syncopate:wght@400;700&family=Work+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #050505;
+      --paper: #f7f8f2;
+      --blue: #061847;
+      --court: #168fd8;
+      --sky: #82d3f4;
+      --ball: #c8ff22;
+      --peach: #f6a178;
+      --lavender: #bba7ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 1800px;
+      min-height: 1160px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Work Sans", sans-serif;
+    }
+
+    .sheet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 56px;
+    }
+
+    .page {
+      height: 1048px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(5, 5, 5, 0.14);
+      background: white;
+    }
+
+    .page img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .page::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    .nav,
+    .hero,
+    .facts {
+      position: absolute;
+      z-index: 2;
+      left: 28px;
+      right: 28px;
+    }
+
+    .nav {
+      top: 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .mark {
+      display: flex;
+      gap: 2px;
+      font-size: 44px;
+      line-height: 0.8;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .hero {
+      top: 156px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 92px;
+      line-height: 0.88;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 24px 0 0;
+      max-width: 430px;
+      font-size: 27px;
+      line-height: 1.06;
+      font-weight: 800;
+    }
+
+    .facts {
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .fact {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      border: 2px solid currentColor;
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .court {
+      color: white;
+      background: var(--blue);
+    }
+
+    .court::after {
+      background:
+        linear-gradient(180deg, rgba(6, 24, 71, 0.06), rgba(6, 24, 71, 0.68)),
+        linear-gradient(90deg, rgba(6, 24, 71, 0.86) 0%, rgba(6, 24, 71, 0.2) 62%, rgba(6, 24, 71, 0.05));
+    }
+
+    .court .mark,
+    .court h1 {
+      font-family: "Syncopate", sans-serif;
+      color: var(--ball);
+    }
+
+    .night {
+      color: white;
+      background: var(--blue);
+    }
+
+    .night::after {
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(6, 24, 71, 0.36) 62%, rgba(6, 24, 71, 0.08)),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.06));
+    }
+
+    .night .mark,
+    .night h1 {
+      font-family: "Orbitron", sans-serif;
+      font-weight: 900;
+    }
+
+    .night h1 {
+      color: var(--ball);
+      transform: skewX(-7deg);
+    }
+
+    .air {
+      background: #def6ff;
+    }
+
+    .air::after {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.48) 56%, rgba(255, 255, 255, 0.14)),
+        radial-gradient(circle at 75% 15%, rgba(187, 167, 255, 0.58), transparent 22%),
+        radial-gradient(circle at 90% 72%, rgba(246, 161, 120, 0.42), transparent 24%);
+    }
+
+    .air .mark,
+    .air h1 {
+      font-family: "Gabarito", sans-serif;
+      font-weight: 900;
+    }
+
+    .air h1 span:nth-child(2) { color: var(--court); }
+    .air h1 span:nth-child(3) { color: var(--peach); }
+    .air h1 span:nth-child(4) { color: var(--lavender); }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="page court">
+      <img src="../image%203323.png" alt="Padel player on blue sky">
+      <div class="nav">
+        <div class="mark"><span>B</span><span>E</span><span>N</span><span>D</span></div>
+        <div>Rally Hydration</div>
+      </div>
+      <div class="hero">
+        <h1>Play<br>beyond<br>limits</h1>
+        <p>Electrolytes built for long rallies, hot courts, and repeat points.</p>
+      </div>
+      <div class="facts">
+        <div class="fact">Sodium + potassium</div>
+        <div class="fact">Light caffeine option</div>
+        <div class="fact">Blue lime</div>
+        <div class="fact">30 servings</div>
+      </div>
+    </section>
+
+    <section class="page night">
+      <img src="../image%203309.png" alt="Blurred tennis player on blue court">
+      <div class="nav">
+        <div class="mark"><span>B</span><span>E</span><span>N</span><span>D</span></div>
+        <div>Pre Match Fuel</div>
+      </div>
+      <div class="hero">
+        <h1>Sharp<br>from<br>serve one</h1>
+        <p>Fast focus and court endurance without gym-supplement noise.</p>
+      </div>
+      <div class="facts">
+        <div class="fact">Creatine</div>
+        <div class="fact">Caffeine</div>
+        <div class="fact">B vitamins</div>
+        <div class="fact">Black pack</div>
+      </div>
+    </section>
+
+    <section class="page air">
+      <img src="../image%203268.png" alt="Floating gummies in the sky">
+      <div class="nav">
+        <div class="mark"><span>B</span><span>E</span><span>N</span><span>D</span></div>
+        <div>Hydration Chews</div>
+      </div>
+      <div class="hero">
+        <h1><span>B</span><span>o</span><span>u</span><span>nce</span><br>back<br>between<br>sets</h1>
+        <p>Soft-format supplements for social matches and flavor-first recovery.</p>
+      </div>
+      <div class="facts">
+        <div class="fact">Lime peach</div>
+        <div class="fact">Berry salt</div>
+        <div class="fact">Pocket pack</div>
+        <div class="fact">Between sets</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

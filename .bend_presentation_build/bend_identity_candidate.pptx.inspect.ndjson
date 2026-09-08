@@ -1,0 +1,260 @@
+{"kind":"deck","id":"pr/i73vuc","name":"Deck"}
+{"kind":"layout","layoutId":"59aaa981-4fd9-4b57-86a7-d646d2d7e09a","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"56d5df8a-19e3-4414-99e7-d67970b1700c","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/6sz76j","slide":1,"title":"BRAND IDENTITY PROPOSAL","textShapes":5}
+{"kind":"shape","id":"sh/lwryp0bi","slide":1,"bbox":[0,0,760,720]}
+{"kind":"textbox","id":"sh/0vihwfud","slide":1,"text":"BRAND IDENTITY PROPOSAL","textPreview":"BRAND IDENTITY PROPOSAL","textChars":23,"textLines":1,"bbox":[64,32,520,20]}
+{"kind":"textbox","id":"sh/bqpgjqdg","slide":1,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[64,112,580,170]}
+{"kind":"textbox","id":"sh/qpgzqlcv","slide":1,"text":"Padel and tennis workout supplements","textPreview":"Padel and tennis workout supplements","textChars":36,"textLines":1,"bbox":[70,284,560,42]}
+{"kind":"textbox","id":"sh/dsryl0vm","slide":1,"text":"Selected directions: Court Pulse, Night Match, Air Bounce","textPreview":"Selected directions: Court Pulse, Night Match, Air Bounce","textChars":57,"textLines":1,"bbox":[70,352,520,88]}
+{"kind":"textbox","id":"sh/crihsvu1","slide":1,"text":"September 2026","textPreview":"September 2026","textChars":14,"textLines":1,"bbox":[70,626,320,30]}
+{"kind":"image","id":"im/zilkbaxs","slide":1,"name":"","geometry":"rect","alt":"Product-image-reference.png","bbox":[604,0,676,720]}
+{"kind":"notes","id":"nt/6sz76j","slide":1,"text":"Uses local user-supplied Bend product image as visual reference."}
+{"kind":"slide","id":"sl/p1eh5a","slide":2,"title":"Reference language","textShapes":15}
+{"kind":"textbox","id":"sh/edkfmpgr","slide":2,"text":"Reference language","textPreview":"Reference language","textChars":18,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/lgbyx4z2","slide":2,"text":"The folder references create a tight visual territory: court blue, acid tennis yellow, deep night contrast, soft sky color, and physical product materials.","textPreview":"The folder references create a tight visual territory: court blue, acid tennis yellow, deep night contrast, soft sky color, and physical ...","textChars":155,"textLines":1,"bbox":[64,132,510,110]}
+{"kind":"textbox","id":"sh/0f2xozyh","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[64,286,54,30]}
+{"kind":"textbox","id":"sh/nitgzeh8","slide":2,"text":"Motion","textPreview":"Motion","textChars":6,"textLines":1,"bbox":[128,284,170,30]}
+{"kind":"textbox","id":"sh/mhkfq9gn","slide":2,"text":"Blurred athletes, falling balls, repeated arcs, speed trails","textPreview":"Blurred athletes, falling balls, repeated arcs, speed trails","textChars":60,"textLines":1,"bbox":[300,286,300,44]}
+{"kind":"textbox","id":"sh/9kby14ze","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[64,364,54,30]}
+{"kind":"textbox","id":"sh/8j2xsjyt","slide":2,"text":"Geometry","textPreview":"Geometry","textChars":8,"textLines":1,"bbox":[128,362,170,30]}
+{"kind":"textbox","id":"sh/3m9wnah4","slide":2,"text":"Court lines, grid divisions, split compositions, precise crops","textPreview":"Court lines, grid divisions, split compositions, precise crops","textChars":62,"textLines":1,"bbox":[300,364,300,44]}
+{"kind":"textbox","id":"sh/2lgfe5gj","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[64,442,54,30]}
+{"kind":"textbox","id":"sh/0z2x8bel","slide":2,"text":"Material","textPreview":"Material","textChars":8,"textLines":1,"bbox":[128,440,170,30]}
+{"kind":"textbox","id":"sh/10byhgv6","slide":2,"text":"Chrome, transparent tubes, felt texture, gummy translucency","textPreview":"Chrome, transparent tubes, felt texture, gummy translucency","textChars":59,"textLines":1,"bbox":[300,442,300,44]}
+{"kind":"textbox","id":"sh/exkf61wv","slide":2,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[64,520,54,30]}
+{"kind":"textbox","id":"sh/fytgf6dg","slide":2,"text":"Type","textPreview":"Type","textChars":4,"textLines":1,"bbox":[128,518,170,30]}
+{"kind":"textbox","id":"sh/onmhcbex","slide":2,"text":"Condensed weight, extended sport tech, occasional serif nostalgia","textPreview":"Condensed weight, extended sport tech, occasional serif nostalgia","textChars":65,"textLines":1,"bbox":[300,520,300,44]}
+{"kind":"textbox","id":"sh/5sry9wvy","slide":2,"text":"Local image analysis. Matched patterns are directional, not claims about source ownership.","textPreview":"Local image analysis. Matched patterns are directional, not claims about source ownership.","textChars":90,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/atgvmt0f","slide":2,"name":"","geometry":"rect","alt":"image 3313.png","bbox":[650,84,268,260]}
+{"kind":"image","id":"im/xg7uh8z6","slide":2,"name":"","geometry":"rect","alt":"image 3315.png","bbox":[938,84,278,260]}
+{"kind":"image","id":"im/cfydo3il","slide":2,"name":"","geometry":"rect","alt":"image 3309.png","bbox":[650,364,268,250]}
+{"kind":"image","id":"im/vqtwr2hk","slide":2,"name":"","geometry":"rect","alt":"image 3268.png","bbox":[938,364,278,250]}
+{"kind":"notes","id":"nt/p1eh5a","slide":2,"text":"All images on this slide are local user-supplied references from the Bend folder."}
+{"kind":"slide","id":"sl/wfnjgk","slide":3,"title":"Selected identity routes","textShapes":11}
+{"kind":"textbox","id":"sh/vmxcbqls","slide":3,"text":"Selected identity routes","textPreview":"Selected identity routes","textChars":24,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"shape","id":"sh/hozud03y","slide":3,"bbox":[64,150,350,420]}
+{"kind":"textbox","id":"sh/ip8b654j","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[86,174,80,44]}
+{"kind":"textbox","id":"sh/jqhcfal4","slide":3,"text":"Court Pulse","textPreview":"Court Pulse","textChars":11,"textLines":1,"bbox":[86,414,290,58]}
+{"kind":"textbox","id":"sh/4rqt8fm9","slide":3,"text":"Campaign master route","textPreview":"Campaign master route","textChars":21,"textLines":1,"bbox":[86,488,270,44]}
+{"kind":"shape","id":"sh/6t8ba54f","slide":3,"bbox":[464,150,350,420]}
+{"kind":"textbox","id":"sh/rehcjal0","slide":3,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[486,174,80,44]}
+{"kind":"textbox","id":"sh/vqp4j6l0","slide":3,"text":"Night Match","textPreview":"Night Match","textChars":11,"textLines":1,"bbox":[486,414,290,58]}
+{"kind":"textbox","id":"sh/upgnal4f","slide":3,"text":"Pre-workout and focus","textPreview":"Pre-workout and focus","textChars":21,"textLines":1,"bbox":[486,488,270,44]}
+{"kind":"shape","id":"sh/gry5cbml","slide":3,"bbox":[864,150,350,420]}
+{"kind":"textbox","id":"sh/7mp4f6l4","slide":3,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[886,174,80,44]}
+{"kind":"textbox","id":"sh/61wn614j","slide":3,"text":"Air Bounce","textPreview":"Air Bounce","textChars":10,"textLines":1,"bbox":[886,414,290,58]}
+{"kind":"textbox","id":"sh/to7mhg3u","slide":3,"text":"Chews and flavor systems","textPreview":"Chews and flavor systems","textChars":24,"textLines":1,"bbox":[886,488,270,44]}
+{"kind":"textbox","id":"sh/8ny58bm9","slide":3,"text":"Focus for this revision: build Bend as a typographic system, not a logo plus decoration.","textPreview":"Focus for this revision: build Bend as a typographic system, not a logo plus decoration.","textChars":88,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/hwzmt47i","slide":3,"name":"","geometry":"rect","alt":"image 3323.png","bbox":[64,150,350,420]}
+{"kind":"image","id":"im/sr6lwzq1","slide":3,"name":"","geometry":"rect","alt":"image 3309.png","bbox":[464,150,350,420]}
+{"kind":"image","id":"im/qt0nutsv","slide":3,"name":"","geometry":"rect","alt":"image 3268.png","bbox":[864,150,350,420]}
+{"kind":"notes","id":"nt/wfnjgk","slide":3,"text":"Uses local user-supplied reference images."}
+{"kind":"slide","id":"sl/odh0iw","slide":4,"title":"Wordmark strategy","textShapes":13}
+{"kind":"textbox","id":"sh/by18nqh0","slide":4,"text":"Wordmark strategy","textPreview":"Wordmark strategy","textChars":17,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/cza9wvy5","slide":4,"text":"The name carries the movement","textPreview":"The name carries the movement","textChars":29,"textLines":1,"bbox":[64,128,470,42]}
+{"kind":"textbox","id":"sh/d0jqp0zq","slide":4,"text":"B","textPreview":"B","textChars":1,"textLines":1,"bbox":[80,232,130,120]}
+{"kind":"textbox","id":"sh/298rqlg3","slide":4,"text":"E","textPreview":"E","textChars":1,"textLines":1,"bbox":[200,202,130,120]}
+{"kind":"textbox","id":"sh/3ah8jqho","slide":4,"text":"N","textPreview":"N","textChars":1,"textLines":1,"bbox":[323,222,150,120]}
+{"kind":"textbox","id":"sh/ova9svy9","slide":4,"text":"D","textPreview":"D","textChars":1,"textLines":1,"bbox":[463,252,150,120]}
+{"kind":"shape","id":"sh/pwjqlgzu","slide":4,"bbox":[76,342,510,58]}
+{"kind":"textbox","id":"sh/m5cr25gn","slide":4,"text":"A bend can happen through baseline shifts, letter width, skew, echo, outline, or color substitution. The system should keep the word readable at product scale and expressive at campaign scale.","textPreview":"A bend can happen through baseline shifts, letter width, skew, echo, outline, or color substitution. The system should keep the word read...","textChars":192,"textLines":1,"bbox":[64,448,548,124]}
+{"kind":"textbox","id":"sh/n6lsvax8","slide":4,"text":"Readable first","textPreview":"Readable first","textChars":14,"textLines":1,"bbox":[724,150,420,36]}
+{"kind":"textbox","id":"sh/ni14bqhs","slide":4,"text":"The mark must work on a bottle, cap, sachet, grip tape, and app header.","textPreview":"The mark must work on a bottle, cap, sachet, grip tape, and app header.","textChars":71,"textLines":1,"bbox":[724,192,420,72]}
+{"kind":"shape","id":"sh/mhsnil07","slide":4,"bbox":[724,272,430,0]}
+{"kind":"textbox","id":"sh/9kj6d0zy","slide":4,"text":"Motion from letters","textPreview":"Motion from letters","textChars":19,"textLines":1,"bbox":[724,292,420,36]}
+{"kind":"textbox","id":"sh/oja5kvid","slide":4,"text":"Use letter modeling before adding balls, arrows, or separate icons.","textPreview":"Use letter modeling before adding balls, arrows, or separate icons.","textChars":67,"textLines":1,"bbox":[724,334,420,72]}
+{"kind":"shape","id":"sh/b6lofah4","slide":4,"bbox":[724,414,430,0]}
+{"kind":"textbox","id":"sh/a5snm50j","slide":4,"text":"One master skeleton","textPreview":"One master skeleton","textChars":19,"textLines":1,"bbox":[724,434,420,36]}
+{"kind":"textbox","id":"sh/x836h0zu","slide":4,"text":"Court, night, and chew variants should feel like siblings.","textPreview":"Court, night, and chew variants should feel like siblings.","textChars":58,"textLines":1,"bbox":[724,476,420,72]}
+{"kind":"shape","id":"sh/w7u5ovi9","slide":4,"bbox":[724,556,430,0]}
+{"kind":"notes","id":"nt/odh0iw","slide":4,"text":"Logo principles developed from user direction in this turn and local reference image analysis."}
+{"kind":"slide","id":"sl/9ouv2l","slide":5,"title":"Logo exploration sheet","textShapes":3}
+{"kind":"textbox","id":"sh/p4j6hwj2","slide":5,"text":"Logo exploration sheet","textPreview":"Logo exploration sheet","textChars":22,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/21s7m1kr","slide":5,"text":"Nine typographic tests for the word BEND. These are not final vector drawings. They show the movement grammar to develop into a custom wordmark.","textPreview":"Nine typographic tests for the word BEND. These are not final vector drawings. They show the movement grammar to develop into a custom wo...","textChars":144,"textLines":1,"bbox":[64,116,1050,42]}
+{"kind":"textbox","id":"sh/gfqpkr2l","slide":5,"text":"Preferred territory: Court Pulse kinetic baseline as master, with Night Match and Air Bounce as controlled alternates.","textPreview":"Preferred territory: Court Pulse kinetic baseline as master, with Night Match and Air Bounce as controlled alternates.","textChars":118,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/udwz2lwj","slide":5,"name":"","geometry":"rect","alt":"bend_proposal_assets/logo_explorations.png","bbox":[64,178,1152,470]}
+{"kind":"notes","id":"nt/9ouv2l","slide":5,"text":"Logo exploration sheet generated locally from editable HTML text and open web font specimens. It is intended as a creative prototype, not a licensed final font file."}
+{"kind":"slide","id":"sl/cqq0cx","slide":6,"title":"02","textShapes":9}
+{"kind":"shape","id":"sh/zutkry9c","slide":6,"bbox":[0,0,880,720]}
+{"kind":"textbox","id":"sh/ytk3yt8r","slide":6,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[64,32,520,20]}
+{"kind":"textbox","id":"sh/xsb2p8r6","slide":6,"text":"Court Pulse wordmark","textPreview":"Court Pulse wordmark","textChars":20,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/c72lw3ql","slide":6,"text":"B","textPreview":"B","textChars":1,"textLines":1,"bbox":[76,195.84,141,122.2]}
+{"kind":"textbox","id":"sh/b6tkny9g","slide":6,"text":"E","textPreview":"E","textChars":1,"textLines":1,"bbox":[192.56,169.52,141,122.2]}
+{"kind":"textbox","id":"sh/a5kjut8v","slide":6,"text":"N","textPreview":"N","textChars":1,"textLines":1,"bbox":[324.16,184.56,141,122.2]}
+{"kind":"textbox","id":"sh/hof21s7q","slide":6,"text":"D","textPreview":"D","textChars":1,"textLines":1,"bbox":[465.16,207.12,141,122.2]}
+{"kind":"shape","id":"sh/w3ml8nq5","slide":6,"bbox":[83.52,306.76,526.4,39.48]}
+{"kind":"shape","id":"sh/29ozy1ob","slide":6,"bbox":[83.52,314.28,526.4,39.48]}
+{"kind":"shape","id":"sh/3uxgrm5g","slide":6,"bbox":[536.6,286.08,26.32,26.32]}
+{"kind":"textbox","id":"sh/4v6h0r61","slide":6,"text":"Role","textPreview":"Role","textChars":4,"textLines":1,"bbox":[64,430,130,28]}
+{"kind":"textbox","id":"sh/pwfytwnm","slide":6,"text":"Main campaign and digital mark. The letters ride a rally arc and create a sporty motion system without a separate tennis icon.","textPreview":"Main campaign and digital mark. The letters ride a rally arc and create a sporty motion system without a separate tennis icon.","textChars":126,"textLines":1,"bbox":[64,462,566,80]}
+{"kind":"textbox","id":"sh/u54fuhoz","slide":6,"text":"Use on site hero, launch posters, event courts, hydration packs, and motion graphics.","textPreview":"Use on site hero, launch posters, event courts, hydration packs, and motion graphics.","textChars":85,"textLines":1,"bbox":[64,568,560,54]}
+{"kind":"image","id":"im/dcvid8ne","slide":6,"name":"","geometry":"rect","alt":"image 3323.png","bbox":[720,0,560,720]}
+{"kind":"notes","id":"nt/cqq0cx","slide":6,"text":"Uses local user-supplied image 3323 and generated logo exploration sheet."}
+{"kind":"slide","id":"sl/8ca2mr","slide":7,"title":"04","textShapes":6}
+{"kind":"shape","id":"sh/md0bad0r","slide":7,"bbox":[0,0,1280,720]}
+{"kind":"textbox","id":"sh/nets3y1c","slide":7,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[64,32,520,20]}
+{"kind":"textbox","id":"sh/0bi983i1","slide":7,"text":"Night Match wordmark","textPreview":"Night Match wordmark","textChars":20,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"shape","id":"sh/lcra18jm","slide":7,"bbox":[102.64,230.72,347.76,38.64]}
+{"kind":"shape","id":"sh/yp0r6t0v","slide":7,"bbox":[205.68,210.48,255.76,38.64]}
+{"kind":"textbox","id":"sh/za9szy1g","slide":7,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[64,170,598,106.72]}
+{"kind":"shape","id":"sh/47mtkni5","slide":7,"bbox":[71.36,217.84,557.52,0]}
+{"kind":"shape","id":"sh/58vadsjq","slide":7,"bbox":[89.76,241.76,515.2,0]}
+{"kind":"shape","id":"sh/tcbidora","slide":7,"bbox":[113.68,263.84,460,0]}
+{"kind":"textbox","id":"sh/sbi14jqp","slide":7,"text":"Role","textPreview":"Role","textChars":4,"textLines":1,"bbox":[64,442,130,28]}
+{"kind":"textbox","id":"sh/ra90be94","slide":7,"text":"Performance route for pre-workout, caffeine, creatine, and focus products. Skew and shadow give the logo speed at black-pack scale.","textPreview":"Performance route for pre-workout, caffeine, creatine, and focus products. Skew and shadow give the logo speed at black-pack scale.","textChars":131,"textLines":1,"bbox":[64,474,620,88]}
+{"kind":"textbox","id":"sh/690z2t8j","slide":7,"text":"Use white or acid on deep blue, black, chrome, and night-court photography.","textPreview":"Use white or acid on deep blue, black, chrome, and night-court photography.","textChars":75,"textLines":1,"bbox":[64,586,556,50]}
+{"kind":"image","id":"im/4jylcbap","slide":7,"name":"","geometry":"rect","alt":"image 3309.png","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/8ca2mr","slide":7,"text":"Uses local user-supplied image 3309 and generated logo exploration sheet."}
+{"kind":"slide","id":"sl/2ou8pq","slide":8,"title":"05","textShapes":9}
+{"kind":"shape","id":"sh/yp4vedcn","slide":8,"bbox":[0,0,920,720]}
+{"kind":"textbox","id":"sh/zqdc7it8","slide":8,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[64,32,520,20]}
+{"kind":"textbox","id":"sh/cnmtcnux","slide":8,"text":"Air Bounce wordmark","textPreview":"Air Bounce wordmark","textChars":19,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"shape","id":"sh/xovu5sbi","slide":8,"bbox":[200.8,177.84,74.88,74.88]}
+{"kind":"shape","id":"sh/al4badcr","slide":8,"bbox":[404.32,223.92,49.92,49.92]}
+{"kind":"textbox","id":"sh/bmdc3itc","slide":8,"text":"B","textPreview":"B","textChars":1,"textLines":1,"bbox":[76,208.56,142.08,124.8]}
+{"kind":"textbox","id":"sh/oz2t83ul","slide":8,"text":"E","textPreview":"E","textChars":1,"textLines":1,"bbox":[189.28,179.76,142.08,124.8]}
+{"kind":"textbox","id":"sh/pkbu18b6","slide":8,"text":"N","textPreview":"N","textChars":1,"textLines":1,"bbox":[316,204.72,142.08,124.8]}
+{"kind":"textbox","id":"sh/xo761grq","slide":8,"text":"D","textPreview":"D","textChars":1,"textLines":1,"bbox":[446.56,185.52,142.08,124.8]}
+{"kind":"shape","id":"sh/wnyp8ba5","slide":8,"bbox":[95.2,329.52,480,0]}
+{"kind":"textbox","id":"sh/b2poz69k","slide":8,"text":"Role","textPreview":"Role","textChars":4,"textLines":1,"bbox":[64,442,130,28]}
+{"kind":"textbox","id":"sh/a1gn61sf","slide":8,"text":"Soft product route for chews, gummies, sticks, and flavor-led line extensions. Letters can bounce, change color, and become flavor markers.","textPreview":"Soft product route for chews, gummies, sticks, and flavor-led line extensions. Letters can bounce, change color, and become flavor markers.","textChars":139,"textLines":1,"bbox":[64,474,630,88]}
+{"kind":"textbox","id":"sh/9076xwru","slide":8,"text":"Use black master wordmark with controlled color letters on sky, peach, and lavender fields.","textPreview":"Use black master wordmark with controlled color letters on sky, peach, and lavender fields.","textChars":91,"textLines":1,"bbox":[64,586,556,50]}
+{"kind":"image","id":"im/wj29cret","slide":8,"name":"","geometry":"rect","alt":"image 3268.png","bbox":[720,0,560,720]}
+{"kind":"notes","id":"nt/2ou8pq","slide":8,"text":"Uses local user-supplied image 3268 and generated logo exploration sheet."}
+{"kind":"slide","id":"sl/1fvank","slide":9,"title":"Logo system","textShapes":15}
+{"kind":"textbox","id":"sh/5wbepsz2","slide":9,"text":"Logo system","textPreview":"Logo system","textChars":11,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/itkvedgr","slide":9,"text":"The final identity should produce a family of marks from one custom skeleton.","textPreview":"The final identity should produce a family of marks from one custom skeleton.","textChars":77,"textLines":1,"bbox":[64,118,650,38]}
+{"kind":"shape","id":"sh/jutwnihc","slide":9,"bbox":[64,184,336,132]}
+{"kind":"textbox","id":"sh/w7idcnyl","slide":9,"text":"Primary wordmark","textPreview":"Primary wordmark","textChars":16,"textLines":1,"bbox":[82,198,290,24]}
+{"kind":"textbox","id":"sh/x8rel8z6","slide":9,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[82,232,298,62]}
+{"kind":"shape","id":"sh/a50vadgf","slide":9,"bbox":[458,184,336,132]}
+{"kind":"textbox","id":"sh/v69wjih0","slide":9,"text":"Split product lockup","textPreview":"Split product lockup","textChars":20,"textLines":1,"bbox":[476,198,290,24]}
+{"kind":"textbox","id":"sh/83id83yp","slide":9,"text":"BE   ND","textPreview":"BE   ND","textChars":7,"textLines":1,"bbox":[476,232,298,62]}
+{"kind":"shape","id":"sh/94reh8zu","slide":9,"bbox":[852,184,336,132]}
+{"kind":"textbox","id":"sh/hwzy1cvu","slide":9,"text":"Night outline","textPreview":"Night outline","textChars":13,"textLines":1,"bbox":[870,198,290,24]}
+{"kind":"textbox","id":"sh/gv6h87up","slide":9,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[870,232,298,62]}
+{"kind":"shape","id":"sh/faxgz2d4","slide":9,"bbox":[64,368,336,132]}
+{"kind":"textbox","id":"sh/u9oz6xcj","slide":9,"text":"Air flavor mark","textPreview":"Air flavor mark","textChars":15,"textLines":1,"bbox":[82,382,290,24]}
+{"kind":"textbox","id":"sh/t8fyxsvy","slide":9,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[82,416,298,62]}
+{"kind":"shape","id":"sh/s76h47ud","slide":9,"bbox":[458,368,336,132]}
+{"kind":"textbox","id":"sh/76xgv2ds","slide":9,"text":"Small digital mark","textPreview":"Small digital mark","textChars":18,"textLines":1,"bbox":[476,382,290,24]}
+{"kind":"textbox","id":"sh/65of2xc7","slide":9,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[476,416,298,62]}
+{"kind":"shape","id":"sh/54fytsv2","slide":9,"bbox":[852,368,336,132]}
+{"kind":"textbox","id":"sh/k3mx0nuh","slide":9,"text":"Pattern asset","textPreview":"Pattern asset","textChars":13,"textLines":1,"bbox":[870,382,290,24]}
+{"kind":"textbox","id":"sh/wnqhgn2d","slide":9,"text":"BEND BEND BEND","textPreview":"BEND BEND BEND","textChars":14,"textLines":1,"bbox":[870,416,298,62]}
+{"kind":"textbox","id":"sh/xozy9s3i","slide":9,"text":"Build the master logo as custom vector outlines after type purchase or custom drawing. Keep editable type prototypes for web, motion tests, and internal review.","textPreview":"Build the master logo as custom vector outlines after type purchase or custom drawing. Keep editable type prototypes for web, motion test...","textChars":160,"textLines":1,"bbox":[64,594,980,50]}
+{"kind":"notes","id":"nt/1fvank","slide":9,"text":"Logo system proposal based on user feedback and generated wordmark exploration sheet."}
+{"kind":"slide","id":"sl/y49i12","slide":10,"title":"Reference typography findings","textShapes":10}
+{"kind":"textbox","id":"sh/2xo36107","slide":10,"text":"Reference typography findings","textPreview":"Reference typography findings","textChars":29,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/qlo3a103","slide":10,"text":"Challengers","textPreview":"Challengers","textChars":11,"textLines":1,"bbox":[900,126,300,30]}
+{"kind":"textbox","id":"sh/dofmlgzu","slide":10,"text":"Fonts In Use identifies Rockwell for the movie poster system and Microgramma Bold Extended for the IMAX logo.","textPreview":"Fonts In Use identifies Rockwell for the movie poster system and Microgramma Bold Extended for the IMAX logo.","textChars":109,"textLines":1,"bbox":[900,160,318,78]}
+{"kind":"textbox","id":"sh/cn6lcbi9","slide":10,"text":"The Grid references","textPreview":"The Grid references","textChars":19,"textLines":1,"bbox":[900,250,300,30]}
+{"kind":"textbox","id":"sh/7qdk7mhk","slide":10,"text":"Modern grotesk territory: Helvetica, Neue Haas, Work Sans, and similar neutral families. Exact font not confirmed from the image alone.","textPreview":"Modern grotesk territory: Helvetica, Neue Haas, Work Sans, and similar neutral families. Exact font not confirmed from the image alone.","textChars":135,"textLines":1,"bbox":[900,284,318,78]}
+{"kind":"textbox","id":"sh/6pk3yh0z","slide":10,"text":"Play Beyond Limits","textPreview":"Play Beyond Limits","textChars":18,"textLines":1,"bbox":[900,374,300,30]}
+{"kind":"textbox","id":"sh/0z2xs3ap","slide":10,"text":"Extended techno-sport territory: Eurostile, Microgramma, Syncopate, Orbitron, and related square sans families.","textPreview":"Extended techno-sport territory: Eurostile, Microgramma, Syncopate, Orbitron, and related square sans families.","textChars":111,"textLines":1,"bbox":[900,408,318,78]}
+{"kind":"textbox","id":"sh/1kbe1ora","slide":10,"text":"Bend product mockup","textPreview":"Bend product mockup","textChars":19,"textLines":1,"bbox":[900,498,300,30]}
+{"kind":"textbox","id":"sh/ex0vqtsz","slide":10,"text":"Closest production direction is a heavy condensed or compact grotesk, then customized into a wordmark.","textPreview":"Closest production direction is a heavy condensed or compact grotesk, then customized into a wordmark.","textChars":102,"textLines":1,"bbox":[900,532,318,78]}
+{"kind":"textbox","id":"sh/zytwzy9k","slide":10,"text":"Font matches are a mix of cited identifications and visual similarity. Exact commercial use requires licensing checks.","textPreview":"Font matches are a mix of cited identifications and visual similarity. Exact commercial use requires licensing checks.","textChars":118,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/o7258fet","slide":10,"name":"","geometry":"rect","alt":"image 3315.png","bbox":[64,126,250,380]}
+{"kind":"image","id":"im/p8v61kfe","slide":10,"name":"","geometry":"rect","alt":"image 3313.png","bbox":[334,126,250,380]}
+{"kind":"image","id":"im/e1kn25wr","slide":10,"name":"","geometry":"rect","alt":"image 3323.png","bbox":[604,126,250,380]}
+{"kind":"notes","id":"nt/y49i12","slide":10,"text":"Font research sources:\nCommercial Type Druk: https://commercialtype.com/catalog/druk\nPangram Pangram Monument: https://pangrampangram.com/products/monument\nGoogle Fonts Syncopate: https://fonts.google.com/specimen/Syncopate\nGoogle Fonts Tourney: https://fonts.google.com/specimen/Tourney\nGoogle Fonts Orbitron: https://fonts.google.com/specimen/Orbitron\nGoogle Fonts Gabarito: https://fonts.google.com/specimen/Gabarito\nGoogle Fonts Work Sans: https://fonts.google.com/specimen/Work+Sans\nGoogle Fonts Michroma: https://fonts.google.com/specimen/Michroma\nFonts In Use Challengers: https://fontsinuse.com/uses/60511/challengers-movie-posters-and-collateral\nFonts In Use tennis tag: https://fontsinuse.com/tags/7387/tennis\nMake Type Work Fonts for Tennis: https://maketypework.com/fonts-for-tennis/\nMyFonts Rockwell: https://www.myfonts.com/collections/rockwell-font-monotype-imaging\nTypographica Eurostile Next review: https://typographica.org/typeface-reviews/eurostile-next/\nMyFonts Eurostile Next purchase context: https://www.myfonts.com/pages/linotype-eurostile-next/\nLocal reference images used for visual comparison."}
+{"kind":"slide","id":"sl/253e01","slide":11,"title":"Paid font candidates","textShapes":10}
+{"kind":"textbox","id":"sh/4z61gzat","slide":11,"text":"Paid font candidates","textPreview":"Paid font candidates","textChars":20,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/jyx07ut8","slide":11,"text":"These are purchase candidates for final logo development and campaign typography. Screenshots are included for evaluation, not as licensed font use.","textPreview":"These are purchase candidates for final logo development and campaign typography. Screenshots are included for evaluation, not as license...","textChars":148,"textLines":1,"bbox":[64,112,990,44]}
+{"kind":"textbox","id":"sh/t4f2doba","slide":11,"text":"Druk","textPreview":"Druk","textChars":4,"textLines":1,"bbox":[64,348,240,28]}
+{"kind":"textbox","id":"sh/s361kjap","slide":11,"text":"Core condensed power for product wordmark","textPreview":"Core condensed power for product wordmark","textChars":41,"textLines":1,"bbox":[64,378,500,30]}
+{"kind":"textbox","id":"sh/61oji9sj","slide":11,"text":"Monument","textPreview":"Monument","textChars":8,"textLines":1,"bbox":[654,348,240,28]}
+{"kind":"textbox","id":"sh/98vi1kb6","slide":11,"text":"Wide display family for Court Pulse","textPreview":"Wide display family for Court Pulse","textChars":35,"textLines":1,"bbox":[654,378,500,30]}
+{"kind":"textbox","id":"sh/25w7e1sv","slide":11,"text":"Eurostile Next","textPreview":"Eurostile Next","textChars":14,"textLines":1,"bbox":[64,586,240,28]}
+{"kind":"textbox","id":"sh/3658n69g","slide":11,"text":"Square sport-tech logic for Night Match","textPreview":"Square sport-tech logic for Night Match","textChars":39,"textLines":1,"bbox":[64,616,500,30]}
+{"kind":"textbox","id":"sh/psnqpgrm","slide":11,"text":"Rockwell","textPreview":"Rockwell","textChars":8,"textLines":1,"bbox":[654,586,240,28]}
+{"kind":"textbox","id":"sh/qtwrilsr","slide":11,"text":"Reference-context serif, useful only as accent","textPreview":"Reference-context serif, useful only as accent","textChars":46,"textLines":1,"bbox":[654,616,500,30]}
+{"kind":"image","id":"im/bi5grexs","slide":11,"name":"","geometry":"rect","alt":"bend_proposal_assets/font_screens/druk.png","bbox":[64,174,530,164]}
+{"kind":"image","id":"im/2tcfe9gb","slide":11,"name":"","geometry":"rect","alt":"bend_proposal_assets/font_screens/monument.png","bbox":[654,174,530,164]}
+{"kind":"image","id":"im/1s3el4zq","slide":11,"name":"","geometry":"rect","alt":"bend_proposal_assets/font_screens/eurostile_typographica.png","bbox":[64,412,530,164]}
+{"kind":"image","id":"im/betsb2ls","slide":11,"name":"","geometry":"rect","alt":"bend_proposal_assets/font_screens/challengers_fontsinuse.png","bbox":[654,412,530,164]}
+{"kind":"notes","id":"nt/253e01","slide":11,"text":"Font research sources:\nCommercial Type Druk: https://commercialtype.com/catalog/druk\nPangram Pangram Monument: https://pangrampangram.com/products/monument\nGoogle Fonts Syncopate: https://fonts.google.com/specimen/Syncopate\nGoogle Fonts Tourney: https://fonts.google.com/specimen/Tourney\nGoogle Fonts Orbitron: https://fonts.google.com/specimen/Orbitron\nGoogle Fonts Gabarito: https://fonts.google.com/specimen/Gabarito\nGoogle Fonts Work Sans: https://fonts.google.com/specimen/Work+Sans\nGoogle Fonts Michroma: https://fonts.google.com/specimen/Michroma\nFonts In Use Challengers: https://fontsinuse.com/uses/60511/challengers-movie-posters-and-collateral\nFonts In Use tennis tag: https://fontsinuse.com/tags/7387/tennis\nMake Type Work Fonts for Tennis: https://maketypework.com/fonts-for-tennis/\nMyFonts Rockwell: https://www.myfonts.com/collections/rockwell-font-monotype-imaging\nTypographica Eurostile Next review: https://typographica.org/typeface-reviews/eurostile-next/\nMyFonts Eurostile Next purchase context: https://www.myfonts.com/pages/linotype-eurostile-next/"}
+{"kind":"slide","id":"sl/7g748x","slide":12,"title":"Open test fonts","textShapes":11}
+{"kind":"textbox","id":"sh/xcjal8z2","slide":12,"text":"Open test fonts","textPreview":"Open test fonts","textChars":15,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/apsrqd0r","slide":12,"text":"Use these free/open candidates for prototyping and motion studies while the paid logo typeface is chosen.","textPreview":"Use these free/open candidates for prototyping and motion studies while the paid logo typeface is chosen.","textChars":105,"textLines":1,"bbox":[64,112,1000,36]}
+{"kind":"textbox","id":"sh/kfa9wnit","slide":12,"text":"Court Pulse","textPreview":"Court Pulse","textChars":11,"textLines":1,"bbox":[840,176,300,32]}
+{"kind":"textbox","id":"sh/5gjapsze","slide":12,"text":"Syncopate first, Michroma as a Eurostile-adjacent test","textPreview":"Syncopate first, Michroma as a Eurostile-adjacent test","textChars":54,"textLines":1,"bbox":[840,212,340,44]}
+{"kind":"textbox","id":"sh/idsrud0n","slide":12,"text":"Night Match","textPreview":"Night Match","textChars":11,"textLines":1,"bbox":[840,272,300,32]}
+{"kind":"textbox","id":"sh/je1snih8","slide":12,"text":"Orbitron for angular speed, Tourney for stencil moments","textPreview":"Orbitron for angular speed, Tourney for stencil moments","textChars":55,"textLines":1,"bbox":[840,308,340,44]}
+{"kind":"textbox","id":"sh/0jq9k3ip","slide":12,"text":"Air Bounce","textPreview":"Air Bounce","textChars":10,"textLines":1,"bbox":[840,368,300,32]}
+{"kind":"textbox","id":"sh/lkzqdoju","slide":12,"text":"Gabarito for flavor-led softness","textPreview":"Gabarito for flavor-led softness","textChars":32,"textLines":1,"bbox":[840,404,340,44]}
+{"kind":"textbox","id":"sh/t072hwbu","slide":12,"text":"System copy","textPreview":"System copy","textChars":11,"textLines":1,"bbox":[840,464,300,32]}
+{"kind":"textbox","id":"sh/8zylora9","slide":12,"text":"Work Sans as a reference-adjacent neutral grotesk","textPreview":"Work Sans as a reference-adjacent neutral grotesk","textChars":49,"textLines":1,"bbox":[840,500,340,44]}
+{"kind":"textbox","id":"sh/7ypkfmto","slide":12,"text":"These fonts are for prototypes. Final Bend wordmark should become custom outlines.","textPreview":"These fonts are for prototypes. Final Bend wordmark should become custom outlines.","textChars":82,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/atcfux8n","slide":12,"name":"","geometry":"rect","alt":"bend_proposal_assets/font_specimens.png","bbox":[64,164,728,420]}
+{"kind":"notes","id":"nt/7g748x","slide":12,"text":"Font research sources:\nCommercial Type Druk: https://commercialtype.com/catalog/druk\nPangram Pangram Monument: https://pangrampangram.com/products/monument\nGoogle Fonts Syncopate: https://fonts.google.com/specimen/Syncopate\nGoogle Fonts Tourney: https://fonts.google.com/specimen/Tourney\nGoogle Fonts Orbitron: https://fonts.google.com/specimen/Orbitron\nGoogle Fonts Gabarito: https://fonts.google.com/specimen/Gabarito\nGoogle Fonts Work Sans: https://fonts.google.com/specimen/Work+Sans\nGoogle Fonts Michroma: https://fonts.google.com/specimen/Michroma\nFonts In Use Challengers: https://fontsinuse.com/uses/60511/challengers-movie-posters-and-collateral\nFonts In Use tennis tag: https://fontsinuse.com/tags/7387/tennis\nMake Type Work Fonts for Tennis: https://maketypework.com/fonts-for-tennis/\nMyFonts Rockwell: https://www.myfonts.com/collections/rockwell-font-monotype-imaging\nTypographica Eurostile Next review: https://typographica.org/typeface-reviews/eurostile-next/\nMyFonts Eurostile Next purchase context: https://www.myfonts.com/pages/linotype-eurostile-next/\nOpen font specimen board rendered locally using Google Fonts CSS."}
+{"kind":"slide","id":"sl/l2mipl","slide":13,"title":"Color system","textShapes":16}
+{"kind":"textbox","id":"sh/2p0bm9cf","slide":13,"text":"Color system","textPreview":"Color system","textChars":12,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/pcbahobq","slide":13,"text":"Three selected routes can share one core palette while each keeps a clear product role.","textPreview":"Three selected routes can share one core palette while each keeps a clear product role.","textChars":87,"textLines":1,"bbox":[64,112,820,38]}
+{"kind":"textbox","id":"sh/4bitojul","slide":13,"text":"02 Court Pulse","textPreview":"02 Court Pulse","textChars":14,"textLines":1,"bbox":[64,174,320,34]}
+{"kind":"shape","id":"sh/retsjytw","slide":13,"bbox":[64,222,168,110]}
+{"kind":"textbox","id":"sh/qdkbqtcb","slide":13,"text":"Deep Blue\n#061847","textPreview":"Deep Blue | #061847","textChars":17,"textLines":2,"bbox":[76,282,144,44]}
+{"kind":"shape","id":"sh/dgbalob2","slide":13,"bbox":[244,222,168,110]}
+{"kind":"textbox","id":"sh/cf2ts3uh","slide":13,"text":"Court Blue\n#168FD8","textPreview":"Court Blue | #168FD8","textChars":18,"textLines":2,"bbox":[256,282,144,44]}
+{"kind":"shape","id":"sh/7ips7uds","slide":13,"bbox":[424,222,168,110]}
+{"kind":"textbox","id":"sh/6hgrepc7","slide":13,"text":"Ball Acid\n#C8FF22","textPreview":"Ball Acid | #C8FF22","textChars":17,"textLines":2,"bbox":[436,282,144,44]}
+{"kind":"textbox","id":"sh/srih4fet","slide":13,"text":"04 Night Match","textPreview":"04 Night Match","textChars":14,"textLines":1,"bbox":[64,376,320,34]}
+{"kind":"shape","id":"sh/tsryxkfe","slide":13,"bbox":[64,424,168,110]}
+{"kind":"textbox","id":"sh/6p0z25wn","slide":13,"text":"Black Court\n#050505","textPreview":"Black Court | #050505","textChars":19,"textLines":2,"bbox":[76,484,144,44]}
+{"kind":"shape","id":"sh/7q9gvax8","slide":13,"bbox":[244,424,168,110]}
+{"kind":"textbox","id":"sh/gv2h8ze5","slide":13,"text":"Night Navy\n#061847","textPreview":"Night Navy | #061847","textChars":18,"textLines":2,"bbox":[256,484,144,44]}
+{"kind":"shape","id":"sh/hwbi14fa","slide":13,"bbox":[424,424,168,110]}
+{"kind":"textbox","id":"sh/ut0z6pwz","slide":13,"text":"Chrome\n#B9BAB3","textPreview":"Chrome | #B9BAB3","textChars":14,"textLines":2,"bbox":[436,484,144,44]}
+{"kind":"textbox","id":"sh/futgzuxk","slide":13,"text":"05 Air Bounce","textPreview":"05 Air Bounce","textChars":13,"textLines":1,"bbox":[704,174,320,34]}
+{"kind":"shape","id":"sh/wzyhwvel","slide":13,"bbox":[704,222,168,110]}
+{"kind":"textbox","id":"sh/x07yp0f6","slide":13,"text":"Sky Foam\n#DFF6FF","textPreview":"Sky Foam | #DFF6FF","textChars":16,"textLines":2,"bbox":[716,282,144,44]}
+{"kind":"shape","id":"sh/xgzetw7u","slide":13,"bbox":[884,222,168,110]}
+{"kind":"textbox","id":"sh/cvqx0rqp","slide":13,"text":"Peach\n#F6A178","textPreview":"Peach | #F6A178","textChars":13,"textLines":2,"bbox":[896,282,144,44]}
+{"kind":"shape","id":"sh/buhwrmp4","slide":13,"bbox":[1064,222,168,110]}
+{"kind":"textbox","id":"sh/at8fyh8j","slide":13,"text":"Lavender\n#BBA7FF","textPreview":"Lavender | #BBA7FF","textChars":16,"textLines":2,"bbox":[1076,282,144,44]}
+{"kind":"textbox","id":"sh/lkjexw76","slide":13,"text":"Usage rules","textPreview":"Usage rules","textChars":11,"textLines":1,"bbox":[704,386,320,34]}
+{"kind":"textbox","id":"sh/kjax4rql","slide":13,"text":"Court Pulse: blue first, acid second.\nNight Match: black and navy first, acid as the hit.\nAir Bounce: white/sky first, flavor colors only on selected letters or packs.","textPreview":"Court Pulse: blue first, acid second. | Night Match: black and navy first, acid as the hit. | Air Bounce: white/sky first, flavor colors ...","textChars":167,"textLines":3,"bbox":[704,432,430,116]}
+{"kind":"notes","id":"nt/l2mipl","slide":13,"text":"Color directions derived from local reference image palette extraction and user-selected routes 02, 04, and 05."}
+{"kind":"slide","id":"sl/az6rzb","slide":14,"title":"Graphic system","textShapes":14}
+{"kind":"textbox","id":"sh/natk3m58","slide":14,"text":"Graphic system","textPreview":"Graphic system","textChars":14,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"shape","id":"sh/pcb25wne","slide":14,"bbox":[700,44,520,520]}
+{"kind":"textbox","id":"sh/adkjy14z","slide":14,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[64,148,52,28]}
+{"kind":"textbox","id":"sh/betk765k","slide":14,"text":"Court geometry","textPreview":"Court geometry","textChars":14,"textLines":1,"bbox":[124,144,360,34]}
+{"kind":"textbox","id":"sh/cf210bm5","slide":14,"text":"Use lines as structure: dividers, score cells, ingredient grids, and motion paths.","textPreview":"Use lines as structure: dividers, score cells, ingredient grids, and motion paths.","textChars":82,"textLines":1,"bbox":[124,182,520,52]}
+{"kind":"textbox","id":"sh/xgv29wnq","slide":14,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[64,260,52,28]}
+{"kind":"textbox","id":"sh/y14j214v","slide":14,"text":"Felt and chrome","textPreview":"Felt and chrome","textChars":15,"textLines":1,"bbox":[124,256,360,34]}
+{"kind":"textbox","id":"sh/z2dkb65g","slide":14,"text":"Pair soft ball texture with hard bottle materials for product credibility.","textPreview":"Pair soft ball texture with hard bottle materials for product credibility.","textChars":74,"textLines":1,"bbox":[124,294,520,52]}
+{"kind":"textbox","id":"sh/bed8f2p8","slide":14,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[64,372,52,28]}
+{"kind":"textbox","id":"sh/ad476x83","slide":14,"text":"Letter motion","textPreview":"Letter motion","textChars":13,"textLines":1,"bbox":[124,368,360,34]}
+{"kind":"textbox","id":"sh/xgvqhs7e","slide":14,"text":"Animate or vary the wordmark baseline, width, skew, and echo by product line.","textPreview":"Animate or vary the wordmark baseline, width, skew, and echo by product line.","textChars":77,"textLines":1,"bbox":[124,406,520,52]}
+{"kind":"textbox","id":"sh/cfmp87qt","slide":14,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[64,484,52,28]}
+{"kind":"textbox","id":"sh/nat8bipc","slide":14,"text":"Micro formula labels","textPreview":"Micro formula labels","textChars":20,"textLines":1,"bbox":[124,480,360,34]}
+{"kind":"textbox","id":"sh/29k72d8r","slide":14,"text":"Use compact ingredient labels as a contrast to large emotional typography.","textPreview":"Use compact ingredient labels as a contrast to large emotional typography.","textChars":74,"textLines":1,"bbox":[124,518,520,52]}
+{"kind":"textbox","id":"sh/pcvqds7i","slide":14,"text":"Avoid generic gym-supplement tropes. The product should feel like court-performance equipment.","textPreview":"Avoid generic gym-supplement tropes. The product should feel like court-performance equipment.","textChars":94,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/pkzypgvq","slide":14,"name":"","geometry":"rect","alt":"image 3308.png","bbox":[736,72,416,416]}
+{"kind":"notes","id":"nt/az6rzb","slide":14,"text":"Uses local user-supplied image 3308 as a motion and repetition reference."}
+{"kind":"slide","id":"sl/qh9jg7","slide":15,"title":"Web page examples","textShapes":3}
+{"kind":"textbox","id":"sh/qxkvat0b","slide":15,"text":"Web page examples","textPreview":"Web page examples","textChars":17,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/d0be58z2","slide":15,"text":"Three prototype page directions show how the logo and type system can flex across digital product surfaces.","textPreview":"Three prototype page directions show how the logo and type system can flex across digital product surfaces.","textChars":107,"textLines":1,"bbox":[64,112,940,38]}
+{"kind":"textbox","id":"sh/3a9czeh0","slide":15,"text":"Page examples use local reference photography and open-font prototypes.","textPreview":"Page examples use local reference photography and open-font prototypes.","textChars":71,"textLines":1,"bbox":[64,676,1080,22]}
+{"kind":"image","id":"im/dobyhg3m","slide":15,"name":"","geometry":"rect","alt":"bend_proposal_assets/web_mockups.png","bbox":[64,166,1152,450]}
+{"kind":"notes","id":"nt/qh9jg7","slide":15,"text":"Web mockup sheet generated locally using local reference images and open Google font prototypes."}
+{"kind":"slide","id":"sl/8833f1","slide":16,"title":"Development plan","textShapes":15}
+{"kind":"textbox","id":"sh/3yd03uh8","slide":16,"text":"Development plan","textPreview":"Development plan","textChars":16,"textLines":1,"bbox":[64,46,760,78]}
+{"kind":"textbox","id":"sh/4zmhcfit","slide":16,"text":"Recommended next step: develop a custom Bend wordmark from the Court Pulse master skeleton, then derive Night Match and Air Bounce alternates from the same drawing.","textPreview":"Recommended next step: develop a custom Bend wordmark from the Court Pulse master skeleton, then derive Night Match and Air Bounce altern...","textChars":164,"textLines":1,"bbox":[64,128,1020,80]}
+{"kind":"textbox","id":"sh/p0vi5kzy","slide":16,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[64,280,44,52]}
+{"kind":"textbox","id":"sh/utkz650b","slide":16,"text":"Choose font base","textPreview":"Choose font base","textChars":16,"textLines":1,"bbox":[64,352,238,38]}
+{"kind":"textbox","id":"sh/vudgzahw","slide":16,"text":"Shortlist Druk, Monument, Eurostile/Microgramma territory, and the open prototypes.","textPreview":"Shortlist Druk, Monument, Eurostile/Microgramma territory, and the open prototypes.","textChars":83,"textLines":1,"bbox":[64,402,235,108]}
+{"kind":"textbox","id":"sh/gvmh8fih","slide":16,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[358,280,44,52]}
+{"kind":"textbox","id":"sh/hwvy1kz2","slide":16,"text":"Draw custom BEND","textPreview":"Draw custom BEND","textChars":16,"textLines":1,"bbox":[358,352,238,38]}
+{"kind":"textbox","id":"sh/6pkz250f","slide":16,"text":"Model the baseline bend, counters, and D curve as owned vector lettering.","textPreview":"Model the baseline bend, counters, and D curve as owned vector lettering.","textChars":73,"textLines":1,"bbox":[358,402,235,108]}
+{"kind":"textbox","id":"sh/7qtgvah0","slide":16,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[652,280,44,52]}
+{"kind":"textbox","id":"sh/729kn6d0","slide":16,"text":"Test real assets","textPreview":"Test real assets","textChars":16,"textLines":1,"bbox":[652,352,238,38]}
+{"kind":"textbox","id":"sh/6103u1cf","slide":16,"text":"Apply the mark to bottle, sachet, web hero, social motion, stickers, and court signage.","textPreview":"Apply the mark to bottle, sachet, web hero, social motion, stickers, and court signage.","textChars":87,"textLines":1,"bbox":[652,402,235,108]}
+{"kind":"textbox","id":"sh/t4b2pgv6","slide":16,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[946,280,44,52]}
+{"kind":"textbox","id":"sh/s3ilwbul","slide":16,"text":"Lock guidelines","textPreview":"Lock guidelines","textChars":15,"textLines":1,"bbox":[946,352,238,38]}
+{"kind":"textbox","id":"sh/f6tkrqdc","slide":16,"text":"Finalize color ratios, typography rules, logo clearspace, export set, and licensing.","textPreview":"Finalize color ratios, typography rules, logo clearspace, export set, and licensing.","textChars":84,"textLines":1,"bbox":[946,402,235,108]}
+{"kind":"textbox","id":"sh/u5k3ylcr","slide":16,"text":"BEND","textPreview":"BEND","textChars":4,"textLines":1,"bbox":[826,566,350,80]}
+{"kind":"notes","id":"nt/8833f1","slide":16,"text":"Development plan based on user feedback and the revised brand proposal content."}

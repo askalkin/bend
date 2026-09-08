@@ -1,0 +1,23 @@
+{
+  "input": "/Users/alinaskalkina/Documents/ChatGPT/Bend/output/Bend_Brand_Identity_Proposal_v3.pptx",
+  "outputDir": "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3",
+  "slideCount": 16,
+  "paths": [
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-1.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-2.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-3.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-4.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-5.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-6.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-7.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-8.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-9.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-10.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-11.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-12.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-13.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-14.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-15.png",
+    "/Users/alinaskalkina/Documents/ChatGPT/Bend/.bend_presentation_build/rendered_final_v3/slide-16.png"
+  ]
+}

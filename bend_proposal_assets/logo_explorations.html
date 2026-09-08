@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bend Logo Explorations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Orbitron:wght@400..900&family=Syncopate:wght@400;700&family=Tourney:wdth,wght@75..125,100..900&family=Work+Sans:wght@900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #050505;
+      --paper: #f7f8f2;
+      --blue: #061847;
+      --court: #168fd8;
+      --sky: #82d3f4;
+      --ball: #c8ff22;
+      --peach: #f6a178;
+      --lavender: #bba7ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 1800px;
+      min-height: 1200px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Work Sans", sans-serif;
+    }
+
+    .sheet {
+      padding: 56px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .route {
+      height: 338px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(5, 5, 5, 0.13);
+      background: white;
+      padding: 24px;
+    }
+
+    .route.dark {
+      background: var(--blue);
+      color: white;
+    }
+
+    .route.lime {
+      background: var(--ball);
+    }
+
+    .route.air {
+      background: linear-gradient(135deg, #d8f6ff 0%, #fff 52%, #ffe1d2 100%);
+    }
+
+    .label {
+      position: absolute;
+      left: 24px;
+      top: 22px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .logo {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 102px;
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      font-size: 118px;
+      line-height: 0.82;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .logo span {
+      display: inline-block;
+      transform-origin: 50% 72%;
+    }
+
+    .caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      margin: 0;
+      max-width: 500px;
+      font-size: 20px;
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    .court-a .logo {
+      font-family: "Syncopate", sans-serif;
+      font-weight: 700;
+      color: var(--ball);
+    }
+
+    .court-a .b { transform: translateY(10px) rotate(-3deg); }
+    .court-a .e { transform: translateY(-18px) rotate(2deg); }
+    .court-a .n { transform: translateY(-2px) skewX(-8deg); }
+    .court-a .d { transform: translateY(20px) rotate(5deg); }
+
+    .court-b .logo {
+      top: 88px;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 900;
+      font-size: 150px;
+      color: var(--ink);
+    }
+
+    .court-b .logo::before {
+      content: "BEND";
+      position: absolute;
+      z-index: -1;
+      transform: translate(18px, 20px);
+      color: var(--court);
+    }
+
+    .court-c .logo {
+      font-family: "Syncopate", sans-serif;
+      font-weight: 700;
+      color: var(--blue);
+      gap: 20px;
+    }
+
+    .court-c .e,
+    .court-c .n {
+      transform: translateY(26px);
+    }
+
+    .night-a .logo {
+      font-family: "Orbitron", sans-serif;
+      font-weight: 900;
+      color: white;
+      text-shadow: 10px 0 0 var(--court), 20px 0 0 rgba(200, 255, 34, 0.7);
+      transform: skewX(-8deg);
+    }
+
+    .night-b .logo {
+      font-family: "Tourney", sans-serif;
+      font-weight: 900;
+      color: var(--ball);
+      transform: skewX(-10deg);
+      filter: drop-shadow(0 14px 0 rgba(22, 143, 216, 0.8));
+    }
+
+    .night-c .logo {
+      top: 84px;
+      justify-content: flex-start;
+      font-family: "Orbitron", sans-serif;
+      font-weight: 900;
+      font-size: 170px;
+      color: transparent;
+      -webkit-text-stroke: 6px white;
+      text-shadow: 0 0 0 white;
+    }
+
+    .night-c .b,
+    .night-c .d { transform: translateY(24px); }
+    .night-c .e,
+    .night-c .n { transform: translateY(-8px); }
+
+    .air-a .logo {
+      font-family: "Gabarito", sans-serif;
+      font-weight: 900;
+      font-size: 152px;
+      color: var(--ink);
+    }
+
+    .air-a .b { transform: rotate(-5deg) translateY(20px); }
+    .air-a .e { transform: rotate(4deg) translateY(-15px); color: var(--court); }
+    .air-a .n { transform: rotate(-2deg) translateY(7px); color: var(--peach); }
+    .air-a .d { transform: rotate(7deg) translateY(-10px); color: var(--lavender); }
+
+    .air-b .logo {
+      font-family: "Gabarito", sans-serif;
+      font-weight: 900;
+      font-size: 146px;
+      color: var(--blue);
+      letter-spacing: -5px;
+    }
+
+    .air-b .e {
+      color: var(--ball);
+      transform: scale(1.14) translateY(-8px);
+    }
+
+    .air-c .logo {
+      top: 88px;
+      font-family: "Gabarito", sans-serif;
+      font-weight: 900;
+      font-size: 144px;
+      color: var(--ink);
+      text-shadow: 0 20px 0 rgba(200, 255, 34, 0.6);
+    }
+
+    .air-c .b { transform: translateY(-10px); }
+    .air-c .e { transform: translateY(10px); }
+    .air-c .n { transform: translateY(26px); }
+    .air-c .d { transform: translateY(6px); }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="route dark court-a">
+      <p class="label">02 Court Pulse / kinetic baseline</p>
+      <h1 class="logo"><span class="b">B</span><span class="e">E</span><span class="n">N</span><span class="d">D</span></h1>
+      <p class="caption">Letters follow a rally arc, useful for digital motion and launch posters</p>
+    </section>
+    <section class="route court-b">
+      <p class="label">02 Court Pulse / echo mark</p>
+      <h1 class="logo"><span>BEND</span></h1>
+      <p class="caption">Shadow repeat creates court speed without adding a separate symbol</p>
+    </section>
+    <section class="route lime court-c">
+      <p class="label">02 Court Pulse / split lockup</p>
+      <h1 class="logo"><span>B</span><span class="e">E</span><span class="n">N</span><span>D</span></h1>
+      <p class="caption">A bend in the center makes BE / ND packaging and merch variants readable</p>
+    </section>
+
+    <section class="route dark night-a">
+      <p class="label">04 Night Match / velocity skew</p>
+      <h1 class="logo"><span>BEND</span></h1>
+      <p class="caption">Aggressive italic pressure for pre-match and focus products</p>
+    </section>
+    <section class="route dark night-b">
+      <p class="label">04 Night Match / cut stencil</p>
+      <h1 class="logo"><span>BEND</span></h1>
+      <p class="caption">Technical, high-contrast version for black packs and apparel</p>
+    </section>
+    <section class="route dark night-c">
+      <p class="label">04 Night Match / outline motion</p>
+      <h1 class="logo"><span class="b">B</span><span class="e">E</span><span class="n">N</span><span class="d">D</span></h1>
+      <p class="caption">Large environmental mark that can stretch across walls, courts, and event banners</p>
+    </section>
+
+    <section class="route air air-a">
+      <p class="label">05 Air Bounce / elastic letters</p>
+      <h1 class="logo"><span class="b">B</span><span class="e">E</span><span class="n">N</span><span class="d">D</span></h1>
+      <p class="caption">Flavor-led personality for chews and hydration sticks</p>
+    </section>
+    <section class="route air air-b">
+      <p class="label">05 Air Bounce / soft center</p>
+      <h1 class="logo"><span>B</span><span class="e">E</span><span>N</span><span>D</span></h1>
+      <p class="caption">The E becomes the bounce point for product flavor coding</p>
+    </section>
+    <section class="route air air-c">
+      <p class="label">05 Air Bounce / baseline wave</p>
+      <h1 class="logo"><span class="b">B</span><span class="e">E</span><span class="n">N</span><span class="d">D</span></h1>
+      <p class="caption">Best route for stickers, animated social, and soft goods</p>
+    </section>
+  </main>
+</body>
+</html>
