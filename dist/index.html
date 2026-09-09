@@ -50,6 +50,7 @@
       type="image/webp"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="revision.css" />
     <script type="importmap">
       { "imports": { "three": "./assets/vendor/three.module.min.js" } }
     </script>
@@ -97,7 +98,7 @@
     </header>
 
     <main id="main">
-      <section class="sky-hero" data-sky-hero aria-label="BEND match world">
+      <section class="sky-hero" data-sky-hero aria-labelledby="heroTitle">
         <div class="sky-hero-sticky" data-sky-frame>
           <img
             class="hero-still"
@@ -111,6 +112,12 @@
             >A still image establishes the bright, airborne visual world of BEND.</span
           >
           <div class="sky-wash" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <p>Padel + tennis match nutrition</p>
+            <h1 id="heroTitle"><span>Three match moments.</span><span>One complete routine.</span></h1>
+            <p>PREP before play, RALLY during and RESET after, packed together for ten match days.</p>
+            <a href="#routine">Explore the Match Stack</a>
+          </div>
           <p class="hero-cue">
             <span>Movement / clarity / drive / care</span
             ><b>Scroll to follow the ball</b>
@@ -128,21 +135,21 @@
           <div class="story-media" aria-label="The three moments of the BEND match routine">
             <figure class="story-media__scene story-media__prep">
               <img
-                src="assets/generated/bend-shop-lineup-web.webp"
-                width="1536"
-                height="1024"
-                alt="The complete BEND Match Stack arranged for preparation at home"
+                src="assets/generated/bend-prep-home-v2.webp"
+                width="1672"
+                height="941"
+                alt="A clear BEND bottle and PREP tube being packed into a blue padel bag"
               />
-              <figcaption><span>01 / Home preparation</span><b>Pack the full routine</b></figcaption>
+              <figcaption><span>Before play</span><b>Pack the calm cue</b></figcaption>
             </figure>
             <figure class="story-media__scene story-media__rally">
               <img
-                src="assets/generated/bend-court-grid-motion-web.webp"
+                src="assets/generated/bend-court-grid-motion-clean-v1.webp"
                 width="1536"
                 height="1024"
                 alt="Padel players and a ball path across a vivid blue court"
               />
-              <figcaption><span>02 / On court</span><b>Keep pace through play</b></figcaption>
+              <figcaption><span>During play</span><b>Keep pace through play</b></figcaption>
             </figure>
             <figure class="story-media__scene story-media__reset">
               <img
@@ -151,114 +158,107 @@
                 height="941"
                 alt="A padel racket captured in controlled motion blur"
               />
-              <figcaption><span>03 / After play</span><b>Close the match</b></figcaption>
+              <figcaption><span>After play</span><b>Close the match</b></figcaption>
             </figure>
           </div>
           <canvas
             id="ballCanvas"
             role="img"
-            aria-label="A fluffy tennis ball becomes a smooth supplement dose and enters a steel BEND vessel"
+            aria-label="A tennis ball becomes a smooth supplement dose and enters a clear BEND bottle"
           ></canvas>
           <div class="css-ball-fallback" aria-hidden="true"><i></i></div>
           <div class="transform-grid" aria-hidden="true"></div>
           <header class="transform-copy" data-transform-copy>
-            <p class="eyebrow">From court ball to match routine</p>
-            <h1 class="display-title" id="transformTitle">
-              <span>The court ball.</span><span>Now the dose.</span>
-            </h1>
+            <h2 class="display-title" id="transformTitle">
+              <span>From court ball</span><span>to match routine.</span>
+            </h2>
             <p>
-              Three distinct formats make the routine easy to follow: one before
-              play, one during, and one after.
+              One measured system keeps focus, hydration and recovery organised
+              around the moments you already have: warm-up, changeovers and the
+              walk off court. Ten match days arrive ready, so every dose is clear
+              when play gets busy.
             </p>
           </header>
           <div class="vessel-stage" aria-hidden="true">
             <div class="pill-rain" data-pill-rain>
-              <i style="--pill-x:-54px"></i><i style="--pill-x:28px"></i>
-              <i style="--pill-x:-18px"></i><i style="--pill-x:52px"></i>
-              <i style="--pill-x:8px"></i><i style="--pill-x:-36px"></i>
-              <i style="--pill-x:40px"></i><i style="--pill-x:-6px"></i>
-              <i style="--pill-x:-48px"></i><i style="--pill-x:24px"></i>
-              <i style="--pill-x:52px"></i><i style="--pill-x:-24px"></i>
-              <i style="--pill-x:4px"></i><i style="--pill-x:34px"></i>
+              <i style="--pill-x:-32px;--rest-x:-48px;--rest-y:-8px"></i><i style="--pill-x:24px;--rest-x:38px;--rest-y:-8px"></i>
+              <i style="--pill-x:-14px;--rest-x:-16px;--rest-y:-34px"></i><i style="--pill-x:38px;--rest-x:56px;--rest-y:-36px"></i>
+              <i style="--pill-x:6px;--rest-x:12px;--rest-y:-63px"></i><i style="--pill-x:-26px;--rest-x:-58px;--rest-y:-66px"></i>
+              <i style="--pill-x:32px;--rest-x:42px;--rest-y:-93px"></i><i style="--pill-x:-5px;--rest-x:-8px;--rest-y:-98px"></i>
+              <i style="--pill-x:-36px;--rest-x:-38px;--rest-y:-124px"></i><i style="--pill-x:18px;--rest-x:22px;--rest-y:-130px"></i>
+              <i style="--pill-x:36px;--rest-x:54px;--rest-y:-154px"></i><i style="--pill-x:-18px;--rest-x:-22px;--rest-y:-160px"></i>
+              <i style="--pill-x:2px;--rest-x:7px;--rest-y:-184px"></i><i style="--pill-x:26px;--rest-x:36px;--rest-y:-190px"></i>
             </div>
             <img
               class="vessel-cutout"
-              src="assets/generated/bend-vessel-cutout.png"
-              width="1120"
-              height="1400"
+              src="assets/generated/bend-glass-bottle-v1.webp"
+              width="1122"
+              height="1402"
               alt=""
             />
           </div>
 
           <div class="story-cards" data-story-cards>
             <article class="story-card story-card--prep" data-story-card="prep">
-              <header class="story-card__header">
-                <b>01</b><span><small>Before play</small><strong>PREP</strong></span>
-                <i class="story-dose story-dose--prep" aria-hidden="true"></i>
-              </header>
-              <div class="story-card__body"><div>
-                <h3>Arrive ready.</h3>
-                <p>A caffeine-free chew that gives your pre-match routine a clear starting point before warm-up.</p>
+              <button class="story-card__trigger" type="button" data-story-jump="prep" aria-expanded="true" aria-controls="storyPrepBody">
+                <span class="story-card__media"><i class="story-dose story-dose--prep" aria-hidden="true"></i></span>
+                <strong>Before play</strong><span class="story-card__arrow" aria-hidden="true">&#8594;</span>
+              </button>
+              <div class="story-card__body" id="storyPrepBody"><div>
+                <p>A caffeine-free chew for a calm, consistent start before warm-up.</p>
                 <ul class="ingredient-list" aria-label="PREP ingredients">
                   <li>L-theanine</li><li>Magnesium</li><li>B vitamins</li>
                 </ul>
-                <p class="story-value">A calm cue, without caffeine.</p>
+                <p class="story-value">Readiness without the buzz.</p>
                 <dl class="story-meta">
-                  <div><dt>Format</dt><dd>01 / 10 mm white court chew</dd></div>
-                  <div><dt>How to use</dt><dd>Chew one serving as directed.</dd></div>
+                  <div><dt>Format</dt><dd>10 mm white court chew</dd></div>
+                  <div><dt>How to use</dt><dd>Take as directed before play.</dd></div>
                   <div><dt>Timing</dt><dd><b>-30</b> minutes before warm-up</dd></div>
-                  <div><dt>Match cue</dt><dd>Ready to play</dd></div>
+                  <div><dt>Routine signal</dt><dd>Ready</dd></div>
                 </dl>
               </div></div>
             </article>
 
             <article class="story-card story-card--rally" data-story-card="rally">
-              <header class="story-card__header">
-                <b>02</b><span><small>During play</small><strong>RALLY</strong></span>
-                <i class="story-dose story-dose--rally" aria-hidden="true"></i>
-              </header>
-              <div class="story-card__body"><div>
-                <h3>Keep your bottle in play.</h3>
-                <p>A dissolvable electrolyte ball for your court bottle, made to be sipped between games.</p>
+              <button class="story-card__trigger" type="button" data-story-jump="rally" aria-expanded="false" aria-controls="storyRallyBody">
+                <span class="story-card__media"><i class="story-dose story-dose--rally" aria-hidden="true"></i></span>
+                <strong>During play</strong><span class="story-card__arrow" aria-hidden="true">&#8594;</span>
+              </button>
+              <div class="story-card__body" id="storyRallyBody" aria-hidden="true"><div>
+                <p>A dissolvable electrolyte ball made for your bottle between games.</p>
                 <ul class="ingredient-list" aria-label="RALLY properties">
                   <li>Electrolytes</li><li>Dissolvable</li><li>Caffeine-free</li>
                 </ul>
                 <p class="story-value">Hydration built into the changeover.</p>
                 <dl class="story-meta">
-                  <div><dt>Format</dt><dd>02 / 20 mm court ball</dd></div>
-                  <div><dt>How to use</dt><dd>Dissolve one serving as directed.</dd></div>
+                  <div><dt>Format</dt><dd>20 mm court-yellow hydration ball</dd></div>
+                  <div><dt>How to use</dt><dd>Dissolve in water as directed.</dd></div>
                   <div><dt>Timing</dt><dd>Sip during play</dd></div>
-                  <div><dt>Match cue</dt><dd><b>04</b> changeovers</dd></div>
+                  <div><dt>Routine signal</dt><dd>Stay in play</dd></div>
                 </dl>
               </div></div>
             </article>
 
             <article class="story-card story-card--reset" data-story-card="reset">
-              <header class="story-card__header">
-                <b>03</b><span><small>After play</small><strong>RESET</strong></span>
-                <i class="story-dose story-dose--reset" aria-hidden="true"><b></b><b></b><b></b></i>
-              </header>
-              <div class="story-card__body"><div>
-                <h3>Finish with the routine.</h3>
+              <button class="story-card__trigger" type="button" data-story-jump="reset" aria-expanded="false" aria-controls="storyResetBody">
+                <span class="story-card__media"><i class="story-dose story-dose--reset" aria-hidden="true"><b></b><b></b><b></b></i></span>
+                <strong>After play</strong><span class="story-card__arrow" aria-hidden="true">&#8594;</span>
+              </button>
+              <div class="story-card__body" id="storyResetBody" aria-hidden="true"><div>
                 <p>A soft fruit gummy for the first part of your post-match routine.</p>
                 <ul class="ingredient-list" aria-label="RESET ingredients">
                   <li>Amino acids</li><li>Tart cherry</li><li>Vitamin C + magnesium</li>
                 </ul>
                 <p class="story-value">One simple cue before you leave court.</p>
                 <dl class="story-meta">
-                  <div><dt>Format</dt><dd>03 / 30 mm soft fruit gummy</dd></div>
-                  <div><dt>How to use</dt><dd>Take one serving as directed.</dd></div>
+                  <div><dt>Format</dt><dd>30 mm soft recovery gummy</dd></div>
+                  <div><dt>How to use</dt><dd>Take as directed after play.</dd></div>
                   <div><dt>Timing</dt><dd><b>+30</b> minutes after play</dd></div>
-                  <div><dt>Match cue</dt><dd>Match complete</dd></div>
+                  <div><dt>Routine signal</dt><dd>Match complete</dd></div>
                 </dl>
               </div></div>
             </article>
           </div>
-
-          <p class="transform-status">
-            <span data-stage-number>01</span
-            ><b data-stage-label>Felt / court</b>
-          </p>
         </div>
       </section>
 
@@ -267,32 +267,31 @@
         id="formula"
         aria-labelledby="boxTitle"
       >
-        <div class="box-copy reveal">
-          <p class="eyebrow">Your first Match Stack</p>
-          <h2 id="boxTitle"><span>10 match days.</span><span>One complete kit.</span></h2>
-          <p>Everything for your before, during, and after routine arrives together and ready for court.</p>
+        <figure class="package-media reveal">
+          <img src="assets/generated/bend-first-box-v1.webp" width="1536" height="1024" alt="The complete BEND first-order box with a clear bottle, three refill tubes, and three supplement formats" />
+        </figure>
+        <div class="package-copy reveal">
+          <h2 id="boxTitle">Refill the routine.</h2>
+          <p>Your first Match Stack brings the complete system together for 10 match days. Keep the bottle and tubes; future orders replace only the supplements you use.</p>
+          <div class="package-items" role="list" aria-label="Inside the Match Stack">
+            <span role="listitem"><b>01</b> clear BEND court bottle</span>
+            <span role="listitem"><b>03</b> labelled refill tubes</span>
+            <span role="listitem"><b>30</b> single doses across three stages</span>
+          </div>
+          <p class="package-care"><b>Care</b> Rinse after each use. Hand-wash and leave the bottle open to air-dry.</p>
+          <div class="buy-panel" id="shop" data-spotlight>
+            <header><span>Match Stack / 10 match days</span><b>EUR 79</b></header>
+            <label class="refill-toggle"><input id="refillPlan" type="checkbox" /><span></span><b>Estimate my next refill from logged matches</b></label>
+            <p id="refillSummary">One starter kit only. No recurring deliveries or charges.</p>
+            <div class="purchase-row">
+              <div class="quantity">
+                <button type="button" data-quantity-minus aria-label="Decrease quantity">&#8722;</button><output id="quantityValue">1</output><button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
+              </div>
+              <button id="addToCart" type="button">Buy the Match Stack / <span id="cartPrice">EUR 79</span></button>
+            </div>
+            <small>Final formula, directions, and claims are subject to formulation and regulatory review.</small>
+          </div>
         </div>
-        <div
-          class="box-ledger reveal"
-          role="list"
-          aria-label="Starter kit contents"
-        >
-          <div role="listitem">
-            <b>01</b><span>Stainless-steel<br />court vessel</span>
-          </div>
-          <div role="listitem">
-            <b>03</b><span>Clearly marked<br />refill tubes</span>
-          </div>
-          <div role="listitem">
-            <b>30</b><span>Single doses<br />across 3 stages</span>
-          </div>
-        </div>
-        <article class="box-care reveal">
-          <p class="eyebrow">Keep the hardware</p>
-          <h3>Refill the routine.</h3>
-          <p>The vessel and labelled tubes arrive with your first kit. Future orders replace only the supplements you use.</p>
-          <div><span>Care</span><p>Rinse after use, hand-wash, and leave the vessel open to air-dry before packing.</p></div>
-        </article>
       </section>
 
       <section
@@ -301,17 +300,19 @@
         aria-labelledby="rhythmTitle"
       >
         <div class="rhythm-copy reveal">
-          <p class="eyebrow">BEND Rhythm / companion app</p>
-          <h2 id="rhythmTitle">Your week has a rhythm.</h2>
+          <p class="eyebrow">BEND Rhythm / phone app</p>
+          <h2 id="rhythmTitle">Your routine, on your phone.</h2>
           <p>
-            Plan sessions, mark each match moment, and see what remains. A
-            refill is prepared for review when your supply is running low.
+            Plan training and match days, mark each supplement as taken, and
+            see what remains. BEND estimates when you may need a refill, then
+            lets you review it before ordering.
           </p>
           <button class="text-button" type="button" data-app-start>
             Open the demo <span aria-hidden="true">&#8594;</span>
           </button>
         </div>
         <div class="phone-shell reveal" data-app-preview>
+          <img class="phone-device" src="assets/generated/bend-phone-frame-v1.webp" width="1024" height="1536" alt="" aria-hidden="true" />
           <div class="phone-screen phone-onboarding" data-app-onboarding>
             <header><span>9:41</span><b>BEND RHYTHM</b></header>
             <div class="onboarding-glow" aria-hidden="true"><i></i></div>
@@ -438,56 +439,6 @@
         </div>
       </section>
 
-      <section class="shop section-shell" id="shop" aria-labelledby="shopTitle">
-        <div class="shop-copy reveal">
-          <p class="eyebrow">10 match days / complete system</p>
-          <h2 id="shopTitle"><span>Bring one kit.</span><span>Cover the match.</span></h2>
-          <p>
-            PREP before warm-up. RALLY in your bottle. RESET after play. The
-            Match Stack keeps all three moments together in one reusable court
-            system.
-          </p>
-          <div class="shop-facts">
-            <span>10 PREP</span><span>10 RALLY</span><span>10 RESET</span>
-          </div>
-        </div>
-        <div class="buy-panel reveal" data-spotlight>
-          <header><span>BEND / STARTER KIT</span><b>EUR 79</b></header>
-          <div class="buy-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-          <label class="refill-toggle"
-            ><input id="refillPlan" type="checkbox" /><span></span
-            ><b>Estimate my next refill from logged matches</b></label
-          >
-          <p id="refillSummary">
-            One starter kit only. No recurring deliveries or charges.
-          </p>
-          <div class="purchase-row">
-            <div class="quantity">
-              <button
-                type="button"
-                data-quantity-minus
-                aria-label="Decrease quantity"
-              >
-                &#8722;</button
-              ><output id="quantityValue">1</output
-              ><button
-                type="button"
-                data-quantity-plus
-                aria-label="Increase quantity"
-              >
-                +
-              </button>
-            </div>
-            <button id="addToCart" type="button">
-              Get the 10-match kit / <span id="cartPrice">EUR 79</span>
-            </button>
-          </div>
-          <small
-            >Final formula, directions, and claims are subject to formulation
-            and regulatory review.</small
-          >
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

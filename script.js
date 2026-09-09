@@ -24,13 +24,15 @@ const heroFrame = document.querySelector("[data-sky-frame]");
 const transformSection = document.querySelector("[data-transform-section]");
 const transformSticky = transformSection.querySelector(".transform-sticky");
 const transformCopy = document.querySelector("[data-transform-copy]");
-const stageNumber = document.querySelector("[data-stage-number]");
-const stageLabel = document.querySelector("[data-stage-label]");
 const cssBallFallback = document.querySelector(".css-ball-fallback");
 const pillRain = [...document.querySelectorAll("[data-pill-rain] i")];
+const vesselStage = document.querySelector(".vessel-stage");
+const storyCards = [...document.querySelectorAll("[data-story-card]")];
+const storyCardRail = document.querySelector("[data-story-cards]");
 const footer = document.querySelector(".site-footer");
 const footerMark = document.querySelector(".footer-mark");
-let lastTransformStage = -1;
+let lastTransformScene = "";
+let transformProgress = 0;
 let ticking = false;
 const smooth = (value) => value * value * (3 - 2 * value);
 
@@ -53,30 +55,26 @@ function updateScrollScene() {
   const transformRect = transformSection.getBoundingClientRect();
   const transformTravel = Math.max(1, transformSection.offsetHeight - viewport);
   const progress = clamp(-transformRect.top / transformTravel);
-  const copyExit = smooth(range(progress, 0.13, 0.24));
+  transformProgress = progress;
+  const copyExit = smooth(range(progress, 0.14, 0.23));
   transformCopy.style.setProperty("--copy-opacity", String(1 - copyExit));
   transformCopy.style.setProperty("--copy-y", `${-45 * copyExit}px`);
 
-  const ballProgress = range(progress, 0, 0.29);
-  const pillProgress = range(progress, 0.17, 0.3);
-  const cupEnter = smooth(range(progress, 0.13, 0.21));
-  const cupShift = smooth(range(progress, 0.28, 0.36));
-  const cupExit = smooth(range(progress, 0.54, 0.61));
-  const cardsEnter = smooth(range(progress, 0.3, 0.37));
-  const prepToRally = smooth(range(progress, 0.56, 0.63));
-  const rallyToReset = smooth(range(progress, 0.76, 0.83));
+  const pillProgress = range(progress, 0.3, 0.47);
+  const bottleEnter = smooth(range(progress, 0.23, 0.3));
+  const bottleShift = smooth(range(progress, 0.48, 0.55));
+  const bottleExit = smooth(range(progress, 0.96, 1));
+  const cardsEnter = smooth(range(progress, 0.5, 0.56));
+  const prepToRally = smooth(range(progress, 0.68, 0.74));
+  const rallyToReset = smooth(range(progress, 0.84, 0.9));
 
   transformSticky.style.setProperty(
     "--cup-opacity",
-    String(cupEnter * (1 - cupExit)),
+    String(bottleEnter * (1 - bottleExit)),
   );
   transformSticky.style.setProperty(
     "--cup-left",
-    `${50 - cupShift * 27}%`,
-  );
-  transformSticky.style.setProperty(
-    "--cup-scale",
-    String(1 - cupShift * 0.18),
+    `${50 - bottleShift * 27}%`,
   );
   transformSticky.style.setProperty(
     "--cards-in",
@@ -96,41 +94,62 @@ function updateScrollScene() {
   );
   transformSticky.style.setProperty("--media-reset", String(rallyToReset));
 
-  transformSticky.dataset.scene =
-    progress < 0.37
+  const scene =
+    progress < 0.5
       ? "intro"
-      : progress < 0.6
+      : progress < 0.68
         ? "prep"
-        : progress < 0.8
+        : progress < 0.84
           ? "rally"
           : "reset";
+  transformSticky.dataset.scene = scene;
+
+  if (scene !== lastTransformScene) {
+    lastTransformScene = scene;
+    storyCards.forEach((card) => {
+      const active = reducedMotion.matches || card.dataset.storyCard === scene;
+      const trigger = card.querySelector("[data-story-jump]");
+      const body = card.querySelector(".story-card__body");
+      card.classList.toggle("is-active", active);
+      trigger.setAttribute("aria-expanded", String(active));
+      if (active) trigger.setAttribute("aria-current", "step");
+      else trigger.removeAttribute("aria-current");
+      body.setAttribute("aria-hidden", String(!active));
+    });
+  }
 
   pillRain.forEach((pill, index) => {
-    const start = index * 0.035;
-    const local = smooth(range(pillProgress, start, start + 0.48));
+    const start = index * 0.028;
+    const local = smooth(range(pillProgress, start, start + 0.52));
+    const entryX = Number.parseFloat(pill.style.getPropertyValue("--pill-x")) || 0;
+    const restX = Number.parseFloat(pill.style.getPropertyValue("--rest-x")) || entryX;
+    const restY = Number.parseFloat(pill.style.getPropertyValue("--rest-y")) || 0;
+    const currentX = entryX + (restX - entryX) * local;
     pill.style.setProperty("--fall", local.toFixed(3));
-    pill.style.setProperty("--fall-y", `${(local * 51).toFixed(2)}svh`);
-    pill.style.setProperty("--pill-scale", (1 - local * 0.22).toFixed(3));
+    pill.style.setProperty("--pill-current-x", `${currentX.toFixed(2)}px`);
     pill.style.setProperty(
-      "--pill-opacity",
-      local < 0.04 || local > 0.92 ? "0" : "1",
+      "--fall-y",
+      `${(local * (viewport * 0.55 + restY)).toFixed(2)}px`,
     );
+    pill.style.setProperty("--pill-scale", (1 - local * 0.08).toFixed(3));
+    pill.style.setProperty("--pill-opacity", local < 0.03 ? "0" : "1");
   });
 
-  const fallbackArrival = range(ballProgress, 0, 0.25);
-  const fallbackSurface = range(ballProgress, 0.2, 0.6);
-  const fallbackDrop = range(ballProgress, 0.56, 0.96);
+  const fallbackArrival = smooth(range(progress, 0.03, 0.24));
+  const fallbackSurface = smooth(range(progress, 0.12, 0.28));
+  const fallbackShrink = smooth(range(progress, 0.14, 0.3));
+  const fallbackDrop = smooth(range(progress, 0.3, 0.44));
   cssBallFallback.style.setProperty(
     "--fallback-x",
     `${64 - fallbackArrival * 14}%`,
   );
   cssBallFallback.style.setProperty(
     "--fallback-y",
-    `${42 - fallbackArrival * 3 + fallbackDrop * 27}%`,
+    `${42 - fallbackArrival * 25 + fallbackDrop * 57}%`,
   );
   cssBallFallback.style.setProperty(
     "--fallback-scale",
-    String(1.06 - fallbackDrop * 0.88),
+    String(1.06 - fallbackShrink * 0.93),
   );
   cssBallFallback.style.setProperty(
     "--fallback-felt",
@@ -145,59 +164,57 @@ function updateScrollScene() {
     fallbackSurface > 0.55 ? "#d8ff35" : "#c8ff22",
   );
 
-  const nextStage =
-    progress < 0.14
-      ? 0
-      : progress < 0.28
-        ? 1
-        : progress < 0.6
-          ? 2
-          : progress < 0.8
-            ? 3
-            : 4;
-  if (nextStage !== lastTransformStage) {
-    lastTransformStage = nextStage;
-    const labels = [
-      "Felt / court",
-      "Dose / forming",
-      "PREP / before play",
-      "RALLY / during play",
-      "RESET / after play",
-    ];
-    const numbers = ["01", "02", "01", "02", "03"];
-    stageNumber.textContent = numbers[nextStage];
-    stageLabel.textContent = labels[nextStage];
-  }
   window.dispatchEvent(
-    new CustomEvent("bend:transform", { detail: { progress: ballProgress } }),
+    new CustomEvent("bend:transform", { detail: { progress } }),
   );
 
   const footerRect = footer.getBoundingClientRect();
   const footerProgress = reducedMotion.matches
     ? 0
     : clamp((viewport - footerRect.top) / Math.max(1, footerRect.height));
-  const footerBend = smooth(range(footerProgress, 0.1, 0.92));
-  const dotPhase = range(footerProgress, 0.58, 1);
+  const footerBend = smooth(range(footerProgress, 0.08, 0.88));
+  const dotPhase = range(footerProgress, 0.55, 1);
   const dotBounce =
     dotPhase < 0.72
       ? Math.sin((dotPhase / 0.72) * Math.PI)
       : Math.sin(((dotPhase - 0.72) / 0.28) * Math.PI) * 0.24;
-  const dotTravel = Math.min(132, viewport * 0.16);
+  const dotTravel = Math.min(92, viewport * 0.12);
 
   footerMark.style.setProperty("--footer-bend", footerBend.toFixed(3));
-  footerMark.style.setProperty(
-    "--footer-n-skew",
-    `${(-8 * footerBend).toFixed(2)}deg`,
-  );
   footerMark.style.setProperty(
     "--footer-dot-y",
     `${(-dotBounce * dotTravel).toFixed(2)}px`,
   );
-  footerMark.style.setProperty(
-    "--footer-dot-spin",
-    `${(dotPhase * 320).toFixed(1)}deg`,
-  );
 }
+
+const storyTargets = { prep: 0.58, rally: 0.76, reset: 0.91 };
+storyCardRail.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-story-jump]");
+  if (!trigger) return;
+  const sectionRect = transformSection.getBoundingClientRect();
+  const sectionTop = window.scrollY + sectionRect.top;
+  const travel = Math.max(1, transformSection.offsetHeight - window.innerHeight);
+  window.scrollTo({
+    top: sectionTop + storyTargets[trigger.dataset.storyJump] * travel,
+    behavior: reducedMotion.matches ? "auto" : "smooth",
+  });
+});
+
+transformSticky.addEventListener("pointermove", (event) => {
+  if (reducedMotion.matches || transformProgress < 0.42 || transformProgress > 0.96)
+    return;
+  const rect = transformSticky.getBoundingClientRect();
+  const x = clamp((event.clientX - rect.left) / rect.width, 0, 1) - 0.5;
+  const y = clamp((event.clientY - rect.top) / rect.height, 0, 1) - 0.5;
+  vesselStage.style.setProperty("--pointer-x", `${(x * 16).toFixed(2)}px`);
+  vesselStage.style.setProperty("--pointer-y", `${(y * 12).toFixed(2)}px`);
+  vesselStage.style.setProperty("--pointer-rotate", `${(x * 4).toFixed(2)}deg`);
+});
+transformSticky.addEventListener("pointerleave", () => {
+  vesselStage.style.setProperty("--pointer-x", "0px");
+  vesselStage.style.setProperty("--pointer-y", "0px");
+  vesselStage.style.setProperty("--pointer-rotate", "0deg");
+});
 
 function queueScrollUpdate() {
   if (ticking) return;
