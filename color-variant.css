@@ -1,0 +1,266 @@
+/* Optional color-field identity. Activate with ?variant=color. */
+html.color-identity {
+  --field-blue: #164be5;
+  --field-acid: #caff20;
+  --field-coral: #ff8170;
+  --field-aqua: #8bdde5;
+  --field-ink: #090b0a;
+  background: var(--field-blue);
+}
+
+html.color-identity body {
+  background: var(--field-blue);
+}
+
+html.color-identity.js .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+html.color-identity .site-header,
+html.color-identity .cart-button {
+  border-color: rgba(255, 255, 255, 0.86);
+  background: rgba(244, 248, 255, 0.72);
+  box-shadow:
+    0 14px 42px rgba(9, 17, 38, 0.13),
+    inset 0 1px rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(135%);
+}
+
+html.color-identity .site-header.scrolled {
+  background: rgba(244, 248, 255, 0.86);
+}
+
+html.color-identity .bend-mark i {
+  color: var(--field-blue);
+}
+
+html.color-identity .sky-hero {
+  background: var(--field-blue);
+}
+
+html.color-identity .sky-hero-sticky {
+  background: #69c9f3;
+}
+
+html.color-identity .sky-wash {
+  background-image:
+    linear-gradient(90deg, rgba(7, 45, 156, 0.34), transparent 58%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 119px,
+      rgba(255, 255, 255, 0.12) 119px,
+      rgba(255, 255, 255, 0.12) 120px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 119px,
+      rgba(255, 255, 255, 0.12) 119px,
+      rgba(255, 255, 255, 0.12) 120px
+    );
+}
+
+html.color-identity .hero-copy > p:first-child,
+html.color-identity .hero-cue {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+html.color-identity .hero-copy a {
+  border-color: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+html.color-identity .transformation {
+  background-color: var(--field-acid);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 95px,
+      rgba(9, 11, 10, 0.1) 95px,
+      rgba(9, 11, 10, 0.1) 96px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 95px,
+      rgba(9, 11, 10, 0.1) 95px,
+      rgba(9, 11, 10, 0.1) 96px
+    );
+}
+
+html.color-identity .transform-sticky {
+  background: transparent;
+}
+
+html.color-identity .transform-grid {
+  opacity: 0.28;
+}
+
+html.color-identity .transform-copy p:last-child {
+  color: rgba(9, 11, 10, 0.66);
+}
+
+html.color-identity .transform-copy h2 span:nth-child(2) {
+  color: var(--field-blue);
+}
+
+html.color-identity .story-media {
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  box-shadow: 0 28px 70px rgba(9, 17, 38, 0.16);
+}
+
+html.color-identity .story-card {
+  border-color: rgba(255, 255, 255, 0.82);
+  background: rgba(244, 248, 255, 0.66);
+  box-shadow:
+    0 18px 44px rgba(4, 19, 38, 0.15),
+    inset 0 1px rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(24px) saturate(130%);
+}
+
+html.color-identity .first-box,
+html.color-identity .rhythm {
+  width: 100%;
+  max-width: none;
+  padding-right: max(32px, calc((100vw - 1420px) / 2));
+  padding-left: max(32px, calc((100vw - 1420px) / 2));
+  border-top: 1px solid rgba(9, 11, 10, 0.42);
+}
+
+html.color-identity .first-box {
+  background-color: var(--field-coral);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 95px,
+      rgba(9, 11, 10, 0.11) 95px,
+      rgba(9, 11, 10, 0.11) 96px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 95px,
+      rgba(9, 11, 10, 0.11) 95px,
+      rgba(9, 11, 10, 0.11) 96px
+    );
+}
+
+html.color-identity .package-media {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 26px 64px rgba(72, 23, 26, 0.17);
+}
+
+html.color-identity .package-copy > p {
+  color: rgba(9, 11, 10, 0.68);
+}
+
+html.color-identity .package-items {
+  border-color: rgba(9, 11, 10, 0.32);
+}
+
+html.color-identity .package-items span {
+  border-color: rgba(9, 11, 10, 0.32);
+}
+
+html.color-identity .package-copy .buy-panel {
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 22px 52px rgba(72, 23, 26, 0.14),
+    inset 0 1px rgba(255, 255, 255, 0.82);
+}
+
+html.color-identity .rhythm {
+  background-color: var(--field-aqua);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 95px,
+      rgba(9, 11, 10, 0.1) 95px,
+      rgba(9, 11, 10, 0.1) 96px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 95px,
+      rgba(9, 11, 10, 0.1) 95px,
+      rgba(9, 11, 10, 0.1) 96px
+    );
+}
+
+html.color-identity .rhythm-copy .eyebrow,
+html.color-identity .rhythm-copy > p:nth-of-type(2) {
+  color: rgba(9, 11, 10, 0.66);
+}
+
+html.color-identity .phone-shell {
+  filter: drop-shadow(0 38px 42px rgba(6, 30, 45, 0.22));
+}
+
+html.color-identity .client-reviews {
+  border-top: 1px solid rgba(255, 255, 255, 0.34);
+  background-color: var(--field-blue);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 95px,
+      rgba(255, 255, 255, 0.1) 95px,
+      rgba(255, 255, 255, 0.1) 96px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 95px,
+      rgba(255, 255, 255, 0.1) 95px,
+      rgba(255, 255, 255, 0.1) 96px
+    );
+}
+
+html.color-identity .client-reviews__intro h2 em {
+  color: var(--field-acid);
+}
+
+html.color-identity .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: var(--field-ink);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 95px,
+      rgba(255, 255, 255, 0.045) 95px,
+      rgba(255, 255, 255, 0.045) 96px
+    );
+}
+
+html.color-identity .footer-mark__dot {
+  background: var(--field-acid);
+}
+
+html.color-identity .toast {
+  background: var(--field-acid);
+  color: var(--field-ink);
+}
+
+@media (max-width: 680px) {
+  html.color-identity .first-box,
+  html.color-identity .rhythm {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.color-identity *,
+  html.color-identity *::before,
+  html.color-identity *::after {
+    scroll-behavior: auto !important;
+  }
+}
