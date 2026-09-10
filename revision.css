@@ -673,3 +673,458 @@
     transform: none;
   }
 }
+
+/* BEND Rhythm sports dashboard */
+.phone-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background:
+    radial-gradient(circle at 16% 21%, rgba(38, 196, 126, 0.24), transparent 29%),
+    radial-gradient(circle at 87% 44%, rgba(255, 83, 143, 0.2), transparent 33%),
+    radial-gradient(circle at 40% 82%, rgba(17, 102, 255, 0.25), transparent 31%),
+    #070908;
+}
+.app-topbar {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr;
+  min-height: 35px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.68);
+}
+.app-topbar b {
+  color: #fff;
+  font-size: 9px;
+}
+.app-topbar button {
+  justify-self: end;
+}
+.app-dashboard-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 8px 0 2px;
+}
+.app-dashboard-intro small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.phone-dashboard .app-dashboard-intro h3 {
+  margin: 6px 0 0;
+  font-family: var(--body);
+  font-size: 24px;
+  font-weight: 680;
+  line-height: 1;
+}
+.phone-dashboard .app-dashboard-intro h3 em {
+  color: rgba(255, 255, 255, 0.48);
+}
+.sport-switch {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+.sport-switch button {
+  min-height: 29px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  font-weight: 700;
+}
+.sport-switch button[aria-pressed="true"] {
+  background: #fff;
+  color: #080a09;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.metric-card {
+  position: relative;
+  min-height: 132px;
+  overflow: hidden;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 20px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.16);
+  color: #fff;
+  backdrop-filter: blur(22px) saturate(1.25);
+}
+.metric-card::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  content: "";
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), transparent 45%);
+  pointer-events: none;
+}
+.metric-card--readiness {
+  background:
+    radial-gradient(circle at 82% 30%, rgba(143, 255, 179, 0.58), transparent 31%),
+    linear-gradient(145deg, rgba(15, 91, 67, 0.9), rgba(5, 24, 21, 0.88));
+}
+.metric-card--hydration {
+  background:
+    radial-gradient(circle at 74% 70%, rgba(255, 211, 101, 0.58), transparent 32%),
+    linear-gradient(145deg, rgba(132, 14, 79, 0.91), rgba(255, 75, 110, 0.66));
+}
+.metric-card--load {
+  background:
+    radial-gradient(circle at 24% 72%, rgba(142, 204, 255, 0.56), transparent 34%),
+    linear-gradient(145deg, rgba(10, 37, 117, 0.96), rgba(23, 110, 230, 0.7));
+}
+.metric-card--movement {
+  background:
+    radial-gradient(circle at 81% 25%, rgba(205, 255, 34, 0.52), transparent 30%),
+    linear-gradient(145deg, rgba(56, 41, 12, 0.94), rgba(126, 96, 18, 0.72));
+}
+.metric-card header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 700;
+}
+.metric-card header small {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 8px;
+  font-weight: 500;
+}
+.metric-card strong {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 13px;
+  font-weight: 400;
+}
+.metric-card strong b {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.metric-card strong i {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 9px;
+  font-style: normal;
+}
+.metric-card p {
+  position: absolute;
+  z-index: 1;
+  right: 13px;
+  bottom: 11px;
+  left: 13px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 8px;
+}
+.metric-dots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 5px;
+  margin-top: 12px;
+}
+.metric-dots i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.34);
+}
+.metric-dots i:nth-child(-n + 6) {
+  background: #c8ff22;
+}
+.metric-scale {
+  position: relative;
+  z-index: 1;
+  height: 2px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.metric-scale i {
+  position: absolute;
+  top: -3px;
+  left: 64%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.metric-wave {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 22px;
+  align-items: center;
+  gap: 3px;
+  margin-top: 10px;
+}
+.metric-wave i {
+  width: 2px;
+  height: 28%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.46);
+}
+.metric-wave i:nth-child(2),
+.metric-wave i:nth-child(10) {
+  height: 46%;
+}
+.metric-wave i:nth-child(3),
+.metric-wave i:nth-child(9) {
+  height: 70%;
+}
+.metric-wave i:nth-child(4),
+.metric-wave i:nth-child(8) {
+  height: 92%;
+}
+.metric-wave i:nth-child(5),
+.metric-wave i:nth-child(7) {
+  height: 62%;
+}
+.metric-wave i:nth-child(6) {
+  height: 100%;
+  background: #c8ff22;
+}
+.phone-dashboard .app-dose-card {
+  margin-top: 0;
+  padding: 12px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(20px);
+}
+.phone-dashboard .app-dose-card header {
+  font-size: 9px;
+}
+.phone-dashboard .app-dose-card > div {
+  margin-top: 10px;
+}
+.phone-dashboard .app-dose-card button {
+  padding: 8px 4px;
+  border-radius: 10px;
+}
+.phone-dashboard .app-dose-card button i {
+  margin-top: 4px;
+}
+.app-dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
+}
+.app-dashboard-footer b {
+  color: #fff;
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 400;
+}
+.app-dashboard-footer button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+}
+.app-dashboard-footer button span {
+  margin-left: 5px;
+}
+
+/* Early player reviews */
+.client-reviews {
+  background: #0b45d8;
+  color: #fff;
+}
+.client-reviews__inner {
+  display: grid;
+  min-height: 760px;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1.28fr);
+  align-items: start;
+  gap: 76px;
+  padding-block: 120px;
+}
+.client-reviews .eyebrow {
+  color: rgba(255, 255, 255, 0.58);
+}
+.client-reviews__intro {
+  position: sticky;
+  top: 140px;
+}
+.client-reviews__intro h2 {
+  max-width: 12ch;
+  margin: 20px 0 26px;
+  font-size: 42px;
+}
+.client-reviews__intro h2 em {
+  color: #c8ff22;
+}
+.client-reviews__intro > p:last-child {
+  max-width: 440px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+.review-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+}
+.player-review {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 22px;
+  margin: 0;
+  padding: 34px 0 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+}
+.review-index {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  font-weight: 700;
+}
+.review-index i {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 50%;
+}
+.player-review:nth-child(1) .review-index i {
+  background: #fff;
+}
+.player-review:nth-child(2) .review-index i {
+  background: #c8ff22;
+}
+.player-review:nth-child(3) .review-index i {
+  background: #ff8f74;
+}
+.player-review blockquote {
+  grid-column: 2;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 560;
+  line-height: 1.26;
+}
+.player-review figcaption {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 24px;
+  font-size: 11px;
+}
+.player-review figcaption b {
+  font-weight: 750;
+}
+.player-review figcaption span {
+  color: rgba(255, 255, 255, 0.58);
+  text-align: right;
+}
+
+@media (max-width: 1100px) {
+  .phone-shell .phone-dashboard {
+    padding: 17px;
+    gap: 7px;
+  }
+  .phone-dashboard .app-dashboard-intro h3 {
+    font-size: 19px;
+  }
+  .metric-card {
+    min-height: 108px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+  .metric-card strong {
+    margin-top: 9px;
+  }
+  .metric-card strong b {
+    font-size: 23px;
+  }
+  .metric-card p {
+    right: 10px;
+    bottom: 8px;
+    left: 10px;
+  }
+  .metric-dots,
+  .metric-wave {
+    margin-top: 8px;
+  }
+  .phone-dashboard .app-dose-card {
+    padding: 10px;
+    border-radius: 16px;
+  }
+  .client-reviews__inner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding-block: 90px;
+  }
+  .client-reviews__intro {
+    position: static;
+  }
+  .client-reviews__intro h2 {
+    max-width: 15ch;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 680px) {
+  .app-dashboard-intro {
+    align-items: start;
+  }
+  .sport-switch button {
+    min-height: 27px;
+    padding-inline: 8px;
+  }
+  .client-reviews__inner {
+    width: min(100% - 32px, 1420px);
+    gap: 34px;
+    padding-block: 72px;
+  }
+  .client-reviews__intro h2 {
+    max-width: 12ch;
+    font-size: 28px;
+  }
+  .client-reviews__intro > p:last-child {
+    font-size: 14px;
+  }
+  .player-review {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+    padding-block: 28px;
+  }
+  .player-review blockquote {
+    font-size: 19px;
+  }
+  .player-review figcaption {
+    align-items: start;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 18px;
+  }
+  .player-review figcaption span {
+    text-align: left;
+  }
+}

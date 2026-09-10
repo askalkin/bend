@@ -255,13 +255,47 @@ const appOnboarding = document.querySelector("[data-app-onboarding]");
 const appDashboard = document.querySelector("[data-app-dashboard]");
 const appStartButtons = [...document.querySelectorAll("[data-app-start]")];
 const appResetButton = document.querySelector("[data-app-reset]");
-const trainingDays = [...document.querySelectorAll("[data-training-day]")];
+const sportButtons = [...document.querySelectorAll("[data-sport]")];
 const doseButtons = [...document.querySelectorAll("[data-dose]")];
-const appSessionCount = document.querySelector("#appSessionCount");
 const appDoseCount = document.querySelector("#appDoseCount");
 const appSupplyCount = document.querySelector("#appSupplyCount");
-const appRefillForecast = document.querySelector("#appRefillForecast");
-const supplyMeter = document.querySelector(".supply-meter i");
+const appSportName = document.querySelector("#appSportName");
+const appNextMatch = document.querySelector("#appNextMatch");
+const appReadiness = document.querySelector("#appReadiness");
+const appReadinessNote = document.querySelector("#appReadinessNote");
+const appHydration = document.querySelector("#appHydration");
+const appCourtLoad = document.querySelector("#appCourtLoad");
+const appMatchType = document.querySelector("#appMatchType");
+const appMovementLabel = document.querySelector("#appMovementLabel");
+const appMovement = document.querySelector("#appMovement");
+const appMovementNote = document.querySelector("#appMovementNote");
+
+const sportMetrics = {
+  padel: {
+    name: "padel.",
+    next: "Next match / 19:30",
+    readiness: "84",
+    readinessNote: "High-intensity play",
+    hydration: "1.2",
+    courtLoad: "72",
+    matchType: "Padel / doubles",
+    movementLabel: "Explosive moves",
+    movement: "46",
+    movementNote: "Short accelerations",
+  },
+  tennis: {
+    name: "tennis.",
+    next: "Next match / Sat 11:00",
+    readiness: "78",
+    readinessNote: "Serve load elevated",
+    hydration: "1.5",
+    courtLoad: "96",
+    matchType: "Tennis / singles",
+    movementLabel: "Serve load",
+    movement: "63",
+    movementNote: "First + second serves",
+  },
+};
 
 function setAppView(showDashboard) {
   appOnboarding.hidden = showDashboard;
@@ -273,15 +307,23 @@ function setAppView(showDashboard) {
       block: "center",
     });
 }
-function updateTrainingPlan() {
-  const sessions = trainingDays.filter(
-    (button) => button.getAttribute("aria-pressed") === "true",
-  ).length;
-  appSessionCount.textContent = `${sessions} ${sessions === 1 ? "session" : "sessions"} selected`;
-  appRefillForecast.textContent =
-    sessions > 3
-      ? "Refill ready to review 22 Sep."
-      : "Refill ready to review 29 Sep.";
+function setSportMetrics(sport) {
+  const metrics = sportMetrics[sport];
+  if (!metrics) return;
+
+  sportButtons.forEach((button) =>
+    button.setAttribute("aria-pressed", String(button.dataset.sport === sport)),
+  );
+  appSportName.textContent = metrics.name;
+  appNextMatch.textContent = metrics.next;
+  appReadiness.textContent = metrics.readiness;
+  appReadinessNote.textContent = metrics.readinessNote;
+  appHydration.textContent = metrics.hydration;
+  appCourtLoad.textContent = metrics.courtLoad;
+  appMatchType.textContent = metrics.matchType;
+  appMovementLabel.textContent = metrics.movementLabel;
+  appMovement.textContent = metrics.movement;
+  appMovementNote.textContent = metrics.movementNote;
 }
 function updateDoseLog() {
   const logged = doseButtons.filter(
@@ -289,20 +331,13 @@ function updateDoseLog() {
   ).length;
   appDoseCount.textContent = `${logged} / 3 logged`;
   appSupplyCount.textContent = logged === 3 ? "07" : "08";
-  supplyMeter.style.width = logged === 3 ? "70%" : "80%";
 }
 appStartButtons.forEach((button) =>
   button.addEventListener("click", () => setAppView(true)),
 );
 appResetButton.addEventListener("click", () => setAppView(false));
-trainingDays.forEach((button) =>
-  button.addEventListener("click", () => {
-    button.setAttribute(
-      "aria-pressed",
-      String(button.getAttribute("aria-pressed") !== "true"),
-    );
-    updateTrainingPlan();
-  }),
+sportButtons.forEach((button) =>
+  button.addEventListener("click", () => setSportMetrics(button.dataset.sport)),
 );
 doseButtons.forEach((button) =>
   button.addEventListener("click", () => {

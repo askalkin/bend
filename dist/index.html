@@ -301,19 +301,19 @@
       >
         <div class="rhythm-copy reveal">
           <p class="eyebrow">BEND Rhythm / phone app</p>
-          <h2 id="rhythmTitle">Your routine, on your phone.</h2>
+          <h2 id="rhythmTitle">Your match, in one view.</h2>
           <p>
-            Plan training and match days, mark each supplement as taken, and
-            see what remains. BEND estimates when you may need a refill, then
-            lets you review it before ordering.
+            Switch between padel and tennis to compare readiness, hydration,
+            court load and movement demand. Log PREP, RALLY and RESET, then
+            review the next refill before anything ships.
           </p>
           <button class="text-button" type="button" data-app-start>
-            Open the demo <span aria-hidden="true">&#8594;</span>
+            Explore the dashboard <span aria-hidden="true">&#8594;</span>
           </button>
         </div>
-        <div class="phone-shell reveal" data-app-preview>
+        <div class="phone-shell dashboard-open reveal" data-app-preview>
           <img class="phone-device" src="assets/generated/bend-phone-frame-v1.webp" width="1024" height="1536" alt="" aria-hidden="true" />
-          <div class="phone-screen phone-onboarding" data-app-onboarding>
+          <div class="phone-screen phone-onboarding" data-app-onboarding hidden>
             <header><span>9:41</span><b>BEND RHYTHM</b></header>
             <div class="onboarding-glow" aria-hidden="true"><i></i></div>
             <div>
@@ -328,9 +328,9 @@
               Build my week <span aria-hidden="true">&#8594;</span>
             </button>
           </div>
-          <div class="phone-screen phone-dashboard" data-app-dashboard hidden>
-            <header>
-              <span>BEND / WEEK 02</span
+          <div class="phone-screen phone-dashboard" data-app-dashboard>
+            <header class="app-topbar">
+              <span>THU / 10 SEP</span><b>BEND RHYTHM</b
               ><button
                 type="button"
                 data-app-reset
@@ -339,66 +339,47 @@
                 &#215;
               </button>
             </header>
-            <h3>Good morning.<br /><em>Padel at 19:30.</em></h3>
-            <div
-              class="mini-calendar"
-              role="group"
-              aria-label="Choose training days"
-            >
-              <button
-                type="button"
-                data-training-day
-                aria-label="Monday 7"
-                aria-pressed="false"
-              >
-                <span>M</span><b>7</b></button
-              ><button
-                type="button"
-                data-training-day
-                aria-label="Tuesday 8"
-                aria-pressed="true"
-              >
-                <span>T</span><b>8</b></button
-              ><button
-                type="button"
-                data-training-day
-                aria-label="Wednesday 9"
-                aria-pressed="false"
-              >
-                <span>W</span><b>9</b></button
-              ><button
-                type="button"
-                data-training-day
-                aria-label="Thursday 10"
-                aria-pressed="false"
-              >
-                <span>T</span><b>10</b></button
-              ><button
-                type="button"
-                data-training-day
-                aria-label="Friday 11"
-                aria-pressed="false"
-              >
-                <span>F</span><b>11</b></button
-              ><button
-                type="button"
-                data-training-day
-                aria-label="Saturday 12"
-                aria-pressed="true"
-              >
-                <span>S</span><b>12</b></button
-              ><button
-                type="button"
-                data-training-day
-                aria-label="Sunday 13"
-                aria-pressed="false"
-              >
-                <span>S</span><b>13</b>
-              </button>
+            <div class="app-dashboard-intro">
+              <div>
+                <small id="appNextMatch">Next match / 19:30</small>
+                <h3>Ready for <em id="appSportName">padel.</em></h3>
+              </div>
+              <div class="sport-switch" role="group" aria-label="Choose sport">
+                <button type="button" data-sport="padel" aria-pressed="true">Padel</button>
+                <button type="button" data-sport="tennis" aria-pressed="false">Tennis</button>
+              </div>
             </div>
-            <div class="app-card app-dose-card">
+
+            <div class="metric-grid" aria-label="Match metrics">
+              <article class="metric-card metric-card--readiness">
+                <header><span>Readiness</span><small>Today</small></header>
+                <strong><b id="appReadiness">84</b><i>%</i></strong>
+                <div class="metric-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <p id="appReadinessNote">High-intensity play</p>
+              </article>
+              <article class="metric-card metric-card--hydration">
+                <header><span>Hydration</span><small>Match plan</small></header>
+                <strong><b id="appHydration">1.2</b><i>L</i></strong>
+                <div class="metric-scale" aria-hidden="true"><i></i></div>
+                <p>Target through play</p>
+              </article>
+              <article class="metric-card metric-card--load">
+                <header><span>Court load</span><small id="appMatchType">Padel / doubles</small></header>
+                <strong><b id="appCourtLoad">72</b><i>min</i></strong>
+                <div class="metric-wave" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </article>
+              <article class="metric-card metric-card--movement">
+                <header><span id="appMovementLabel">Explosive moves</span><small>Last match</small></header>
+                <strong><b id="appMovement">46</b><i>reps</i></strong>
+                <p id="appMovementNote">Short accelerations</p>
+              </article>
+            </div>
+
+            <div class="app-dose-card">
               <header>
-                <span>Today</span><b id="appDoseCount">1 / 3 logged</b>
+                <span>Match routine</span><b id="appDoseCount">1 / 3 logged</b>
               </header>
               <div>
                 <button
@@ -425,16 +406,39 @@
                 </button>
               </div>
             </div>
-            <div class="app-card app-supply-card">
-              <span>Supply</span
-              ><strong><b id="appSupplyCount">08</b> match days</strong>
-              <div class="supply-meter"><i></i></div>
-              <p id="appRefillForecast">Refill ready to review 29 Sep.</p>
-              <button type="button" data-refill-review>Review plan</button>
+            <div class="app-dashboard-footer">
+              <span><b id="appSupplyCount">08</b> match days left</span>
+              <button type="button" data-refill-review>
+                Review refill <span aria-hidden="true">&#8594;</span>
+              </button>
             </div>
-            <p class="session-count" id="appSessionCount">
-              2 sessions selected
-            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="client-reviews" aria-labelledby="reviewsTitle">
+        <div class="client-reviews__inner section-shell">
+          <header class="client-reviews__intro reveal">
+            <p class="eyebrow">Early player notes / match-day trial</p>
+            <h2 id="reviewsTitle">Clear in the bag.<br /><em>Useful on court.</em></h2>
+            <p>Players tested the three-stage routine around real club sessions. These are the details they noticed first.</p>
+          </header>
+          <div class="review-list">
+            <figure class="player-review reveal">
+              <div class="review-index"><span>01</span><i aria-hidden="true"></i></div>
+              <blockquote>&ldquo;Before, during and after finally feels like one routine, not three loose products in my bag.&rdquo;</blockquote>
+              <figcaption><b>Padel league player</b><span>Berlin / 3 sessions weekly</span></figcaption>
+            </figure>
+            <figure class="player-review reveal">
+              <div class="review-index"><span>02</span><i aria-hidden="true"></i></div>
+              <blockquote>&ldquo;The format tells me what comes next. I stopped checking instructions between points.&rdquo;</blockquote>
+              <figcaption><b>Tennis club player</b><span>Hamburg / singles and doubles</span></figcaption>
+            </figure>
+            <figure class="player-review reveal">
+              <div class="review-index"><span>03</span><i aria-hidden="true"></i></div>
+              <blockquote>&ldquo;Match load and remaining doses in one view makes the refill useful instead of automatic.&rdquo;</blockquote>
+              <figcaption><b>Padel coach</b><span>Barcelona / player testing</span></figcaption>
+            </figure>
           </div>
         </div>
       </section>
