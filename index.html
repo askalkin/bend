@@ -50,7 +50,13 @@
     />
     <link
       rel="preload"
-      href="assets/generated/bend-ball-sky-field.webp"
+      href="assets/generated/bend-site-v2-tube-hero.webp"
+      as="image"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      href="assets/generated/bend-site-v3-dock-hero.webp"
       as="image"
       type="image/webp"
     />
@@ -107,15 +113,22 @@
       <section class="sky-hero" data-sky-hero aria-labelledby="heroTitle">
         <div class="sky-hero-sticky" data-sky-frame>
           <img
-            class="hero-still"
-            src="assets/generated/bend-ball-sky-field.webp"
-            width="1472"
-            height="2208"
+            class="hero-still hero-still--original"
+            src="assets/generated/bend-site-v2-tube-hero.webp"
+            width="1672"
+            height="941"
             aria-describedby="heroMediaDescription"
-            alt="Tennis balls suspended in a clear blue sky"
+            alt="BEND pressurized supplement tubes, metallic bottle, refill pouches, and starter box arranged on a court"
+          />
+          <img
+            class="hero-still hero-still--color"
+            src="assets/generated/bend-site-v3-dock-hero.webp"
+            width="1672"
+            height="941"
+            alt="BEND clubhouse dock, match cases, refills, and supplements floating against a bright sky"
           />
           <span class="sr-only" id="heroMediaDescription"
-            >A still image establishes the bright, airborne visual world of BEND.</span
+            >A product still introduces the BEND match nutrition system.</span
           >
           <div class="sky-wash" aria-hidden="true"></div>
           <div class="hero-copy">
@@ -126,14 +139,41 @@
           </div>
           <p class="hero-cue">
             <span>Movement / clarity / drive / care</span
-            ><b>Scroll to follow the ball</b>
+            ><b>Scroll to explore the system</b>
           </p>
+        </div>
+      </section>
+
+      <span class="routine-anchor" id="routine" aria-hidden="true"></span>
+
+      <section class="color-system-story" aria-labelledby="colorSystemTitle">
+        <header class="color-system-story__header">
+          <p class="eyebrow">Variant 03 / Clubhouse dock and match cases</p>
+          <h2 id="colorSystemTitle"><span>Pack at the dock.</span><span>Play from the case.</span></h2>
+          <p>PREP, RALLY and RESET stay organised at home, then move to court as three compact match cases. Refill the formats you use and keep the hardware in play.</p>
+        </header>
+        <div class="color-system-story__media">
+          <figure class="color-system-story__item color-system-story__item--dock">
+            <img src="assets/generated/bend-site-v3-dock-kit.webp" width="512" height="512" alt="BEND clubhouse dock with a metallic court bottle and three match cases" />
+            <figcaption>01 / Clubhouse dock</figcaption>
+          </figure>
+          <figure class="color-system-story__item color-system-story__item--cases">
+            <img src="assets/generated/bend-site-v3-match-cases.webp" width="512" height="512" loading="lazy" alt="Three BEND match cases for PREP, RALLY and RESET" />
+            <figcaption>02 / Match cases</figcaption>
+          </figure>
+          <figure class="color-system-story__item color-system-story__item--open">
+            <img src="assets/generated/bend-site-v3-open-case.webp" width="1254" height="1254" loading="lazy" alt="Open RESET match case with large supplement gummies" />
+            <figcaption>03 / Open case</figcaption>
+          </figure>
+          <figure class="color-system-story__item color-system-story__item--refill">
+            <img src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND paper refill packages for the three match moments" />
+            <figcaption>04 / Refill system</figcaption>
+          </figure>
         </div>
       </section>
 
       <section
         class="transformation"
-        id="routine"
         data-transform-section
         aria-labelledby="transformTitle"
       >
@@ -274,7 +314,8 @@
         aria-labelledby="boxTitle"
       >
         <figure class="package-media reveal">
-          <img src="assets/generated/bend-first-box-v2.webp" width="1536" height="1024" alt="The complete BEND first-order box with a brushed stainless-steel bottle, three refill tubes, and three supplement formats" />
+          <img class="package-image package-image--original" src="assets/generated/bend-site-v2-tube-starter.webp" width="1254" height="1254" alt="The BEND pressurized ball tube starter kit with a metallic bottle and PREP, RALLY and RESET tubes" />
+          <img class="package-image package-image--color" src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND PREP, RALLY and RESET match-case refill packages floating against a bright sky" />
         </figure>
         <div class="package-copy reveal">
           <h2 id="boxTitle">Refill the routine.</h2>
@@ -500,6 +541,10 @@
     ></button>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
-    <script type="module" src="ball-scene.js"></script>
+    <script type="module">
+      if (!document.documentElement.classList.contains("color-identity")) {
+        import("./ball-scene.js");
+      }
+    </script>
   </body>
 </html>
