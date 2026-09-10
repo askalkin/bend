@@ -349,7 +349,7 @@ html.color-identity .client-reviews {
 html.color-identity .client-reviews__inner {
   display: grid;
   min-height: 820px;
-  grid-template-columns: minmax(280px, 0.68fr) minmax(560px, 1.32fr);
+  grid-template-columns: minmax(520px, 0.72fr) minmax(0, 1.28fr);
   align-items: start;
   gap: 84px;
   padding-block: 132px;
@@ -366,10 +366,10 @@ html.color-identity .client-reviews__intro {
 }
 
 html.color-identity .client-reviews__intro h2 {
-  max-width: 12ch;
+  max-width: none;
   margin: 20px 0 26px;
   color: #fff;
-  font-size: 44px;
+  font-size: 40px;
 }
 
 html.color-identity .client-reviews__intro h2 em {
@@ -589,7 +589,7 @@ html.color-identity .toast {
   }
 
   html.color-identity .client-reviews__intro h2 {
-    font-size: 30px;
+    font-size: 22px;
   }
 
   html.color-identity .player-review {
