@@ -18,6 +18,32 @@ document
   .querySelectorAll(".reveal")
   .forEach((element) => revealObserver.observe(element));
 
+document.querySelectorAll("[data-carousel-shell]").forEach((shell) => {
+  const section = shell.parentElement;
+  const track = shell.querySelector("[data-carousel-track]");
+  const previous = section.querySelector("[data-carousel-prev]");
+  const next = section.querySelector("[data-carousel-next]");
+  if (!track || !previous || !next) return;
+
+  const updateControls = () => {
+    const remaining = track.scrollWidth - track.clientWidth - track.scrollLeft;
+    previous.disabled = track.scrollLeft < 4;
+    next.disabled = remaining < 4;
+  };
+  const move = (direction) => {
+    track.scrollBy({
+      left: direction * track.clientWidth * 0.78,
+      behavior: reducedMotion.matches ? "auto" : "smooth",
+    });
+  };
+
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  track.addEventListener("scroll", updateControls, { passive: true });
+  window.addEventListener("resize", updateControls);
+  updateControls();
+});
+
 const header = document.querySelector("[data-header]");
 const hero = document.querySelector("[data-sky-hero]");
 const heroFrame = document.querySelector("[data-sky-frame]");
@@ -366,8 +392,8 @@ const refillPlan = document.querySelector("#refillPlan");
 const refillSummary = document.querySelector("#refillSummary");
 refillPlan.addEventListener("change", () => {
   refillSummary.textContent = refillPlan.checked
-    ? "BEND estimates a refill from your logged sessions. You review the date and EUR 39 price before payment."
-    : "One starter kit only. No recurring deliveries or charges.";
+    ? "Refills follow logged play. You review the date and EUR 39 price before anything ships."
+    : "Start with the first package only. Add refills when your match rhythm is clear.";
 });
 
 const quantityValue = document.querySelector("#quantityValue");
@@ -443,8 +469,8 @@ document.querySelector("#addToCart").addEventListener("click", () => {
   cart.push({
     name: "BEND Match Stack",
     mode: refillPlan.checked
-      ? "starter kit + refill review"
-      : "one-time starter kit",
+      ? "first package + refill subscription review"
+      : "first package only",
     price: 79,
     quantity,
   });

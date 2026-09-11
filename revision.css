@@ -164,6 +164,7 @@
   background: radial-gradient(circle at 32% 25%, #ffd4c2, #f39b78 70%);
 }
 .story-cards {
+  z-index: 6;
   top: 50%;
   right: max(42px, calc((100vw - 1440px) / 2));
   width: min(470px, 36vw);
@@ -175,6 +176,7 @@
   pointer-events: auto;
 }
 .story-card {
+  position: relative;
   height: 76px;
   border-radius: 18px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(236, 242, 239, 0.44));
@@ -1154,5 +1156,499 @@
   .player-review figcaption {
     gap: 4px;
     margin-top: 24px;
+  }
+}
+
+/* Product contents and court studies */
+.transform-grid,
+.story-media {
+  display: none;
+}
+
+.hero-still--original {
+  object-position: center 48%;
+}
+
+.pill-rain i {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 118%;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+}
+.pill-rain i.pill-rain__prep {
+  width: 18px;
+  height: 18px;
+  background-image: url("assets/generated/bend-prep-dose-v2.png");
+}
+.pill-rain i.pill-rain__rally {
+  width: 25px;
+  height: 25px;
+  background-image: url("assets/generated/bend-rally-dose-v2.png");
+}
+.pill-rain i.pill-rain__reset {
+  width: 34px;
+  height: 34px;
+  background-image: url("assets/generated/bend-reset-dose-v2.png");
+}
+
+.story-card__media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.04);
+  mix-blend-mode: multiply;
+}
+
+.kit-showcase {
+  position: relative;
+  padding: 118px 0 132px;
+  overflow: hidden;
+  border-top: 1px solid rgba(8, 31, 60, 0.12);
+  background: #edf1ef;
+  color: #081f3c;
+}
+.kit-showcase__header,
+.court-gallery__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr) auto;
+  align-items: end;
+  gap: 36px;
+}
+.kit-showcase__header h2,
+.court-gallery__header h2 {
+  max-width: 17ch;
+  margin: 18px 0 0;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1;
+}
+.kit-showcase__header > p,
+.court-gallery__header > p {
+  max-width: 500px;
+  margin: 0 0 2px;
+  color: #526170;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.carousel-controls button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(8, 31, 60, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.76);
+  color: #081f3c;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+.carousel-controls button:hover:not(:disabled),
+.carousel-controls button:focus-visible {
+  background: #081f3c;
+  color: #fff;
+}
+.carousel-controls button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.carousel-controls button:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+.kit-carousel,
+.court-gallery__shell {
+  margin-top: 54px;
+}
+.kit-carousel__track,
+.court-gallery__track {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(32px, calc((100vw - 1420px) / 2));
+}
+.kit-carousel__track::-webkit-scrollbar,
+.court-gallery__track::-webkit-scrollbar {
+  display: none;
+}
+.kit-carousel__track {
+  grid-auto-columns: clamp(330px, 35vw, 520px);
+  gap: 12px;
+  padding-inline: max(32px, calc((100vw - 1420px) / 2));
+}
+.kit-card {
+  display: grid;
+  min-height: 610px;
+  grid-template-rows: minmax(0, 1fr) auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 18px 46px rgba(8, 31, 60, 0.08);
+  scroll-snap-align: start;
+}
+.kit-card:nth-child(2) { transition-delay: 80ms; }
+.kit-card:nth-child(3) { transition-delay: 160ms; }
+.kit-card:nth-child(4) { transition-delay: 240ms; }
+.kit-card:nth-child(5) { transition-delay: 320ms; }
+.kit-card > img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+.kit-card > div {
+  min-height: 190px;
+  padding: 25px 26px 28px;
+  border-top: 1px solid rgba(8, 31, 60, 0.12);
+}
+.kit-card span,
+.court-study figcaption span {
+  display: block;
+  font-size: 10px;
+  font-weight: 740;
+  text-transform: uppercase;
+}
+.kit-card h3 {
+  max-width: 17ch;
+  margin: 22px 0 12px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+.kit-card p {
+  max-width: 44ch;
+  margin: 0;
+  color: #526170;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.court-gallery {
+  padding: 116px 0 132px;
+  overflow: hidden;
+  background: #081f3c;
+  color: #fff;
+}
+.court-gallery__header .eyebrow,
+.court-gallery__header > p {
+  color: rgba(255, 255, 255, 0.66);
+}
+.carousel-controls--dark button {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.carousel-controls--dark button:hover:not(:disabled),
+.carousel-controls--dark button:focus-visible {
+  background: #fff;
+  color: #081f3c;
+}
+.court-gallery__track {
+  grid-auto-columns: clamp(520px, 64vw, 980px);
+  gap: 12px;
+  padding-inline: max(32px, calc((100vw - 1420px) / 2));
+}
+.court-study {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 8px;
+  scroll-snap-align: start;
+}
+.court-study img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.court-study:nth-child(2) img {
+  object-position: center;
+}
+.court-study::after {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(3, 12, 25, 0.72));
+  content: "";
+}
+.court-study figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 22px;
+  bottom: 20px;
+  left: 22px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.62);
+}
+.court-study figcaption b {
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .kit-showcase__header,
+  .court-gallery__header {
+    grid-template-columns: 1fr auto;
+  }
+  .kit-showcase__header > p,
+  .court-gallery__header > p {
+    grid-column: 1;
+  }
+  .carousel-controls {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: end;
+  }
+}
+
+@media (max-width: 720px) {
+  .kit-showcase,
+  .court-gallery {
+    padding-block: 80px 92px;
+  }
+  .kit-showcase__header,
+  .court-gallery__header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .kit-showcase__header h2,
+  .court-gallery__header h2 {
+    max-width: 18ch;
+    font-size: 29px;
+  }
+  .kit-showcase__header > p,
+  .court-gallery__header > p {
+    font-size: 14px;
+  }
+  .carousel-controls {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .kit-carousel,
+  .court-gallery__shell {
+    margin-top: 34px;
+  }
+  .kit-carousel__track {
+    grid-auto-columns: min(84vw, 360px);
+    padding-inline: 18px;
+    scroll-padding-inline: 18px;
+  }
+  .kit-card {
+    min-height: 530px;
+  }
+  .kit-card > img {
+    min-height: 320px;
+  }
+  .kit-card > div {
+    min-height: 180px;
+    padding: 22px;
+  }
+  .kit-card h3 {
+    font-size: 22px;
+  }
+  .court-gallery__track {
+    grid-auto-columns: 86vw;
+    padding-inline: 18px;
+    scroll-padding-inline: 18px;
+  }
+  .court-study {
+    aspect-ratio: 4 / 5;
+  }
+  .court-study figcaption {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+  }
+}
+
+/* Homepage media swap and second-section packaging story */
+.hero-still--original {
+  object-position: center center;
+}
+
+.first-box.section-shell {
+  width: 100%;
+  max-width: none;
+}
+
+.first-box {
+  min-height: 0;
+  grid-template-columns: 1fr;
+  gap: 34px;
+  margin: 0;
+  padding: 96px 0 118px;
+  border-top: 1px solid rgba(8, 31, 60, 0.1);
+  border-bottom: 1px solid rgba(8, 31, 60, 0.1);
+  background: linear-gradient(180deg, #f4f6f3, #ecefed);
+}
+
+.first-box .package-media,
+.first-box .package-copy {
+  width: min(1420px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.package-media {
+  min-height: 0;
+  aspect-ratio: 1671 / 941;
+  border-radius: 8px;
+  background: #e2e5e1;
+  box-shadow: 0 26px 72px rgba(8, 31, 60, 0.12);
+}
+
+.package-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.package-copy {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(300px, 0.85fr) minmax(320px, 0.9fr);
+  align-items: start;
+  gap: 24px 42px;
+}
+
+.package-copy h2 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.02;
+}
+
+.package-copy > p {
+  max-width: 620px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.package-items {
+  margin-top: 0;
+}
+
+.package-care {
+  grid-column: 2;
+  max-width: 530px;
+  margin: 18px 0 0 !important;
+  padding-left: 0;
+}
+
+.package-care b {
+  margin-left: 0;
+}
+
+.package-copy .buy-panel {
+  display: grid;
+  grid-column: 1 / -1;
+  min-height: 0;
+  grid-template-columns: minmax(230px, 0.65fr) minmax(300px, 1fr) minmax(300px, 0.95fr);
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 8px;
+}
+
+.package-copy .buy-panel > header {
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 0;
+}
+
+.package-copy .refill-toggle {
+  padding: 0;
+  border: 0;
+}
+
+.package-copy .buy-panel > p {
+  margin: 0;
+}
+
+.package-copy .purchase-row {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.package-copy .buy-panel > small {
+  grid-column: 1 / -1;
+  margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+  .package-copy {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .package-copy h2,
+  .package-items {
+    grid-column: 1;
+  }
+
+  .package-copy > p,
+  .package-care {
+    grid-column: 2;
+  }
+
+  .package-copy .buy-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .package-copy .purchase-row {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-still--original {
+    object-position: 47% center;
+  }
+
+  .first-box {
+    gap: 24px;
+    padding: 72px 0 88px;
+  }
+
+  .first-box .package-media,
+  .first-box .package-copy {
+    width: calc(100% - 36px);
+  }
+
+  .package-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .package-media img {
+    object-position: 46% center;
+  }
+
+  .package-copy {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .package-copy h2,
+  .package-copy > p,
+  .package-items,
+  .package-care,
+  .package-copy .buy-panel {
+    grid-column: 1;
   }
 }

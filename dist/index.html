@@ -50,9 +50,15 @@
     />
     <link
       rel="preload"
-      href="assets/generated/bend-site-v2-tube-hero.webp"
+      href="assets/generated/bend-hero-court-motion-original.png"
       as="image"
-      type="image/webp"
+      type="image/png"
+    />
+    <link
+      rel="preload"
+      href="assets/generated/bend-first-package-clean.png"
+      as="image"
+      type="image/png"
     />
     <link
       rel="preload"
@@ -114,11 +120,11 @@
         <div class="sky-hero-sticky" data-sky-frame>
           <img
             class="hero-still hero-still--original"
-            src="assets/generated/bend-site-v2-tube-hero.webp"
-            width="1672"
-            height="941"
+            src="assets/generated/bend-hero-court-motion-original.png"
+            width="1536"
+            height="1024"
             aria-describedby="heroMediaDescription"
-            alt="BEND pressurized supplement tubes, metallic bottle, refill pouches, and starter box arranged on a court"
+            alt="Padel players and a tennis ball path across a vivid blue court"
           />
           <img
             class="hero-still hero-still--color"
@@ -135,7 +141,7 @@
             <p>Padel + tennis match nutrition</p>
             <h1 id="heroTitle"><span>Three match moments.</span><span>One complete routine.</span></h1>
             <p>PREP before play, RALLY during and RESET after, packed together for ten match days.</p>
-            <a href="#routine">Explore the Match Stack</a>
+            <a href="#formula">Explore the Match Stack</a>
           </div>
           <p class="hero-cue">
             <span>Movement / clarity / drive / care</span
@@ -144,33 +150,40 @@
         </div>
       </section>
 
-      <span class="routine-anchor" id="routine" aria-hidden="true"></span>
-
-      <section class="color-system-story" aria-labelledby="colorSystemTitle">
-        <header class="color-system-story__header">
-          <p class="eyebrow">Variant 03 / Clubhouse dock and match cases</p>
-          <h2 id="colorSystemTitle"><span>Pack at the dock.</span><span>Play from the case.</span></h2>
-          <p>PREP, RALLY and RESET stay organised at home, then move to court as three compact match cases. Refill the formats you use and keep the hardware in play.</p>
-        </header>
-        <div class="color-system-story__media">
-          <figure class="color-system-story__item color-system-story__item--dock">
-            <img src="assets/generated/bend-site-v3-dock-kit.webp" width="512" height="512" alt="BEND clubhouse dock with a metallic court bottle and three match cases" />
-            <figcaption>01 / Clubhouse dock</figcaption>
-          </figure>
-          <figure class="color-system-story__item color-system-story__item--cases">
-            <img src="assets/generated/bend-site-v3-match-cases.webp" width="512" height="512" loading="lazy" alt="Three BEND match cases for PREP, RALLY and RESET" />
-            <figcaption>02 / Match cases</figcaption>
-          </figure>
-          <figure class="color-system-story__item color-system-story__item--open">
-            <img src="assets/generated/bend-site-v3-open-case.webp" width="1254" height="1254" loading="lazy" alt="Open RESET match case with large supplement gummies" />
-            <figcaption>03 / Open case</figcaption>
-          </figure>
-          <figure class="color-system-story__item color-system-story__item--refill">
-            <img src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND paper refill packages for the three match moments" />
-            <figcaption>04 / Refill system</figcaption>
-          </figure>
+      <section
+        class="first-box section-shell"
+        id="formula"
+        aria-labelledby="boxTitle"
+      >
+        <figure class="package-media reveal">
+          <img class="package-image package-image--original" src="assets/generated/bend-first-package-clean.png" width="1671" height="941" alt="The BEND first package with tubes, bottle, refill pouches, and PREP, RALLY, and RESET formats" />
+          <img class="package-image package-image--color" src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND PREP, RALLY and RESET match-case refill packages floating against a bright sky" />
+        </figure>
+        <div class="package-copy reveal">
+          <h2 id="boxTitle">First package now. Refills on rhythm.</h2>
+          <p>Your first Match Stack arrives with the reusable bottle, three labelled tubes and the first ten match-day routines. After that, BEND works as a flexible refill subscription: keep the hardware, top up PREP, RALLY and RESET, and review every delivery before it ships.</p>
+          <div class="package-items" role="list" aria-label="Inside the Match Stack">
+            <span role="listitem"><b>01</b> reusable BEND court bottle</span>
+            <span role="listitem"><b>03</b> labelled match tubes</span>
+            <span role="listitem"><b>30</b> doses for ten complete routines</span>
+          </div>
+          <p class="package-care"><b>Care</b> Rinse after each use. Hand-wash and leave the bottle open to air-dry.</p>
+          <div class="buy-panel" id="shop" data-spotlight>
+            <header><span>Match Stack / 10 match days</span><b>EUR 79</b></header>
+            <label class="refill-toggle"><input id="refillPlan" type="checkbox" /><span></span><b>Add refill subscription after the first package</b></label>
+            <p id="refillSummary">Start with the first package only. Add refills when your match rhythm is clear.</p>
+            <div class="purchase-row">
+              <div class="quantity">
+                <button type="button" data-quantity-minus aria-label="Decrease quantity">&#8722;</button><output id="quantityValue">1</output><button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
+              </div>
+              <button id="addToCart" type="button">Buy the Match Stack / <span id="cartPrice">EUR 79</span></button>
+            </div>
+            <small>Final formula, directions, and claims are subject to formulation and regulatory review.</small>
+          </div>
         </div>
       </section>
+
+      <span class="routine-anchor" id="routine" aria-hidden="true"></span>
 
       <section
         class="transformation"
@@ -178,35 +191,6 @@
         aria-labelledby="transformTitle"
       >
         <div class="transform-sticky">
-          <div class="story-media" aria-label="The three moments of the BEND match routine">
-            <figure class="story-media__scene story-media__prep">
-              <img
-                src="assets/generated/bend-prep-seating-v1.webp"
-                width="1672"
-                height="941"
-                alt="Blank deep-green court seats with one warm ivory seat picked out by sunlight"
-              />
-              <figcaption><span>Before play</span><b>Pack the calm cue</b></figcaption>
-            </figure>
-            <figure class="story-media__scene story-media__rally">
-              <img
-                src="assets/generated/bend-court-grid-motion-clean-v1.webp"
-                width="1536"
-                height="1024"
-                alt="Padel players and a ball path across a vivid blue court"
-              />
-              <figcaption><span>During play</span><b>Keep pace through play</b></figcaption>
-            </figure>
-            <figure class="story-media__scene story-media__reset">
-              <img
-                src="assets/generated/bend-padel-racket-motion-v1.webp"
-                width="1672"
-                height="941"
-                alt="A padel racket captured in controlled motion blur"
-              />
-              <figcaption><span>After play</span><b>Close the match</b></figcaption>
-            </figure>
-          </div>
           <canvas
             id="ballCanvas"
             role="img"
@@ -227,13 +211,13 @@
           </header>
           <div class="vessel-stage" aria-hidden="true">
             <div class="pill-rain" data-pill-rain>
-              <i style="--pill-x:-32px;--rest-x:-48px;--rest-y:-8px"></i><i style="--pill-x:24px;--rest-x:38px;--rest-y:-8px"></i>
-              <i style="--pill-x:-14px;--rest-x:-16px;--rest-y:-34px"></i><i style="--pill-x:38px;--rest-x:56px;--rest-y:-36px"></i>
-              <i style="--pill-x:6px;--rest-x:12px;--rest-y:-63px"></i><i style="--pill-x:-26px;--rest-x:-58px;--rest-y:-66px"></i>
-              <i style="--pill-x:32px;--rest-x:42px;--rest-y:-93px"></i><i style="--pill-x:-5px;--rest-x:-8px;--rest-y:-98px"></i>
-              <i style="--pill-x:-36px;--rest-x:-38px;--rest-y:-124px"></i><i style="--pill-x:18px;--rest-x:22px;--rest-y:-130px"></i>
-              <i style="--pill-x:36px;--rest-x:54px;--rest-y:-154px"></i><i style="--pill-x:-18px;--rest-x:-22px;--rest-y:-160px"></i>
-              <i style="--pill-x:2px;--rest-x:7px;--rest-y:-184px"></i><i style="--pill-x:26px;--rest-x:36px;--rest-y:-190px"></i>
+              <i class="pill-rain__prep" style="--pill-x:-32px;--rest-x:-48px;--rest-y:-8px"></i><i class="pill-rain__rally" style="--pill-x:24px;--rest-x:38px;--rest-y:-8px"></i>
+              <i class="pill-rain__reset" style="--pill-x:-14px;--rest-x:-16px;--rest-y:-34px"></i><i class="pill-rain__prep" style="--pill-x:38px;--rest-x:56px;--rest-y:-36px"></i>
+              <i class="pill-rain__rally" style="--pill-x:6px;--rest-x:12px;--rest-y:-63px"></i><i class="pill-rain__reset" style="--pill-x:-26px;--rest-x:-58px;--rest-y:-66px"></i>
+              <i class="pill-rain__prep" style="--pill-x:32px;--rest-x:42px;--rest-y:-93px"></i><i class="pill-rain__rally" style="--pill-x:-5px;--rest-x:-8px;--rest-y:-98px"></i>
+              <i class="pill-rain__reset" style="--pill-x:-36px;--rest-x:-38px;--rest-y:-124px"></i><i class="pill-rain__prep" style="--pill-x:18px;--rest-x:22px;--rest-y:-130px"></i>
+              <i class="pill-rain__rally" style="--pill-x:36px;--rest-x:54px;--rest-y:-154px"></i><i class="pill-rain__reset" style="--pill-x:-18px;--rest-x:-22px;--rest-y:-160px"></i>
+              <i class="pill-rain__prep" style="--pill-x:2px;--rest-x:7px;--rest-y:-184px"></i><i class="pill-rain__rally" style="--pill-x:26px;--rest-x:36px;--rest-y:-190px"></i>
             </div>
             <img
               class="vessel-cutout"
@@ -247,17 +231,17 @@
           <div class="story-cards" data-story-cards>
             <article class="story-card story-card--prep" data-story-card="prep">
               <button class="story-card__trigger" type="button" data-story-jump="prep" aria-expanded="true" aria-controls="storyPrepBody">
-                <span class="story-card__media"><i class="story-dose story-dose--prep" aria-hidden="true"></i></span>
+                <span class="story-card__media"><img src="assets/generated/bend-prep-dose-v2.png" width="1254" height="1254" alt="" aria-hidden="true" /></span>
                 <strong>Before play</strong><span class="story-card__arrow" aria-hidden="true">&#8594;</span>
               </button>
               <div class="story-card__body" id="storyPrepBody"><div>
-                <p>A caffeine-free chew for a calm, consistent start before warm-up.</p>
+                <p>A caffeine-free prep ball for a calm, consistent start before warm-up.</p>
                 <ul class="ingredient-list" aria-label="PREP ingredients">
                   <li>L-theanine</li><li>Magnesium</li><li>B vitamins</li>
                 </ul>
                 <p class="story-value">Readiness without the buzz.</p>
                 <dl class="story-meta">
-                  <div><dt>Format</dt><dd>10 mm white court chew</dd></div>
+                  <div><dt>Format</dt><dd>10 mm court-green prep ball</dd></div>
                   <div><dt>How to use</dt><dd>Take as directed before play.</dd></div>
                   <div><dt>Timing</dt><dd><b>-30</b> minutes before warm-up</dd></div>
                   <div><dt>Routine signal</dt><dd>Ready</dd></div>
@@ -267,7 +251,7 @@
 
             <article class="story-card story-card--rally" data-story-card="rally">
               <button class="story-card__trigger" type="button" data-story-jump="rally" aria-expanded="false" aria-controls="storyRallyBody">
-                <span class="story-card__media"><i class="story-dose story-dose--rally" aria-hidden="true"></i></span>
+                <span class="story-card__media"><img src="assets/generated/bend-rally-dose-v2.png" width="1254" height="1254" alt="" aria-hidden="true" /></span>
                 <strong>During play</strong><span class="story-card__arrow" aria-hidden="true">&#8594;</span>
               </button>
               <div class="story-card__body" id="storyRallyBody" aria-hidden="true"><div>
@@ -277,7 +261,7 @@
                 </ul>
                 <p class="story-value">Hydration built into the changeover.</p>
                 <dl class="story-meta">
-                  <div><dt>Format</dt><dd>20 mm court-yellow hydration ball</dd></div>
+                  <div><dt>Format</dt><dd>20 mm court-green hydration ball</dd></div>
                   <div><dt>How to use</dt><dd>Dissolve in water as directed.</dd></div>
                   <div><dt>Timing</dt><dd>Sip during play</dd></div>
                   <div><dt>Routine signal</dt><dd>Stay in play</dd></div>
@@ -287,7 +271,7 @@
 
             <article class="story-card story-card--reset" data-story-card="reset">
               <button class="story-card__trigger" type="button" data-story-jump="reset" aria-expanded="false" aria-controls="storyResetBody">
-                <span class="story-card__media"><i class="story-dose story-dose--reset" aria-hidden="true"><b></b><b></b><b></b></i></span>
+                <span class="story-card__media"><img src="assets/generated/bend-reset-dose-v2.png" width="1254" height="1254" alt="" aria-hidden="true" /></span>
                 <strong>After play</strong><span class="story-card__arrow" aria-hidden="true">&#8594;</span>
               </button>
               <div class="story-card__body" id="storyResetBody" aria-hidden="true"><div>
@@ -297,7 +281,7 @@
                 </ul>
                 <p class="story-value">One simple cue before you leave court.</p>
                 <dl class="story-meta">
-                  <div><dt>Format</dt><dd>30 mm soft recovery gummy</dd></div>
+                  <div><dt>Format</dt><dd>30 mm court-green recovery gummy</dd></div>
                   <div><dt>How to use</dt><dd>Take as directed after play.</dd></div>
                   <div><dt>Timing</dt><dd><b>+30</b> minutes after play</dd></div>
                   <div><dt>Routine signal</dt><dd>Match complete</dd></div>
@@ -308,35 +292,70 @@
         </div>
       </section>
 
-      <section
-        class="first-box section-shell"
-        id="formula"
-        aria-labelledby="boxTitle"
-      >
-        <figure class="package-media reveal">
-          <img class="package-image package-image--original" src="assets/generated/bend-site-v2-tube-starter.webp" width="1254" height="1254" alt="The BEND pressurized ball tube starter kit with a metallic bottle and PREP, RALLY and RESET tubes" />
-          <img class="package-image package-image--color" src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND PREP, RALLY and RESET match-case refill packages floating against a bright sky" />
-        </figure>
-        <div class="package-copy reveal">
-          <h2 id="boxTitle">Refill the routine.</h2>
-          <p>Your first Match Stack brings the complete system together for 10 match days. Keep the bottle and tubes; future orders replace only the supplements you use.</p>
-          <div class="package-items" role="list" aria-label="Inside the Match Stack">
-            <span role="listitem"><b>01</b> brushed stainless-steel BEND bottle</span>
-            <span role="listitem"><b>03</b> labelled refill tubes</span>
-            <span role="listitem"><b>30</b> single doses across three stages</span>
+      <section class="kit-showcase" id="kitContents" aria-labelledby="kitContentsTitle">
+        <div class="kit-showcase__header section-shell reveal">
+          <div>
+            <p class="eyebrow">First-time box / what arrives</p>
+            <h2 id="kitContentsTitle">Everything for ten match days.</h2>
           </div>
-          <p class="package-care"><b>Care</b> Rinse after each use. Hand-wash and leave the bottle open to air-dry.</p>
-          <div class="buy-panel" id="shop" data-spotlight>
-            <header><span>Match Stack / 10 match days</span><b>EUR 79</b></header>
-            <label class="refill-toggle"><input id="refillPlan" type="checkbox" /><span></span><b>Estimate my next refill from logged matches</b></label>
-            <p id="refillSummary">One starter kit only. No recurring deliveries or charges.</p>
-            <div class="purchase-row">
-              <div class="quantity">
-                <button type="button" data-quantity-minus aria-label="Decrease quantity">&#8722;</button><output id="quantityValue">1</output><button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
-              </div>
-              <button id="addToCart" type="button">Buy the Match Stack / <span id="cartPrice">EUR 79</span></button>
-            </div>
-            <small>Final formula, directions, and claims are subject to formulation and regulatory review.</small>
+          <p>A complete before, during and after system: reusable hardware, three clearly scaled formats and the first set of doses.</p>
+          <div class="carousel-controls" aria-label="Box contents controls">
+            <button type="button" data-carousel-prev aria-label="Previous box item" title="Previous box item">&#8592;</button>
+            <button type="button" data-carousel-next aria-label="Next box item" title="Next box item">&#8594;</button>
+          </div>
+        </div>
+        <div class="kit-carousel" data-carousel-shell>
+          <div class="kit-carousel__track" data-carousel-track tabindex="0" aria-label="Products inside the first-time box">
+            <article class="kit-card kit-card--bottle reveal">
+              <img src="assets/generated/bend-kit-bottle-blue-v1.webp" width="512" height="512" alt="Brushed metal BEND court bottle on a blue court" />
+              <div><span>01 / Reusable</span><h3>Steel court bottle.</h3><p>The clear bottle explains the transformation. This durable metal version is the one that travels to court.</p></div>
+            </article>
+            <article class="kit-card kit-card--box reveal">
+              <img src="assets/generated/bend-kit-box-blue-v1.webp" width="512" height="512" loading="lazy" alt="Open BEND first-time box with fitted compartments" />
+              <div><span>02 / Starter pack</span><h3>First-time box.</h3><p>A fitted home base for the bottle, three formats and ten complete match-day routines.</p></div>
+            </article>
+            <article class="kit-card kit-card--canisters reveal">
+              <img src="assets/generated/bend-kit-canisters-blue-v1.webp" width="512" height="512" loading="lazy" alt="PREP, RALLY and RESET metal storage canisters on a blue court" />
+              <div><span>03 / Home storage</span><h3>Three marked canisters.</h3><p>Separate PREP, RALLY and RESET at home, then pack only the formats needed for the match.</p></div>
+            </article>
+            <article class="kit-card kit-card--doses reveal">
+              <img src="assets/generated/bend-kit-doses-blue-v2.png" width="1254" height="1254" loading="lazy" alt="PREP ball, RALLY hydration ball and RESET gummy shown at their relative sizes" />
+              <div><span>04 / 10 + 10 + 10</span><h3>Three dose formats.</h3><p>A small PREP ball, medium RALLY dissolvable ball and larger RESET gummy make each moment identifiable by touch.</p></div>
+            </article>
+            <article class="kit-card kit-card--refills reveal">
+              <img src="assets/generated/bend-kit-refills-blue-v1.webp" width="512" height="512" loading="lazy" alt="BEND refill cartons for PREP, RALLY and RESET on a blue court" />
+              <div><span>05 / Refill only what moves</span><h3>Three refill cartons.</h3><p>Keep the hardware. Replace each match format independently as your routine runs low.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="court-gallery" aria-labelledby="courtGalleryTitle">
+        <div class="court-gallery__header section-shell reveal">
+          <div>
+            <p class="eyebrow">Court studies / three moments</p>
+            <h2 id="courtGalleryTitle">The routine, in play.</h2>
+          </div>
+          <p>Preparation, pace and recovery stay visually distinct while the system remains one continuous match ritual.</p>
+          <div class="carousel-controls carousel-controls--dark" aria-label="Court studies controls">
+            <button type="button" data-carousel-prev aria-label="Previous court study" title="Previous court study">&#8592;</button>
+            <button type="button" data-carousel-next aria-label="Next court study" title="Next court study">&#8594;</button>
+          </div>
+        </div>
+        <div class="court-gallery__shell" data-carousel-shell>
+          <div class="court-gallery__track" data-carousel-track tabindex="0" aria-label="Court studies">
+            <figure class="court-study reveal">
+              <img src="assets/generated/bend-prep-seating-v1.webp" width="1672" height="941" loading="lazy" alt="Blank deep-green court seats with one warm ivory seat picked out by sunlight" />
+              <figcaption><span>01 / Before play</span><b>Pack the calm cue</b></figcaption>
+            </figure>
+            <figure class="court-study reveal">
+              <img src="assets/generated/bend-court-grid-motion-clean-v1.webp" width="1536" height="1024" loading="lazy" alt="Padel players and a ball path across a vivid blue court" />
+              <figcaption><span>02 / During play</span><b>Keep pace through play</b></figcaption>
+            </figure>
+            <figure class="court-study reveal">
+              <img src="assets/generated/bend-padel-racket-motion-v1.webp" width="1672" height="941" loading="lazy" alt="A padel racket captured in controlled motion blur" />
+              <figcaption><span>03 / After play</span><b>Close the match</b></figcaption>
+            </figure>
           </div>
         </div>
       </section>

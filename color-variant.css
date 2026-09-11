@@ -807,3 +807,164 @@ html.color-identity .toast {
     scroll-behavior: auto !important;
   }
 }
+
+/* Variant palette revision: product photography on clean color fields, without grids. */
+html.color-identity {
+  --field-blue: #133b7a;
+  --field-sky: #7bc7eb;
+  --field-acid: #cbdc86;
+  --field-coral: #e99b76;
+  --field-aqua: #dce8cf;
+  --field-ink: #071b39;
+  --field-paper: #eef1f3;
+  background: var(--field-paper);
+}
+
+html.color-identity body {
+  background: var(--field-paper);
+}
+
+html.color-identity .sky-wash {
+  background-image: linear-gradient(
+    90deg,
+    rgba(7, 27, 57, 0.68),
+    rgba(7, 27, 57, 0.18) 62%,
+    rgba(7, 27, 57, 0.03) 86%
+  );
+}
+
+html.color-identity .hero-copy {
+  z-index: 3;
+  bottom: 96px;
+  width: min(760px, calc(100vw - 96px));
+}
+
+html.color-identity .hero-copy h1 {
+  max-width: 760px;
+  font-size: 50px;
+  line-height: 0.97;
+}
+
+html.color-identity .hero-copy > p:nth-of-type(2) {
+  max-width: 480px;
+}
+
+html.color-identity .hero-cue {
+  background: var(--field-aqua);
+  color: var(--field-ink);
+}
+
+html.color-identity .transformation,
+html.color-identity .color-system-story {
+  display: none;
+  background-image: none;
+}
+
+html.color-identity .kit-showcase {
+  min-height: 100svh;
+  padding-top: 126px;
+  border-top: 0;
+  background: var(--field-paper);
+  color: var(--field-ink);
+}
+
+html.color-identity .kit-showcase__header .eyebrow,
+html.color-identity .kit-showcase__header > p,
+html.color-identity .kit-card p {
+  color: rgba(7, 27, 57, 0.66);
+}
+
+html.color-identity .kit-showcase__header h2 {
+  max-width: 18ch;
+  color: var(--field-ink);
+}
+
+html.color-identity .kit-card {
+  border-color: rgba(255, 255, 255, 0.92);
+  background: #fff;
+  box-shadow: 0 20px 48px rgba(7, 27, 57, 0.1);
+}
+
+html.color-identity .kit-card > div {
+  border-color: rgba(7, 27, 57, 0.14);
+}
+
+html.color-identity .kit-card--box > div,
+html.color-identity .kit-card--canisters > div {
+  background: var(--field-aqua);
+}
+
+html.color-identity .kit-card--doses > div {
+  background: #f1b393;
+}
+
+html.color-identity .kit-card--refills > div {
+  background: var(--field-ink);
+  color: #fff;
+}
+
+html.color-identity .kit-card--refills p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+html.color-identity .carousel-controls button {
+  border-color: rgba(7, 27, 57, 0.28);
+  background: #fff;
+  color: var(--field-ink);
+}
+
+html.color-identity .carousel-controls button:hover:not(:disabled),
+html.color-identity .carousel-controls button:focus-visible {
+  background: var(--field-ink);
+  color: #fff;
+}
+
+html.color-identity .first-box {
+  border-color: rgba(7, 27, 57, 0.22);
+  background: #efb08e;
+}
+
+html.color-identity .package-copy,
+html.color-identity .rhythm,
+html.color-identity .client-reviews,
+html.color-identity .site-footer {
+  background-image: none;
+}
+
+html.color-identity .rhythm {
+  border-color: rgba(7, 27, 57, 0.22);
+  background-color: var(--field-aqua);
+}
+
+html.color-identity .client-reviews {
+  border-color: rgba(255, 255, 255, 0.22);
+  background-color: var(--field-ink);
+}
+
+html.color-identity .site-footer {
+  background-color: #050d1c;
+}
+
+html.color-identity .footer-mark__dot {
+  background: #fff;
+}
+
+html.color-identity .court-gallery {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  html.color-identity .hero-copy {
+    bottom: 88px;
+    width: calc(100% - 36px);
+  }
+
+  html.color-identity .hero-copy h1 {
+    font-size: 27px;
+  }
+
+  html.color-identity .kit-showcase {
+    min-height: 0;
+    padding-top: 82px;
+  }
+}
