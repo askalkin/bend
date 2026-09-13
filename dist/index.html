@@ -151,34 +151,21 @@
       </section>
 
       <section
-        class="first-box section-shell"
+        class="first-box section-shell package-scroll"
         id="formula"
+        data-package-section
         aria-labelledby="boxTitle"
       >
-        <figure class="package-media reveal">
-          <img class="package-image package-image--original" src="assets/generated/bend-first-package-clean.png" width="1671" height="941" alt="The BEND first package with tubes, bottle, refill pouches, and PREP, RALLY, and RESET formats" />
-          <img class="package-image package-image--color" src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND PREP, RALLY and RESET match-case refill packages floating against a bright sky" />
-        </figure>
-        <div class="package-copy reveal">
-          <h2 id="boxTitle">First package now. Refills on rhythm.</h2>
-          <p>Your first Match Stack arrives with the reusable bottle, three labelled tubes and the first ten match-day routines. After that, BEND works as a flexible refill subscription: keep the hardware, top up PREP, RALLY and RESET, and review every delivery before it ships.</p>
-          <div class="package-items" role="list" aria-label="Inside the Match Stack">
-            <span role="listitem"><b>01</b> reusable BEND court bottle</span>
-            <span role="listitem"><b>03</b> labelled match tubes</span>
-            <span role="listitem"><b>30</b> doses for ten complete routines</span>
-          </div>
-          <p class="package-care"><b>Care</b> Rinse after each use. Hand-wash and leave the bottle open to air-dry.</p>
-          <div class="buy-panel" id="shop" data-spotlight>
-            <header><span>Match Stack / 10 match days</span><b>EUR 79</b></header>
-            <label class="refill-toggle"><input id="refillPlan" type="checkbox" /><span></span><b>Add refill subscription after the first package</b></label>
-            <p id="refillSummary">Start with the first package only. Add refills when your match rhythm is clear.</p>
-            <div class="purchase-row">
-              <div class="quantity">
-                <button type="button" data-quantity-minus aria-label="Decrease quantity">&#8722;</button><output id="quantityValue">1</output><button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
-              </div>
-              <button id="addToCart" type="button">Buy the Match Stack / <span id="cartPrice">EUR 79</span></button>
-            </div>
-            <small>Final formula, directions, and claims are subject to formulation and regulatory review.</small>
+        <span class="package-shop-anchor" id="shop" aria-hidden="true"></span>
+        <div class="package-scroll__sticky" data-package-frame>
+          <figure class="package-media reveal">
+            <img class="package-image package-image--original" src="assets/generated/bend-first-package-clean.png" width="1671" height="941" alt="The BEND first package with tubes, bottle, refill pouches, and PREP, RALLY, and RESET formats" />
+            <img class="package-image package-image--color" src="assets/generated/bend-site-v3-refills.webp" width="1254" height="1254" loading="lazy" alt="BEND PREP, RALLY and RESET match-case refill packages floating against a bright sky" />
+          </figure>
+          <div class="package-copy reveal">
+            <h2 id="boxTitle">Refills on rhythm</h2>
+            <p>Your first Match Stack arrives with the reusable bottle, three labelled tubes and the first ten match-day routines. After that, you don't need to worry about refill with subscription.</p>
+            <button id="addToCart" class="package-cta" type="button">Buy first package</button>
           </div>
         </div>
       </section>

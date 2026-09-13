@@ -47,6 +47,8 @@ document.querySelectorAll("[data-carousel-shell]").forEach((shell) => {
 const header = document.querySelector("[data-header]");
 const hero = document.querySelector("[data-sky-hero]");
 const heroFrame = document.querySelector("[data-sky-frame]");
+const packageSection = document.querySelector("[data-package-section]");
+const packageFrame = document.querySelector("[data-package-frame]");
 const transformSection = document.querySelector("[data-transform-section]");
 const transformSticky = transformSection.querySelector(".transform-sticky");
 const transformCopy = document.querySelector("[data-transform-copy]");
@@ -77,6 +79,50 @@ function updateScrollScene() {
   );
   heroFrame.classList.toggle("is-card", heroProgress > 0.08);
   header.classList.toggle("scrolled", window.scrollY > 50);
+
+  if (packageSection && packageFrame) {
+    const packageRect = packageSection.getBoundingClientRect();
+    const packageTravel = Math.max(1, packageSection.offsetHeight - viewport);
+    const packageRaw = clamp(-packageRect.top / packageTravel);
+    const packageImageProgress = smooth(range(packageRaw, 0.06, 0.74));
+    const packageCopyProgress = smooth(range(packageRaw, 0.36, 0.66));
+    const gutter =
+      window.innerWidth < 900
+        ? 18
+        : 48;
+    const fullWidth = Math.max(
+      280,
+      Math.min(1360, window.innerWidth - gutter * 2),
+    );
+    const finalWidth =
+      window.innerWidth < 900
+        ? fullWidth
+        : Math.max(420, window.innerWidth * 0.5 - gutter);
+    const finalCenter =
+      window.innerWidth < 900
+        ? window.innerWidth / 2
+        : window.innerWidth - gutter - finalWidth / 2;
+    const imageX = (finalCenter - window.innerWidth / 2) * packageImageProgress;
+    const imageWidth =
+      fullWidth + (finalWidth - fullWidth) * packageImageProgress;
+
+    packageSection.style.setProperty(
+      "--package-media-width",
+      `${imageWidth.toFixed(2)}px`,
+    );
+    packageSection.style.setProperty(
+      "--package-media-x",
+      `${imageX.toFixed(2)}px`,
+    );
+    packageSection.style.setProperty(
+      "--package-copy-opacity",
+      packageCopyProgress.toFixed(3),
+    );
+    packageSection.style.setProperty(
+      "--package-copy-y",
+      `${(30 * (1 - packageCopyProgress)).toFixed(2)}px`,
+    );
+  }
 
   const transformRect = transformSection.getBoundingClientRect();
   const transformTravel = Math.max(1, transformSection.offsetHeight - viewport);
@@ -390,29 +436,35 @@ document
 
 const refillPlan = document.querySelector("#refillPlan");
 const refillSummary = document.querySelector("#refillSummary");
-refillPlan.addEventListener("change", () => {
-  refillSummary.textContent = refillPlan.checked
-    ? "Refills follow logged play. You review the date and EUR 39 price before anything ships."
-    : "Start with the first package only. Add refills when your match rhythm is clear.";
-});
+if (refillPlan && refillSummary) {
+  refillPlan.addEventListener("change", () => {
+    refillSummary.textContent = refillPlan.checked
+      ? "Refills follow logged play. You review the date and EUR 39 price before anything ships."
+      : "Start with the first package only. Add refills when your match rhythm is clear.";
+  });
+}
 
 const quantityValue = document.querySelector("#quantityValue");
 const cartPrice = document.querySelector("#cartPrice");
 let quantity = 1;
 const updatePrice = () => {
-  cartPrice.textContent = `EUR ${79 * quantity}`;
-  quantityValue.textContent = String(quantity);
+  if (cartPrice) cartPrice.textContent = `EUR ${79 * quantity}`;
+  if (quantityValue) quantityValue.textContent = String(quantity);
 };
-document
-  .querySelector("[data-quantity-minus]")
-  .addEventListener("click", () => {
+const quantityMinus = document.querySelector("[data-quantity-minus]");
+const quantityPlus = document.querySelector("[data-quantity-plus]");
+if (quantityMinus) {
+  quantityMinus.addEventListener("click", () => {
     quantity = Math.max(1, quantity - 1);
     updatePrice();
   });
-document.querySelector("[data-quantity-plus]").addEventListener("click", () => {
-  quantity = Math.min(8, quantity + 1);
-  updatePrice();
-});
+}
+if (quantityPlus) {
+  quantityPlus.addEventListener("click", () => {
+    quantity = Math.min(8, quantity + 1);
+    updatePrice();
+  });
+}
 
 const cartDrawer = document.querySelector("#cartDrawer");
 const cartButton = document.querySelector(".cart-button");
@@ -465,19 +517,22 @@ drawerBackdrop.addEventListener("click", closeCart);
 document
   .querySelectorAll("[data-close-cart]")
   .forEach((el) => el.addEventListener("click", closeCart));
-document.querySelector("#addToCart").addEventListener("click", () => {
-  cart.push({
-    name: "BEND Match Stack",
-    mode: refillPlan.checked
-      ? "first package + refill subscription review"
-      : "first package only",
-    price: 79,
-    quantity,
+const addToCartButton = document.querySelector("#addToCart");
+if (addToCartButton) {
+  addToCartButton.addEventListener("click", () => {
+    cart.push({
+      name: "BEND Match Stack",
+      mode: refillPlan?.checked
+        ? "first package + refill subscription review"
+        : "first package only",
+      price: 79,
+      quantity,
+    });
+    renderCart();
+    showToast("Match Stack added to cart");
+    openCart();
   });
-  renderCart();
-  showToast("Match Stack added to cart");
-  openCart();
-});
+}
 document
   .querySelector("#checkoutButton")
   .addEventListener("click", () =>
