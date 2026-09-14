@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BEND Packaging System Concepts</title>
+    <meta
+      name="description"
+      content="A structured visual board for BEND padel and tennis supplement packaging concepts."
+    />
+    <style>
+      @font-face {
+        font-family: "Monument Extended";
+        src: url("assets/fonts/MonumentExtended-Regular.otf") format("opentype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/InterVariable.woff2") format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --paper: #eeeee8;
+        --paper-warm: #ddd6c9;
+        --ink: #111111;
+        --muted: #5e625b;
+        --line: rgba(17, 17, 17, 0.18);
+        --acid: #d7ff35;
+        --sage: #9fac98;
+        --clay: #bf755f;
+        --chrome: #cfd0cd;
+        --white: #f8f8f2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: minmax(160px, auto) minmax(0, 1fr);
+        align-items: center;
+        gap: 24px;
+        padding: 16px 42px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(238, 238, 232, 0.9);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        font-family: "Monument Extended", Inter, sans-serif;
+        font-size: 34px;
+        line-height: 1;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+        font-size: 12px;
+      }
+
+      .nav-links a {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        text-decoration: none;
+        background: rgba(248, 248, 242, 0.56);
+      }
+
+      .scope {
+        min-height: calc(100vh - 69px);
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scope-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 64px 42px;
+        border-right: 1px solid var(--line);
+      }
+
+      .eyebrow,
+      .variant-kicker,
+      .meta {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      figure {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin-top: 44px;
+        font-family: "Monument Extended", Inter, sans-serif;
+        font-size: 92px;
+        line-height: 0.9;
+        font-weight: 400;
+      }
+
+      .scope-note {
+        max-width: 360px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .scope-list {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-content: stretch;
+        border-left: 0;
+        list-style: none;
+        counter-reset: packaging-item;
+      }
+
+      .scope-item {
+        position: relative;
+        counter-increment: packaging-item;
+        min-height: 190px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 26px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: rgba(248, 248, 242, 0.44);
+      }
+
+      .scope-item::before {
+        content: counter(packaging-item, decimal-leading-zero);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 740;
+      }
+
+      .scope-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .scope-item strong {
+        display: block;
+        max-width: 18ch;
+        font-size: 24px;
+        line-height: 1.05;
+        font-weight: 740;
+      }
+
+      .scope-item span {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .variant {
+        padding: 72px 42px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .variant-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 22px;
+      }
+
+      h2 {
+        font-family: "Monument Extended", Inter, sans-serif;
+        font-size: 46px;
+        line-height: 1;
+        font-weight: 400;
+      }
+
+      .complete-frame {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper-warm);
+      }
+
+      .complete-frame img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .bento {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .tile {
+        position: relative;
+        overflow: hidden;
+        min-height: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--chrome);
+        aspect-ratio: 1 / 1;
+      }
+
+      .tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.025);
+        transform-origin: center;
+      }
+
+      .tile figcaption {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        max-width: calc(100% - 24px);
+        padding: 7px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.36);
+        border-radius: 6px;
+        background: rgba(248, 248, 242, 0.74);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 760;
+        text-transform: uppercase;
+        backdrop-filter: blur(14px);
+      }
+
+      .discovery {
+        padding: 72px 42px;
+        border-bottom: 1px solid var(--line);
+        background: #f4f4ef;
+      }
+
+      .discovery-head {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+        align-items: end;
+        gap: 42px;
+        margin-bottom: 22px;
+      }
+
+      .discovery-copy {
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .discovery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .discovery-photo {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--chrome);
+      }
+
+      .discovery-photo img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        transform: scale(1.01);
+        transform-origin: center;
+      }
+
+      .discovery-photo figcaption {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        display: grid;
+        gap: 4px;
+        width: min(360px, calc(100% - 24px));
+        padding: 10px 11px;
+        border: 1px solid rgba(255, 255, 255, 0.38);
+        border-radius: 6px;
+        background: rgba(248, 248, 242, 0.76);
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+        backdrop-filter: blur(14px);
+      }
+
+      .discovery-photo figcaption strong {
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 780;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 30px 42px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      @media (max-width: 1180px) {
+        .scope {
+          grid-template-columns: 1fr;
+        }
+
+        .scope-title {
+          min-height: 520px;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .bento {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .discovery-head,
+        .discovery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .nav {
+          position: static;
+          grid-template-columns: 1fr;
+          padding: 16px;
+        }
+
+        .brand {
+          font-size: 30px;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+        }
+
+        .scope-title,
+        .discovery,
+        .variant,
+        .footer {
+          padding: 34px 16px;
+        }
+
+        h1 {
+          font-size: 58px;
+        }
+
+        h2 {
+          font-size: 32px;
+        }
+
+        .scope-list,
+        .bento {
+          grid-template-columns: 1fr;
+        }
+
+        .cue-card {
+          min-height: auto;
+        }
+
+        .cue-stage {
+          min-height: 230px;
+        }
+
+        .scope-item,
+        .scope-item:nth-child(2n) {
+          min-height: 150px;
+          border-right: 0;
+        }
+
+        .variant-head,
+        .footer {
+          display: block;
+        }
+
+        .variant-kicker {
+          margin-bottom: 10px;
+        }
+
+        .complete-frame img {
+          aspect-ratio: 4 / 3;
+        }
+
+        .bento {
+          grid-auto-rows: 260px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="nav" aria-label="Packaging concept navigation">
+        <a class="brand" href="#items" aria-label="BEND packaging items">BEND</a>
+        <div class="nav-links">
+          <a href="#items">Items</a>
+          <a href="#discovery">Discovery</a>
+          <a href="#variant-01">Variant 01</a>
+          <a href="#variant-01b">Variant 01B</a>
+          <a href="#variant-02">Variant 02</a>
+          <a href="#variant-03">Variant 03</a>
+          <a href="#variant-03b">Variant 03B</a>
+          <a href="#variant-04">Variant 04</a>
+          <a href="#variant-05">Variant 05</a>
+          <a href="#variant-06">Variant 06</a>
+        </div>
+      </nav>
+
+      <section class="scope" id="items" aria-labelledby="items-title">
+        <div class="scope-title">
+          <div>
+            <p class="eyebrow">Concept Scope</p>
+            <h1 id="items-title">BEND Packaging System</h1>
+          </div>
+          <p class="scope-note">
+            A complete packaging direction for the BEND court nutrition ritual, showing the starter kit, refill architecture, reusable vessels, and individual product expressions.
+          </p>
+        </div>
+
+        <ol class="scope-list" aria-label="Packaging items included in the concept scope">
+          <li class="scope-item">
+            <strong>Premium starter box</strong>
+            <span>The first brand encounter: protective, giftable, and designed to frame the system as a ritual.</span>
+          </li>
+          <li class="scope-item">
+            <strong>Molded mycelium insert</strong>
+            <span>A tactile compostable tray that gives each object a precise place while keeping the unboxing elevated.</span>
+          </li>
+          <li class="scope-item">
+            <strong>Reusable court vessel</strong>
+            <span>A signature bottle or cup adapted per concept, extending the identity beyond the supplement pack.</span>
+          </li>
+          <li class="scope-item">
+            <strong>PREP container</strong>
+            <span>The before-play format, built around a compact daily dose and a calm preparation moment.</span>
+          </li>
+          <li class="scope-item">
+            <strong>RALLY container</strong>
+            <span>The during-play format, designed for easy court-bag use and a clear mid-session behavior.</span>
+          </li>
+          <li class="scope-item">
+            <strong>RESET container</strong>
+            <span>The after-play format, with the most sensory product expression through a larger glossy gummy.</span>
+          </li>
+          <li class="scope-item">
+            <strong>Portable match tubes</strong>
+            <span>Slim refillable carry pieces for one match, one court bag, and one focused use occasion.</span>
+          </li>
+          <li class="scope-item">
+            <strong>Refill architecture</strong>
+            <span>Lightweight replenishment packs that make repeat purchase feel intentional, premium, and low-waste.</span>
+          </li>
+          <li class="scope-item">
+            <strong>Supplement formats</strong>
+            <span>A recognizable green product language across small PREP tablets, medium RALLY tablets, and RESET gummies.</span>
+          </li>
+          <li class="scope-item">
+            <strong>Printed ritual card</strong>
+            <span>A small supporting touchpoint for dosage, replenishment, brand storytelling, and digital content.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="discovery" id="discovery" aria-labelledby="discovery-title">
+        <div class="discovery-head">
+          <div>
+            <p class="eyebrow">Visual Discovery</p>
+            <h2 id="discovery-title">Recognition Beyond Color</h2>
+          </div>
+          <p class="discovery-copy">
+            The system can make PREP, RALLY, and RESET instantly recognizable through shape, material, cap construction, tab placement, and micro-marking. Color stays as a precise secondary cue: useful for quick scanning, but never the whole identity.
+          </p>
+        </div>
+
+        <div class="discovery-grid" aria-label="Product recognition product photo variants">
+          <figure class="discovery-photo">
+            <img
+              src="assets/generated/bend-discovery-01-form-factor.png"
+              alt="BEND product photography showing PREP RALLY and RESET differentiated through distinct container and refill package form factors"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Form-factor codes</strong>
+              <span>Short PREP, slimmer RALLY, and broader RESET silhouettes create recognition before any color read.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="discovery-photo">
+            <img
+              src="assets/generated/bend-discovery-02-material-system.png"
+              alt="BEND product photography showing material-led recognition through ceramic, smoked glass, frosted glass, and metallic package finishes"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Material system</strong>
+              <span>Surface finish carries the ritual: soft ceramic, smoked glass, frosted glass, and controlled metallic details.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="discovery-photo">
+            <img
+              src="assets/generated/bend-discovery-03-closure-codes.png"
+              alt="BEND product photography showing cap and closure differences across PREP RALLY and RESET containers"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Closure cues</strong>
+              <span>Flat, ribbed, and heavier cap profiles make each workout time recognizable by touch and silhouette.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="discovery-photo">
+            <img
+              src="assets/generated/bend-discovery-04-refill-windows.png"
+              alt="BEND product photography showing refill pouch window and tab placement differences for PREP RALLY and RESET"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Refill architecture</strong>
+              <span>Windows, tab placement, and micro-marking help the refill match its container without relying on big color blocks.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-01" aria-labelledby="variant-01-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 01</p>
+          <h2 id="variant-01-title">Mycelium Trophy Case</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v1-blue-court-wide-vessel.png"
+            alt="Complete BEND mycelium trophy case packaging concept on a blue padel court floor with a 1.5x wider top-handle metal court vessel placed horizontally in an enlarged upper tray slot above smaller metal containers, refill boxes, and PREP RALLY RESET supplements in three sizes"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 01 individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1-item-01-first-order-box-wide-vessel.png"
+              alt="BEND first-order box with molded mycelium insert, enlarged horizontal top slot for a 1.5x wider metal court vessel, and smaller cylindrical containers on a blue padel court floor"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1-vessel-item-02-metal-court-vessel.png"
+              alt="BEND top-handle metal court vessel photographed on a blue padel court floor"
+              loading="lazy"
+            />
+            <figcaption>Court vessel</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1-cup-item-03-home-containers.png"
+              alt="Three BEND metallic supplement containers on a blue padel court floor"
+              loading="lazy"
+            />
+            <figcaption>Containers</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1-cup-item-04-refill-cartons.png"
+              alt="BEND mycelium refill cartons for PREP, RALLY, and RESET on a blue padel court floor"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1-pill-scale-item-05-refill-spill-realistic-box.png"
+              alt="Open BEND PREP refill carton with realistic molded paper geometry and small matte pressed supplement tablets on a blue padel court floor"
+              loading="lazy"
+            />
+            <figcaption>Refill</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1-pill-scale-item-06-prep-rally-reset.png"
+              alt="BEND PREP RALLY and RESET supplements on a blue padel court floor with PREP smallest tablets, RALLY medium tablets, and RESET largest glossy gummies"
+              loading="lazy"
+            />
+            <figcaption>Pills</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-01b" aria-labelledby="variant-01b-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 01B</p>
+          <h2 id="variant-01b-title">Trophy Case With Court Tubes</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v1b-wide-vessel-tray.png"
+            alt="Complete BEND mycelium starter kit with a 1.5x wider top-handle metal court vessel placed horizontally in an enlarged upper tray slot above frosted glass home containers, plus transportable metal court tubes and PREP RALLY RESET supplements in three sizes"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 01B individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1b-item-01-starter-tray-wide-vessel.png"
+              alt="BEND first-order mycelium kit with frosted glass home containers below an enlarged horizontal top-slot metal court vessel, court tubes, and scaled PREP RALLY RESET contents"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1b-cup-item-02-court-tubes.png"
+              alt="Transportable BEND court tubes placed in the first-order package"
+              loading="lazy"
+            />
+            <figcaption>Court tubes</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1b-pill-scale-item-03-home-containers.png"
+              alt="Three BEND frosted glass home containers with metallic lids showing PREP smallest tablets, RALLY medium tablets, and RESET largest gummies through frosted glass"
+              loading="lazy"
+            />
+            <figcaption>Containers</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1b-item-04-refill-boxes-realistic.png"
+              alt="Standing BEND mycelium refill boxes for PREP RALLY and RESET with corrected straight package structure and realistic paper geometry"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1b-item-05-open-refill-realistic.png"
+              alt="Open BEND PREP refill box with corrected molded paper structure and only small PREP supplement tablets spilling out"
+              loading="lazy"
+            />
+            <figcaption>Refill</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v1b-pill-scale-item-06-portable-tube.png"
+              alt="BEND slim portable PREP court tube with cap and small matte pressed PREP tablets"
+              loading="lazy"
+            />
+            <figcaption>Portable tube</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-02" aria-labelledby="variant-02-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 02</p>
+          <h2 id="variant-02-title">Pressurized Ball Tube System</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v2-full-metallic-gradient-pouches.png"
+            alt="Complete BEND pressurized ball tube packaging concept with frosted translucent refill pouches, full-height metallic gradient material, left paper tabs, quantity text, and three-size PREP RALLY RESET supplements"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 02 individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v2-pill-scale-item-01-tube-starter-kit.png"
+              alt="BEND pressurized ball tube first-order package with PREP small tablets, RALLY medium tablets, and RESET large glossy gummies in clear tubes"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v2-pill-scale-item-02-product-tubes.png"
+              alt="Three clear BEND supplement tubes labeled PREP RALLY and RESET with visible three-size tablet and gummy contents"
+              loading="lazy"
+            />
+            <figcaption>Containers</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v2-item-03-bottle.png"
+              alt="BEND metallic bottle in the package"
+              loading="lazy"
+            />
+            <figcaption>Court bottle</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v2-pill-scale-item-04-refill-pouches.png"
+              alt="Clean typographic BEND refill pouches with frosted translucent material, metallic top gradient, left paper tags, bottom-right quantity text, and three-size contents"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v2-pill-scale-item-05-reset-refill.png"
+              alt="Single frosted translucent BEND RESET refill pouch with metallic top band, left paper tag, blurred large glossy RESET gummies, and bottom-right quantity text"
+              loading="lazy"
+            />
+            <figcaption>Refill</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v2-pill-scale-item-06-prep-rally-reset.png"
+              alt="BEND supplement macro showing PREP smallest tablets, RALLY medium tablets, and RESET largest glossy gummies"
+              loading="lazy"
+            />
+            <figcaption>Pills</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-03" aria-labelledby="variant-03-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 03</p>
+          <h2 id="variant-03-title">Clubhouse Dock And Match Cases</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v3-sky-float-no-glass-bottles.png"
+            alt="Complete BEND clubhouse dock concept with match cases, scaled PREP RALLY RESET supplements, parchment-window refill packaging, and no glass bottles"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 03 individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-glass-item-01-clubhouse-dock.png"
+              alt="BEND clubhouse dock first-order kit with glass bottle floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-glass-item-02-match-cases.png"
+              alt="BEND match case containers for PREP RALLY and RESET floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-pill-scale-item-03-open-case.png"
+              alt="Open metal match case floating with a mix of small PREP tablets, medium RALLY tablets, and large glossy RESET gummies"
+              loading="lazy"
+            />
+            <figcaption>Open case</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-pill-scale-item-04-parchment-refills.png"
+              alt="BEND refill cartons with softly blurred parchment blister windows and scaled PREP RALLY RESET contents floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>Refill</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-pill-scale-item-05-reset-gummies.png"
+              alt="RESET gummy supplement refill floating with large glossy translucent RESET gummies"
+              loading="lazy"
+            />
+            <figcaption>Gummies</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-glass-item-06-glass-bottle-dock.png"
+              alt="BEND glass bottle and dock detail floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>Dock detail</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-03b" aria-labelledby="variant-03b-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 03B</p>
+          <h2 id="variant-03b-title">Clubhouse Dock With Empty Clear Bottle</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v3b-empty-clear-bottle.png"
+            alt="Complete BEND clubhouse dock concept floating in the sky with match cases, refill cartons, scaled PREP RALLY RESET supplements, and an empty clear bail-handle bottle"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 03B individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3b-item-01-clubhouse-dock-empty-clear-bottle.png"
+              alt="BEND clubhouse dock first-order kit with an empty clear bail-handle bottle floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-glass-item-02-match-cases.png"
+              alt="BEND match case containers for PREP RALLY and RESET floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-pill-scale-item-03-open-case.png"
+              alt="Open metal match case floating with a mix of small PREP tablets, medium RALLY tablets, and large glossy RESET gummies"
+              loading="lazy"
+            />
+            <figcaption>Open case</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-pill-scale-item-04-parchment-refills.png"
+              alt="BEND refill cartons with softly blurred parchment blister windows and scaled PREP RALLY RESET contents floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>Refill</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3-pill-scale-item-05-reset-gummies.png"
+              alt="RESET gummy supplement refill floating with large glossy translucent RESET gummies"
+              loading="lazy"
+            />
+            <figcaption>Gummies</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v3b-item-06-empty-clear-bottle-dock.png"
+              alt="Empty clear BEND bail-handle bottle and clubhouse dock detail floating in the sky"
+              loading="lazy"
+            />
+            <figcaption>Bottle</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-04" aria-labelledby="variant-04-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 04</p>
+          <h2 id="variant-04-title">Smoked Glass Metallic Cans</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v4-brutalist-graphite.png"
+            alt="Complete BEND smoked frosted glass metallic can packaging concept with mycelium tray, wave-free graphite refill boxes, brutalist Swiss typography, and three-size PREP RALLY RESET contents"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 04 individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v4-item-01-starter-tray-brutalist.png"
+              alt="BEND starter tray with wave-free cardboard lid, brutalist Swiss typography, smoked frosted glass cans, and scaled PREP RALLY RESET contents"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v4-pill-scale-item-02-stacked-cans.png"
+              alt="Stacked BEND smoked glass metallic cans with visible scaled supplement contents"
+              loading="lazy"
+            />
+            <figcaption>Can stack</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v4-pill-scale-item-03-prep-rally-reset-cans.png"
+              alt="Three BEND smoked glass cans labeled PREP RALLY and RESET with smallest tablets, medium tablets, and largest gummies"
+              loading="lazy"
+            />
+            <figcaption>Containers</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v4-item-04-brutalist-refill-boxes.png"
+              alt="BEND wave-free graphite cardboard refill boxes with brutalist Swiss typography beside a smoked glass can with scaled supplement contents"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v4-pill-scale-item-05-open-can.png"
+              alt="Open BEND smoked glass can with small tablets and large glossy RESET gummies"
+              loading="lazy"
+            />
+            <figcaption>Open can</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v4-pill-scale-item-06-smoked-glass-macro.png"
+              alt="Large glossy RESET gummies and smaller tablets visible through smoked frosted glass"
+              loading="lazy"
+            />
+            <figcaption>Pills</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-05" aria-labelledby="variant-05-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 05</p>
+          <h2 id="variant-05-title">Tall Frosted Dose Tubes</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v5-pill-scale.png"
+            alt="Complete BEND tall frosted tube packaging concept with chrome caps, refill pouches, and three-size PREP RALLY RESET supplements"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 05 individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v5-pill-scale-item-01-starter-tray.png"
+              alt="BEND starter tray with tall frosted dose tubes showing three-size PREP RALLY RESET contents"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v5-item-02-three-tubes-spherical.png"
+              alt="Three BEND tall frosted tubes labeled PREP RALLY and RESET with spherical green supplements in three sizes"
+              loading="lazy"
+            />
+            <figcaption>Containers</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v5-pill-scale-item-03-single-tube.png"
+              alt="Single BEND tall frosted dose tube with visible large glossy RESET gummies and loose gummies"
+              loading="lazy"
+            />
+            <figcaption>Single container</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v5-pill-scale-item-04-refill-pouches.png"
+              alt="BEND white refill pouches with blurred glassine windows and scaled PREP RALLY RESET contents"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v5-item-05-refill-moment-spherical.png"
+              alt="BEND refill pouch pouring spherical green supplements into a tall frosted tube"
+              loading="lazy"
+            />
+            <figcaption>Refill</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v5-pill-scale-item-06-frosted-glass-macro.png"
+              alt="Large glossy RESET gummies visible through pale frosted glass"
+              loading="lazy"
+            />
+            <figcaption>Pills</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="variant" id="variant-06" aria-labelledby="variant-06-title">
+        <div class="variant-head">
+          <p class="variant-kicker">Variant 06</p>
+          <h2 id="variant-06-title">Warm Frosted Jar Lifestyle</h2>
+        </div>
+        <figure class="complete-frame">
+          <img
+            src="assets/generated/bend-packaging-v6-crystal-ice-cream.png"
+            alt="Complete BEND warm lifestyle frosted jar packaging concept with hand-held jar, refills, bottle, three-size PREP RALLY RESET supplements, and a decorative crystal coupe of tennis-ball ice cream"
+            loading="lazy"
+          />
+        </figure>
+        <div class="bento" aria-label="Variant 06 individual packaging item photos">
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v6-item-01-starter-lineup-crystal-ice-cream.png"
+              alt="BEND warm lifestyle starter lineup with frosted jars, refills, metal bottle, scaled supplement contents, and decorative tennis-ball ice cream in crystal glass"
+              loading="lazy"
+            />
+            <figcaption>First-order box</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v6-pill-scale-item-02-handheld-jar.png"
+              alt="Hand holding a BEND frosted PREP jar with small pressed PREP tablets visible through glass"
+              loading="lazy"
+            />
+            <figcaption>Handheld container</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v6-pill-scale-item-03-three-jars.png"
+              alt="Three BEND frosted jars labeled PREP RALLY and RESET with smallest tablets, medium tablets, and largest gummies"
+              loading="lazy"
+            />
+            <figcaption>Containers</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v6-item-04-refills-with-jar-crystal-ice-cream.png"
+              alt="BEND refill boxes beside a frosted jar with scaled PREP RALLY RESET contents visible through refill windows and a decorative crystal glass tennis-ball ice cream prop"
+              loading="lazy"
+            />
+            <figcaption>Box itself</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v6-pill-scale-item-05-open-jar.png"
+              alt="Open BEND frosted RESET jar with large glossy RESET gummies and loose gummies"
+              loading="lazy"
+            />
+            <figcaption>Open jar</figcaption>
+          </figure>
+          <figure class="tile">
+            <img
+              src="assets/generated/bend-v6-pill-scale-item-06-frosted-jar-macro.png"
+              alt="Large glossy RESET gummies visible through warm frosted green glass"
+              loading="lazy"
+            />
+            <figcaption>Pills</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>BEND packaging concept board</span>
+        <span>First-order systems, transport containers, refill structures, and individual product photos</span>
+      </footer>
+    </main>
+  </body>
+</html>
