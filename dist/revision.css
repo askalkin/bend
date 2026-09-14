@@ -2096,3 +2096,47 @@
     line-height: 1.48;
   }
 }
+
+/* Shared section-heading type. Keep the display-scale treatment on the hero only. */
+.package-scroll .package-copy h2,
+.transform-copy h2,
+.kit-showcase__header h2,
+.court-gallery__header h2,
+.rhythm-copy h2,
+.client-reviews__intro h2 {
+  max-width: 18ch;
+  font-family: var(--display);
+  font-size: clamp(34px, 3.2vw, 44px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+}
+
+.transform-copy h2 span {
+  display: inline;
+  color: inherit;
+  white-space: normal;
+}
+
+.transform-copy h2 span:nth-child(2) {
+  color: inherit;
+}
+
+.client-reviews__intro h2 em {
+  color: inherit;
+}
+
+@media (max-width: 720px) {
+  .package-scroll .package-copy h2,
+  .transform-copy h2,
+  .kit-showcase__header h2,
+  .court-gallery__header h2,
+  .rhythm-copy h2,
+  .client-reviews__intro h2 {
+    max-width: 18ch;
+    font-size: 29px;
+    line-height: 1.04;
+  }
+}
